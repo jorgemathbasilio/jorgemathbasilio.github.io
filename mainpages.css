@@ -1,0 +1,176 @@
+body
+    {
+    font-family: Verdana, helvetica, arial, sans-serif;
+    font-size: 14px;
+    line-height: 23px;
+    background-color: #EEEEEE; margin: 0em; 
+    padding-top: 5px; padding-left: 0em; padding-right: 0em;    
+    padding-bottom: 0em;
+    /* old padding was <padding: 0em;> */
+    color: #252525
+    }
+
+@media (min-width: 917px)
+    {
+    div.wholedoc
+        {
+        padding-top: 20px; padding-left: 20px; 
+        padding-right: 20px; padding-bottom: 20px;
+        border: 0px;
+        /*
+        border-left: solid 1px #CCCCCC;
+        border-right: solid 1px #CCCCCC;
+        border-bottom: solid 1px #CCCCCC;
+        */
+        display: block;
+        width: 917px;
+        margin: 0px auto 0px auto;
+        background-color: #FFFFFF;
+        }
+    }
+@media (max-width: 916px)
+    {
+    div.wholedoc
+        {
+        padding-top: 20px; padding-left: 20px; 
+        padding-right: 20px; padding-bottom: 20px;
+        border: 0px;
+        /*
+        border-left: solid 1px #CCCCCC;
+        border-right: solid 1px #CCCCCC;
+        border-bottom: solid 1px #CCCCCC;
+        */
+        display: block;
+        width: device-width;
+        margin: 0px auto 0px auto;
+        background-color: #FFFFFF;
+        }
+    }
+
+@media (min-width: 959px) 
+    /* belk original blue color: #333366*/
+    { div.header {  
+        height: 69px;  
+        background-color:#f0c7cd;  
+        margin: 0px auto 0px auto;  
+        padding: 0em;  width: 959px } }
+@media (min-width: 600px) and (max-width: 958px)
+    { div.header {  height: 69px;  background-color:#f0c7cd;  margin: 0px auto 0px auto;  padding: 0em;  width: device-width  } }
+@media (max-width: 599px) and (min-width: 435px)
+    { div.header {  height: 11.5vw;  background-color:#f0c7cd;  margin: 0px auto 0px auto;  padding: 0em;  width: device-width  } }
+@media (max-width: 434px)
+    { div.header {  height: 50px;  background-color:#f0c7cd;  margin: 0px auto 0px auto;  padding: 0em;  width: device-width  } }
+
+@media (min-width: 600px)
+    { span.coursetitle { 
+        /*other color ideas white #FFFFFF*/
+    color: #ffffff; font-size: 24px; 
+    font-family: Verdana, helvetica, arial, sans-serif; 
+    float: left; margin-top: 1.09em; margin-left: 0.8em 
+    } }
+    /*
+    font-family: Verdana, helvetica, arial, sans-serif; 
+    float: left; margin-top: 1.09em; margin-left: 0.8em 
+    */
+@media (max-width: 599px) and (min-width: 375px)
+    { span.coursetitle { 
+    color: #ffffff; font-size: 4vw; float: left; margin-top: 1.09em; margin-left: 0.8em } }
+@media (max-width: 374px)
+    { span.coursetitle { color: #ffffff; font-size: 15px; float: left; margin-top: 1.09em; margin-left: 0.8em } }
+
+@media (min-width: 600px)
+    /* color ideas: #5e61a5 nice blue used for links n stuff
+        white #FFFFFF, medium gray #8d8d8d
+    */
+    { span.schoolsname { 
+    color:rgba(94, 97, 165, 0.53); 
+    font-size: 21px; 
+    font-weight: 600;
+    font-family: Verdana, helvetica, arial, sans-serif; 
+    text-align: right; float: right; margin-top: 1.29em;
+    margin-right: 0.8em 
+    /*font-family: georgia, 'Times New Roman', Times; text-align: right; float: right; margin-top: 1.04em;
+    margin-right: 0.8em 
+    */
+    } }
+
+@media (max-width: 599px) and (min-width: 375px)
+    { span.schoolsname { 
+    color:rgba(94, 97, 165, 0.53); 
+    font-size: 4vw; 
+    font-family: Verdana, helvetica, arial, sans-serif; 
+    text-align: right; float: right; margin-top: 1.29em;
+    margin-right: 0.8em 
+    /* 
+    font-family: georgia, 'Times New Roman', Times; text-align: right; float: right; margin-top: 1.04em;
+    margin-right: 0.8em 
+    */
+    } }
+@media (max-width: 374px)
+    { span.schoolsname { 
+    color:rgba(94, 97, 165, 0.53); font-size: 15px; 
+    font-family: Verdana, helvetica, arial, sans-serif; 
+    text-align: right; float: right; margin-top: 1.29em;
+    margin-right: 0.8em 
+    /* 
+    font-family: georgia, 'Times New Roman', Times; text-align: right; float: right; margin-top: 1.04em;
+    margin-right: 0.8em 
+    */
+    } }
+
+@media (min-width: 917px)
+    { div.footer { padding: 20px; display: block; width: 917px; margin: 20px auto 100px auto; font-size: 11px; color: #888888;}  }
+@media (max-width: 916px)
+    { div.footer { padding: 20px; display: block; width: device-width; margin: 20px auto 100px auto; font-size: 11px; color: #888888; }  }
+
+@media (min-width: 700px)
+    { img.a { margin-right: 14px; margin-left: 21px; float: right; max-width: 50% } }
+@media (max-width: 699px)
+    { img.a { margin-right: 2vw; margin-left: 3vw; float: right; max-width: 50% } }
+
+@media (min-width: 700px)
+    { img.flt { float:right; margin: 14px 14px 14px 21px; max-width:40% } }
+@media (max-width: 699px)
+    { img.flt { float:right; margin: 2vw 2vw 2vw 3vw; max-width:40% } }
+
+@media (min-width: 600px)
+    { h1 {  font-family: Georgia, Times, serif;  font-weight: normal;  font-size: 30px;  margin-bottom: 0.5em;  margin-top: 0em;  line-height: 100% }
+    }
+@media (min-width: 400px) and (max-width: 599px)
+    { h1 {  font-family: Georgia, Times, serif;  font-weight: normal;  font-size: 5vw;  margin-bottom: 0.5em;  margin-top: 0em;  line-height: 100%;
+    color: Black } }
+@media (max-width: 399px)
+    { h1 {  font-family: Georgia, Times, serif;  font-weight: normal;  font-size: 20px;  margin-bottom: 0.5em;  margin-top: 0em;  line-height: 100%;
+    color: Black } }
+
+@media (min-width: 600px)
+    { h2 {  font-family: Georgia, Times, serif;  margin-top: 1.25em; margin-bottom: 0.5em;  font-weight: normal; font-size: 21px; line-height: 125%;  color:
+    Black  } }
+@media (min-width: 457px) and (max-width: 599px)
+    { h2 {  font-family: Georgia, Times, serif;  margin-top: 1.25em; margin-bottom: 0.5em;  font-weight: normal; font-size: 3.5vw; line-height: 125%;  color:
+    Black } }
+@media (max-width: 456px)
+    { h2 {  font-family: Georgia, Times, serif;  margin-top: 1.25em; margin-bottom: 0.5em;  font-weight: normal; font-size: 18px; line-height: 125%;  color:
+    Black } }
+
+h4 { margin-bottom: 0em; margin-top: 1em; color: Black }
+a {text-decoration: none; color:#5e61a5; font-weight: bold;}
+    /* original links blue: #0066CC <font-weight: bold;>*/
+a:hover {color: #f88a2d;}
+    /* original link hover text-decoration: underline; 'color: red;' (remove 's) */
+ul { margin-top: 0.5em; margin-bottom:0em; list-style-type: none }
+li { margin-bottom: 0.5em}
+ul.compact { margin-top: -1em; margin-bottom:0em }
+li.compact { margin-bottom: 0em; margin-top: 0em }
+.schedule { width: 60%; min-width: 40em; border-collapse:collapse; }
+.schedule ul { margin-top: 0em; margin-bottom:0em; list-style-type: none; margin-left: 0em; padding-left: 0em }
+.schedule li { margin-bottom: 0em; margin-left: 0em; padding-left: 0em }
+.schedule td { border:1px solid #98bf21; padding:3px 7px 2px 7px; }
+.schedule th { border:1px solid #98bf21; padding:3px 7px 2px 7px;
+               text-align:left; padding-top:5px; padding-bottom:4px; background-color:#ddeecc; color:#333366;
+               font-size: 135%; font-weight: normal; }
+.schedule tr.alt td { color:#000000; background-color:#f3faee; }
+table.grid { border: 1px solid black; }
+td.box { border: 1px solid black; padding: 0.5em; font-size: 100% }
+
+
