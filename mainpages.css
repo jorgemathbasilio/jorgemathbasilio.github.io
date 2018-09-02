@@ -165,7 +165,9 @@ li.compact { margin-bottom: 0em; margin-top: 0em }
 .schedule { width: 90%; min-width: 40em; border-collapse:collapse; }
 .schedule ul { margin-top: 0em; margin-bottom:0em; margin-left: 1em; padding-left: 0em;
                     list-style-type: circle; }
-    /* list-style-type: none */ 
+    /* list-style-type: none  or disc or circle or square */ 
+.schedule ul li ul { list-style-type: disc; }
+.schedule ul li ul li ul { list-style-type: circle; }
 .schedule li { margin-bottom: 0em; margin-left: 0em; padding-left: 0em }
 .schedule td { border:1px solid #98bf21; padding:3px 7px 2px 7px; }
 .schedule th { border:1px solid #98bf21; padding:3px 7px 2px 7px;
