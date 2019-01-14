@@ -176,5 +176,8 @@ li.compact { margin-bottom: 0em; margin-top: 0em }
 .schedule tr.alt td { color:#000000; background-color:#f3faee; }
 table.grid { border: 1px solid black; }
 td.box { border: 1px solid black; padding: 0.5em; font-size: 100% }
+.boldred { color: red; font-weight: bold; }
+.boldblue { color: blue; font-weight: bold; }
+.boldfuchsia { color: fuchsia; font-weight: bold; }
 
 
