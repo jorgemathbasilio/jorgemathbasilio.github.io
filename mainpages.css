@@ -177,7 +177,9 @@ li.compact { margin-bottom: 0em; margin-top: 0em }
 table.grid { border: 1px solid black; }
 td.box { border: 1px solid black; padding: 0.5em; font-size: 100% }
 .boldred { color: red; font-weight: bold; }
+.boldorange { color: orange; font-weight: bold; }
 .boldblue { color: blue; font-weight: bold; }
 .boldfuchsia { color: fuchsia; font-weight: bold; }
+.boldgreen { color: forestgreen; font-weight: bold; }
 
 
