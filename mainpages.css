@@ -169,17 +169,26 @@ li.compact { margin-bottom: 0em; margin-top: 0em }
 .schedule ul li ul { list-style-type: disc; }
 .schedule ul li ul li ul { list-style-type: circle; }
 .schedule li { margin-bottom: 0em; margin-left: 0em; padding-left: 0em }
-.schedule td { border:1px solid #98bf21; padding:3px 7px 2px 7px; }
-.schedule th { border:1px solid #98bf21; padding:3px 7px 2px 7px;
+.schedule td { border:1px solid darkgray; padding:3px 7px 2px 7px; }
+/*.schedule th { border:1px solid #98bf21; padding:3px 7px 2px 7px;
                text-align:left; padding-top:5px; padding-bottom:4px; background-color:#ddeecc; color:#333366;
-               font-size: 135%; font-weight: normal; }
-.schedule tr.alt td { color:#000000; background-color:#f3faee; }
+               font-size: 135%; font-weight: normal; } */
+.schedule th { border:1px solid darkgray; padding:3px 7px 2px 7px;
+               text-align:left; padding-top:5px; padding-bottom:4px; 
+                    background-color: #f0c7cd;/*background-color:#F8F4F6;*/ 
+                    color: black;/*color:#333366;*/
+               font-size: 135%; 
+               font-weight: normal;/*font-weight: normal;*/ 
+        } 
+.schedule tr.alt td { color:#000000; background-color:#EDE2E8; }
 table.grid { border: 1px solid black; }
 td.box { border: 1px solid black; padding: 0.5em; font-size: 100% }
 .boldred { color: red; font-weight: bold; }
 .boldorange { color: orange; font-weight: bold; }
+.alert2 { color: #41B348; font-weight: bold; }
 .boldblue { color: blue; font-weight: bold; }
 .boldfuchsia { color: fuchsia; font-weight: bold; }
-.boldgreen { color: forestgreen; font-weight: bold; }
-
+.boldgreen { color:seagreen; font-weight: bold; }
+.week { color:#B78CA4; font-weight: bold; }
+.class { color:#8B5674; /*background-color: lightgrey; font-weight: bold;*/ }
 
