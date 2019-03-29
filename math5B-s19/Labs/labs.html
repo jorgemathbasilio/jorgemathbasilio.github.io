@@ -5,25 +5,38 @@
 
 
 <HEAD>
-<meta charset="UTF-8">
+<meta charset="UTF-8">    
 <link rel="stylesheet" type="text/css" href="../../mainpages.css">
-<!--<link rel="stylesheet" type="text/css" href="../coursepages.css">-->
 
 <meta name=viewport content="width=device-width, initial-scale=1">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
 <TITLE>Math 5B - Calculus II - Home Page</TITLE>
+    
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async>
-</script>     
+</script><!-- added to use Latex in HTML w AJAX...use \(x^2+1=0\)--> 
+
+<!-- for sagemath cells -->    
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script>
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script>
+<script>$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+        template:       sagecell.templates.minimal,
+            evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+            evalButtonText: 'Evaluate'});
+});
+</script>    
+<link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css"><!-- to make sure the styling of the sage cells doesn't get screwed up by my own styles -->
+    
 </HEAD>
 
-
 <BODY link=darkblue vlink=darkblue>
-
-
-    
+   
 <div class="header">
 <span class="coursetitle">Math 5B</span>
 <span class="schoolsname">
@@ -34,7 +47,7 @@
 
 <div class="wholedoc">
 
-<img class="a" style="width:40%" src="../Sine-Taylor.gif">
+<img class="a" style="width:40%" src="slope_field.svg">
     
 <h1>Calculus II: Futher Study of Motion and Change</h1>
 
@@ -52,6 +65,7 @@
 <li class="compact">Th 11am-12pm </li>
 </ul>   
 
+<h2>Labs</h2>
     
 <table class="schedule">
     <col width="210">
@@ -108,6 +122,89 @@
     
 </table>
     
+<h2>SageMathCloud</h2>
+
+<h4>Tangent Line Applet</h4>
+    
+Click the “Activate” button below to run an application that investigages the tangent line.    
+<div id="mycell">
+<script type="text/x-sage">
+
+f(x) = x^3 - x
+
+f_prime(x) = diff( f(x), x)
+
+@interact
+def tangent_at_point( x_0 = slider(-2, 2, 0.1, -1.5, label="x-coordinate") ):
+    y_0 = f( x_0 )
+    m = f_prime( x_0 )
+
+    # because y - y_0 = m(x - x_0) we know that
+    # y - y_0 = mx - m*x_0
+    # y = mx + y_0 - m*x_0
+    # therefore b = y_0 - m*x_0
+
+    b = y_0 - m*x_0
+
+    P1 = plot( f(x), -2, 2, color='blue', ymin=-6, ymax=6, gridlines='minor', thickness=2)
+    P2 = plot( m*x + b, -2, 2, color='red', ymin=-6, ymax=6, thickness=4)
+    P3 = point( (x_0, y_0), color='green', size=80, zorder=10)
+
+    P = P1+P2+P3
+
+    P.show()
+
+    print
+    print "x_0 = ", x_0
+    print "y_0 = f(x_0) = ", y_0
+    print "m = f'(x_0) = ", m
+    print "tangent line: y = (", m, ")*x + (", b, ")"
+
+    return
+
+</script>
+</div>
+    
+<h4>Your own computations</h4>
+
+Type your own Sage computation below and click “Evaluate”.   
+    
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+2+2
+</script>
+</div>    
+
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+plot(sin(x), (x, 0, 2*pi))
+</script>
+</div>
+    
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+limit(1/x, x=2)
+</script>
+</div> 
+
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+derivative(sec(x), x)
+</script>
+</div>  
+
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+integral(sec(x), x)
+</script>
+</div>     
+    
+     
 <a name="handouts"><h2>References</h2></a>
 
 <h4>CoCalc Website</h4>
@@ -142,86 +239,7 @@
     </li>
 </ul>    
     
-<!--    
-<table class="schedule">
-    <col width="210">
-    <col width="400">
-    <!--<col width="10">-->
-<!--    
-<tr><th>Week</th> <th>Class</th> <th>Hand-outs</th></tr>
-
-<tr>
-<td><span class="week">Week 5</span>
-    <ul>
-        <li>3/19</li> 
-        <li>3/21</li> 
-    </ul>
-</td>
-<td>
-    <ul>
-        <li><span class="class">{Tu} Class 8</span>
-            <ul>
-                <li>
-                    Section 9.2
-                        (<a href="classnotes/Ma5B-Calc2-Section9.2-handout.pdf">notes</a>)
-                        (<a href="ICA/Ma5B-Calc2-ICA_9.2.pdf">ICA</a>)
-                </li>
-            </ul> 
-        </li> 
-        <li><span class="class">{Th} Class 9</span>
-            <ul>
-                <li>
-                    Section 6.8
-                        (<a href="classnotes/Ma5B-Calc2-Section6.8-handout.pdf">notes</a>)
-                        (<a href="ICA/Ma5B-Calc2-ICA_6.8.pdf">ICA</a>)
-                </li>
-            </ul>
-        </li> 
-    </ul>
-</td>    
-<td>&mdash;</td>
-</tr>
-
-<tr class="alt"><td>Week 8</td>
-<td><b><span class="boldred">Exam 2</span></b> (80 min)</td>
-<td>
-    <span class="boldred">{Tu} 4/11</span><br/> 
-            <span class="alert2">
-                &#64; 4:00 &mdash; 5:20pm
-            </span>
-</td>
-</tr>
-
-<tr>
-<td>
-    <ul>
-        <li>4/16</li> 
-        <li>4/18</li> 
-    </ul>
-</td>
-<td>
-    <ul>
-        <li>{Tu} <b><span class="alert2">Spring Break!</span></b></li> 
-        <li>{Th} <b><span class="alert2">Spring Break!</span></b></li> 
-    </ul>
-</td>    
-<td>&mdash;</td>
-</tr>
-
-<tr class="alt"><td>Week 16</td>
-<td><b><span class="boldred">Final Exam</span></b> (2 hrs)</td>
-    <td><span class="boldred">{Th} 6/13</span><br/> 
-            <span class="alert2">
-                &#64; 3:15pm &mdash; 5:15pm
-            </span>
-    </td>
-</tr>
-
-</table>
--->
-
-</div>
-
+</div><!-- whole doc -->
 <div class="footer"></div>
 
 </BODY>
