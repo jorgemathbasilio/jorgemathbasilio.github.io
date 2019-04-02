@@ -151,9 +151,10 @@ def left_endpoint_approx( nn ): # tell it n as nn since n is predefined in sage
 
     print "the left endpoint approximation is", lea.n()
     print "the exact answer is", exactint.n()
+    print "the error is", exactint.n()-lea.n()
 
     return
-# input the n to compute S_n
+# input the n to compute S_n using LEA
 left_endpoint_approx(4)
 </script>
 </div>  
@@ -182,6 +183,7 @@ def right_endpoint_approx( nn ): # tell it n as nn since n is predefined in sage
 
     print "the right endpoint approximation is", rea.n()
     print "the exact answer is", exactint.n()
+    print "the error is", exactint.n()-rea.n()
 
     return
 # input the n to compute S_n using REA
@@ -213,9 +215,10 @@ def midpoint_approx( nn ): # tell it n as nn since n is predefined in sage
 
     print "the midpoint approximation is", mpa.n()
     print "the exact answer is", exactint.n()
+    print "the error is", exactint.n()-mpa.n()
 
     return
-# input the n to compute S_n using REA
+# input the n to compute S_n using MPA
 midpoint_approx(4)
 </script>
 </div>  
@@ -245,9 +248,10 @@ def trapezoid_approx( nn ): # tell it n as nn since n is predefined in sage
 
     print "the trapezoid approximation is", trapa.n()
     print "the exact answer is", exactint.n()
+    print "the error is", exactint.n()-trapa.n()
 
     return
-# input the n to compute S_n using REA
+# input the n to compute S_n using TRAPA
 trapezoid_approx(4)
 </script>
 </div> 
@@ -277,6 +281,7 @@ def simpson_approx( nn ): # tell it n as nn since n is predefined in sage
 
     print "the Simpson's Rule approximation is", simpa.n()
     print "the exact answer is", exactint.n()
+    print "the error is", exactint.n()-simpa.n()
 
     return
 # input the n to compute S_n using Simpson's Rule. Enter an EVEN number
