@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<HTML>
+
+
+<HEAD>
+<meta charset="UTF-8">    
+<link rel="stylesheet" type="text/css" href="../../mainpages.css">
+
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<TITLE>Math 5B - Calculus II - Home Page</TITLE>
+    
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async>
+</script><!-- added to use Latex in HTML w AJAX...use \(x^2+1=0\)--> 
+
+<!-- for sagemath cells -->    
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script>
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script>
+<script>$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+        template:       sagecell.templates.minimal,
+            evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+            evalButtonText: 'Evaluate'});
+});
+</script>    
+<link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css"><!-- to make sure the styling of the sage cells doesn't get screwed up by my own styles -->
+    
+</HEAD>
+
+<BODY link=darkblue vlink=darkblue>
+   
+<div class="header">
+<span class="coursetitle">Math 5B</span>
+<span class="schoolsname">
+    Pasadena City College
+</span>
+</div>  
+
+
+<div class="wholedoc">
+
+<img class="a" style="width:40%" src="slope_field.svg">
+    
+<h1>Calculus II: Futher Study of Motion and Change</h1>
+
+<p><b>Course:</b>&nbsp;&nbsp;Math 5B &mdash; CRN 30719, Spring 2019</p>
+
+<p><b>Time &amp; Place:</b>&nbsp;&nbsp;TuTh 4-6:30 (R Bulding, Room 109)</p>
+
+
+<p><b>Instructor:</b>&nbsp;&nbsp;<a href="https://jorgemathbasilio.github.io/index.html" target="_blank">Jorge Basilio</a> (<a href="mailto:gbasilio@pasadena.edu">gbasilio@pasadena.edu</a>)</p>
+
+<p><b>Office:</b>&nbsp;&nbsp;MSC R-406</p>
+    
+<p><b>Office Hours:</b></p>
+<ul class="compact">
+<li class="compact">Th 11am-12pm </li>
+</ul>   
+
+<h2>Labs</h2>
+    
+<table class="schedule">
+    <col width="210">
+    <col width="400">
+    <!--<col width="10">-->
+<tr><th>Lab</th> <th>Files</th> <th>Due Date</th></tr>
+    
+<tr>
+<td><span class="week">1</span></td>
+<td>
+    <ul>
+        <li>
+        Sage Worksheet of Lab_0 (<a href="Lab_0.sagews">here</a>)
+        </li>
+        <li>
+        Sage Worksheet of Lab_0 as HTML (<a href="Lab_0.sagews.html">here</a>)
+        </li>    
+        <li>
+        Sage Worksheet of Lab_0 as PDF (<a href="Lab_0.sagews.pdf">here</a>)
+        </li>    
+        <li>
+        Sage Worksheet of Lab_0 Write-up template (<a href="Math5B-Lab_0%E2%80%93%20YourLastName_YourFirstName-S19(template).sagews">here</a>)
+        </li>
+    </ul>  
+</td>
+<td>
+    April 9, , 11:59 PM via CoCalc 
+</td>
+</tr>
+    
+<tr class="alt">
+<td>2</td>
+<td>
+    <ul>
+        <li>
+        Sage Juputer Notebook of Lab_1 (<a href="Lab_1.ipynb">here</a>)
+        </li>
+        <li>
+        Sage Juputer Notebook of Lab_1 as HTML (<a href="Lab_1.html">here</a>)
+        </li>    
+        <li>
+        Sage Juputer Notebook of Lab_1 as PDF (<a href="Lab_1.pdf">here</a>)
+        </li>    
+    </ul>
+</td>
+<td>
+    May 28, , 11:59 PM via CoCalc 
+</td>
+</tr>
+    
+<tr>
+<td><span class="week">3</span></td>
+<td></td>
+<td></td>
+</tr>
+    
+</table>
+    
+<h2>SageMathCloud</h2>
+
+<h4>Tangent Line Applet</h4>
+    
+Click the “Activate” button below to run an application that investigages the tangent line.    
+<div id="mycell">
+<script type="text/x-sage">
+
+f(x) = x^3 - x
+
+f_prime(x) = diff( f(x), x)
+
+@interact
+def tangent_at_point( x_0 = slider(-2, 2, 0.1, -1.5, label="x-coordinate") ):
+    y_0 = f( x_0 )
+    m = f_prime( x_0 )
+
+    # because y - y_0 = m(x - x_0) we know that
+    # y - y_0 = mx - m*x_0
+    # y = mx + y_0 - m*x_0
+    # therefore b = y_0 - m*x_0
+
+    b = y_0 - m*x_0
+
+    P1 = plot( f(x), -2, 2, color='blue', ymin=-6, ymax=6, gridlines='minor', thickness=2)
+    P2 = plot( m*x + b, -2, 2, color='red', ymin=-6, ymax=6, thickness=4)
+    P3 = point( (x_0, y_0), color='green', size=80, zorder=10)
+
+    P = P1+P2+P3
+
+    P.show()
+
+    print
+    print "x_0 = ", x_0
+    print "y_0 = f(x_0) = ", y_0
+    print "m = f'(x_0) = ", m
+    print "tangent line: y = (", m, ")*x + (", b, ")"
+
+    return
+
+</script>
+</div>
+    
+<h4>Your own computations</h4>
+
+Type your own Sage computation below and click “Evaluate”.   
+    
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+2+2
+</script>
+</div>    
+
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+plot(sin(x), (x, 0, 2*pi))
+</script>
+</div>
+    
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+limit(1/x, x=2)
+</script>
+</div> 
+
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+derivative(sec(x), x)
+</script>
+</div>  
+
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+integral(sec(x), x)
+</script>
+</div>     
+    
+     
+<a name="handouts"><h2>References</h2></a>
+
+<h4>CoCalc Website</h4>
+
+<ul>
+    <li>
+        CoCalc website: (<a href="https://cocalc.com/">here</a>)
+    </li>
+</ul>    
+    
+<h4>Book: Sage for Undergraduates</h4>
+
+<ul>
+    <li>
+        By Gregory Bard. Download it at his website: (<a href="http://www.gregorybard.com/Sage.html">here</a>)
+    </li>
+</ul>      
+
+<h4>Sage Tutorial - Online site</h4>
+
+<ul>
+    <li>
+        By Mike O'Sullivan. Available at his website: (<a href="https://mosullivan.sdsu.edu/sagetutorial/about.html#getting-started">here</a>)
+    </li>
+</ul>         
+    
+<h4>SageMath Advice for Calculus</h4>
+
+<ul>
+    <li>
+        By Tuan A. Le and Hieu D. Nguyen. Available: (<a href="http://users.rowan.edu/~nguyen/sage/SageMathAdviceforCalculus.pdf">here</a>)
+    </li>
+</ul>    
+    
+</div><!-- whole doc -->
+<div class="footer"></div>
+
+</BODY>
+</HTML>
