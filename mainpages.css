@@ -174,21 +174,139 @@ li.compact { margin-bottom: 0em; margin-top: 0em }
                text-align:left; padding-top:5px; padding-bottom:4px; background-color:#ddeecc; color:#333366;
                font-size: 135%; font-weight: normal; } */
 .schedule th { border:1px solid darkgray; padding:3px 7px 2px 7px;
-               text-align:left; padding-top:5px; padding-bottom:4px; 
-                    background-color: #f0c7cd;/*background-color:#F8F4F6;*/ 
+               text-align:left; /*padding-top:5px; padding-bottom:4px;*/
+                    background-color: #f0c7cd;/*background-color:#F8F4F6; #f0c7cd*/ 
                     color: black;/*color:#333366;*/
                font-size: 135%; 
                font-weight: normal;/*font-weight: normal;*/ 
         } 
-.schedule tr.alt td { color:#000000; background-color:#EDE2E8; }
+.schedule tr.alt td { color:#000000; background-color: #f0f0f5; /*#EDE2E8*/ }
 table.grid { border: 1px solid black; }
 td.box { border: 1px solid black; padding: 0.5em; font-size: 100% }
+
 .boldred { color: red; font-weight: bold; }
 .boldorange { color: orange; font-weight: bold; }
 .alert2 { color: #41B348; font-weight: bold; }
 .boldblue { color: blue; font-weight: bold; }
 .boldfuchsia { color: fuchsia; font-weight: bold; }
 .boldgreen { color:seagreen; font-weight: bold; }
+
 .week { color:#B78CA4; font-weight: bold; }
 .class { color:#8B5674; /*background-color: lightgrey; font-weight: bold;*/ }
+
+/* make collapsible calendar -- code from W3schools */
+
+/* style the button that is used to open and close the collapsible content */
+.collapsible {
+    /*background-color: #777;
+    color: white;*/
+    cursor: pointer;
+    padding: 0 0 10px 0px;
+    width: 100%;
+    border: none;
+    outline: none;
+    align-content: center;
+}
+
+/* add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+/*.active, .collapsible {
+    background-color: #f0c7cd;
+}*/
+/*.collapsible:hover {
+    background-color: #f0f0f5;
+}*/
+
+/* style the table inside collapsible */
+.schedule-1 {
+    /*background-color: red;*/
+    padding: 0;
+    border: none;
+    outline: none;
+    width: 100%;
+    border-collapse: collapse;
+    border: 0px solid darkgray;
+    padding:3px 7px 2px 7px;
+    text-align: left;
+    font-size: 150%;
+    font-weight: normal;
+    color: black;
+}
+
+.schedule-1 td {
+    background-color: #f0c7cd;
+    padding:3px 7px 2px 7px;
+    border: 0px solid darkgray;
+    /*
+    border-left: 1px solid darkgray;
+    border-right: 1px solid darkgray;
+    border-bottom: 0px solid darkgray;
+    border-top: 1px solid darkgray;
+    */
+}
+
+.schedule-1-alt {
+    /*background-color: red;*/
+    padding: 0;
+    border: none;
+    outline: none;
+    width: 100%;
+    border-collapse: collapse;
+    border: 0px solid darkgray;
+    padding:3px 7px 2px 7px;
+    text-align: left;
+    font-size: 150%;
+    font-weight: normal;
+    color: black;
+}
+
+.schedule-1-alt td {
+    background-color: #f0f0f5;
+    padding:3px 7px 2px 7px;
+    border: 0px solid darkgray;
+    /*
+    border-left: 1px solid darkgray;
+    border-right: 1px solid darkgray;
+    border-bottom: 0px solid darkgray;
+    border-top: 1px solid darkgray;
+    */
+}
+
+/* style the collapsible content. note: hidden by default */
+.content {
+    display: none;    
+    overflow: hidden;
+    border-collapse: collapse;
+    padding: 0 0 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
