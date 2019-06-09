@@ -181,8 +181,27 @@ li.compact { margin-bottom: 0em; margin-top: 0em }
                font-weight: normal;/*font-weight: normal;*/ 
         } 
 .schedule tr.alt td { color:#000000; background-color: #f0f0f5; /*#EDE2E8*/ }
-table.grid { border: 1px solid black; }
-td.box { border: 1px solid black; padding: 0.5em; font-size: 100% }
+
+table.grid { 
+    color: darkslategray;
+    border: none;
+}
+td.box { 
+    background-color: #f0f0f5;
+    border-left-style: solid;
+    border-left-color: slategray;
+    border-left-width: 2px;
+    padding: 5px; 
+    font-size: 100%
+}
+td.box-alt { 
+    background-color: white;
+    border-left-style: solid;
+    border-left-color: #f0f0f5;
+    border-left-width: 2px;
+    padding: 5px; 
+    font-size: 100%
+}
 
 .boldred { color: red; font-weight: bold; }
 .boldorange { color: orange; font-weight: bold; }
@@ -201,11 +220,26 @@ td.box { border: 1px solid black; padding: 0.5em; font-size: 100% }
     /*background-color: #777;
     color: white;*/
     cursor: pointer;
-    padding: 0 0 10px 0px;
+    padding: 0 0 0px 0px;
     width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
     border: none;
     outline: none;
     align-content: center;
+}
+
+.announcementtitle h4 {
+    background-color: #f0f0f5;
+    padding: 2px 7px 2px 7px;
+    border: none;
+    outline: none;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 180%;
+    font-weight: 500;
+    width: 50%;
+    color: darkslategray;
 }
 
 /* add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -216,23 +250,60 @@ td.box { border: 1px solid black; padding: 0.5em; font-size: 100% }
     background-color: #f0f0f5;
 }*/
 
-/* style the table inside collapsible */
-.schedule-1 {
-    /*background-color: red;*/
-    padding: 0;
-    border: none;
-    outline: none;
-    width: 100%;
+
+/* style the collapsible content. note: hidden by default */
+.content {
+    display: none;    
+    overflow: hidden;
     border-collapse: collapse;
-    border: 0px solid darkgray;
-    padding:3px 7px 2px 7px;
-    text-align: left;
-    font-size: 150%;
-    font-weight: normal;
-    color: black;
+    padding: 0 0 5px 0;
+    width: 100%;
 }
 
-.schedule-1 td {
+.content-show {
+    /*display: none;*/    
+    overflow: hidden;
+    border-collapse: collapse;
+    padding: 0 0 5px 0;
+    width: 100%;
+}
+
+.announcementcontent {
+    background-color: none;
+    margin-top: 0px;
+    border: none;
+    border-collapse: collapse;
+    padding: 0 0 0px 7px;
+    color: darkslategray;
+    border-left-style: solid;
+    border-left-color: #f0f0f5;
+    border-left-width: medium;
+}
+
+.announcementcontent ul {
+    margin-top: 0px;
+    border: none;
+    outline: none;
+    border-collapse: collapse;
+    padding: 7px 0 0 0;
+}
+
+/* style the schedule button table (visible) */
+.schedule-out {
+    /*background-color: red;*/
+    outline: none;
+    width: 100%;
+    /*margin-bottom: 10px;*/
+    border-collapse: collapse;
+    border: none;
+    padding:2px 7px 2px 7px;
+    text-align: left;
+    font-size: 170%;
+    font-weight: normal;
+    color: darkslategray;
+}
+
+.schedule-out td {
     background-color: #f0c7cd;
     padding:3px 7px 2px 7px;
     border: 0px solid darkgray;
@@ -244,23 +315,22 @@ td.box { border: 1px solid black; padding: 0.5em; font-size: 100% }
     */
 }
 
-.schedule-1-alt {
+.schedule-out-alt {
     /*background-color: red;*/
-    padding: 0;
-    border: none;
     outline: none;
     width: 100%;
+    /*margin-bottom: 10px;*/
     border-collapse: collapse;
-    border: 0px solid darkgray;
-    padding:3px 7px 2px 7px;
+    border: none;
+    padding:2px 7px 2px 7px;
     text-align: left;
-    font-size: 150%;
+    font-size: 170%;
     font-weight: normal;
-    color: black;
+    color: darkslategray;
 }
 
-.schedule-1-alt td {
-    background-color: #f0f0f5;
+.schedule-out-alt td {
+    background-color: #c2c2f0;
     padding:3px 7px 2px 7px;
     border: 0px solid darkgray;
     /*
@@ -271,32 +341,83 @@ td.box { border: 1px solid black; padding: 0.5em; font-size: 100% }
     */
 }
 
-/* style the collapsible content. note: hidden by default */
-.content {
+/* style the schedule table inside (hidden) */
+.schedulecontent {
     display: none;    
     overflow: hidden;
     border-collapse: collapse;
-    padding: 0 0 10px 0;
+    width: 100%;
+    background-color: none;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    border: 0 0 10px 0;
+    padding: 0 10px 0px 0px;
+    border-left-style: solid;
+    border-left-color: #f0c7cd;
+    border-left-width: medium;
 }
 
+.schedulecontent-alt {
+    display: none;
+    overflow: hidden;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: none;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    border: none;
+    padding: 0 10px 0px 0px;
+    border-left-style: solid;
+    border-left-color: #c2c2f0;
+    border-left-width: medium;
+}
 
+.schedule-in {
+    background-color: ;
+    padding: 0;
+    border: none;
+    outline: none;
+    width: 100%;
+    border-collapse: collapse;
+    padding:2px 7px 2px 7px;
+    text-align: left;
+    font-size: 100%;
+    font-weight: normal;
+    color: darkslategray;
+}
 
+.schedule-in tr.alt {
+    background-color: #fafafa;
+    padding: 0;
+    border: none;
+    outline: none;
+    width: 100%;
+    border-collapse: collapse;
+    padding:2px 7px 2px 7px;
+    text-align: left;
+    font-size: 100%;
+    font-weight: normal;
+    color: darkslategray;
+}
 
+.schedule-in ul{
+    /*list-style-type: circle;*/
+    padding: 0 0 0 10px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* exam */
+.exam {
+    color: red;
+    font-weight: bold;
+    font-size: 150%;
+    background-color: #ffffcc;
+}
+.exam-info {
+    color: #5e61a5;
+    font-weight: bold;
+    font-size: 150%;
+    background-color: #ffffcc;
+}
 
 
 
