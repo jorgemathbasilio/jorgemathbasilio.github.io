@@ -6,7 +6,6 @@ body
     background-color: #EEEEEE; margin: 0em; 
     padding-top: 5px; padding-left: 0em; padding-right: 0em;    
     padding-bottom: 0em;
-    /* old padding was <padding: 0em;> */
     color: #252525
     }
 
@@ -220,7 +219,7 @@ td.box-alt {
     padding: 10px 0 0 10px;
 }
 
-.img-a {
+.courseinfo .img-a {
     float: right;
     padding: 0 10px 0 0;
 }
