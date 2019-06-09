@@ -1,0 +1,339 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<HTML>
+
+
+<HEAD>
+<meta charset="UTF-8">    
+<link rel="stylesheet" type="text/css" href="../../mainpages.css">
+
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<TITLE>Math 5B - Calculus II - Home Page</TITLE>
+    
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async>
+</script><!-- added to use Latex in HTML w AJAX...use \(x^2+1=0\)--> 
+
+<!-- for sagemath cells -->    
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script>
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script>
+<script>$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+        template:       sagecell.templates.minimal,
+            evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+            evalButtonText: 'Evaluate'});
+});
+</script>    
+<link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css"><!-- to make sure the styling of the sage cells doesn't get screwed up by my own styles -->
+    
+</HEAD>
+
+<BODY link=darkblue vlink=darkblue>
+   
+<div class="header">
+<span class="coursetitle">Math 5B</span>
+<span class="schoolsname">
+    Pasadena City College
+</span>
+</div>  
+
+
+<div class="wholedoc">
+
+<img class="a" style="width:40%" src="slope_field.svg">
+    
+<h1>Calculus II: Futher Study of Motion and Change</h1>
+
+<p><b>Course:</b>&nbsp;&nbsp;Math 5B &mdash; CRN 30719, Spring 2019</p>
+
+<p><b>Time &amp; Place:</b>&nbsp;&nbsp;TuTh 4-6:30 (R Bulding, Room 109)</p>
+
+
+<p><b>Instructor:</b>&nbsp;&nbsp;<a href="https://jorgemathbasilio.github.io/index.html" target="_blank">Jorge Basilio</a> (<a href="mailto:gbasilio@pasadena.edu">gbasilio@pasadena.edu</a>)</p>
+
+<p><b>Office:</b>&nbsp;&nbsp;MSC R-406</p>
+    
+<p><b>Office Hours:</b></p>
+<ul class="compact">
+<li class="compact">Th 11am-12pm </li>
+</ul>   
+
+<!--<h2>Labs</h2>
+
+<table class="schedule">
+    <col width="210">
+    <col width="400">
+    <!--<col width="10">
+<tr><th>Lab</th> <th>Files</th> <th>Due Date</th></tr>
+    
+<tr>
+<td><span class="week">1</span></td>
+<td>
+    <ul>
+    <li>
+        Sage Worksheet of Lab_0 (<a href="Lab_0.sagews">here</a>)
+    </li>
+    <li>
+        Sage Worksheet of Lab_0 as HTML (<a href="Lab_0.sagews.html">here</a>)
+    </li>    
+    <li>
+        Sage Worksheet of Lab_0 as PDF (<a href="Lab_0.sagews.html.pdf">here</a>)
+        </li>    
+    <li>
+        Sage Worksheet of Lab_0 Write-up template (<a href="Math5B-Lab_0%E2%80%93%20YourLastName_YourFirstName-S19(template).sagews">here</a>)
+    </li>
+</ul>  
+</td>
+<td>
+    April 9 
+</td>
+</tr>
+    
+<tr class="alt">
+<td>2</td>
+<td></td>
+<td></td>
+</tr>
+    
+<tr>
+<td><span class="week">3</span></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr class="alt">
+<td>4</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td><span class="week">5</span></td>
+<td></td>
+<td></td>
+</tr>
+    
+</table>
+-->
+    
+<h2>Numerical Integration with SageMath</h2>
+
+<h4>Left endpoint approximation</h4>
+    
+click “Evaluate”.  You can edit the code to try your own functions.
+    
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+#LEA
+f(x) = x^2 # change me!
+a = 0      # change me!
+b = 2      # change me!
+exactint = integral(f,x,a,b)
+
+def left_endpoint_approx( nn ): # tell it n as nn since n is predefined in sage
+    deltax = (b-a)/nn
+    lea = deltax*sum([f(a+i*deltax) for i in range(nn)])
+
+    P1 = plot(f, a-0.2,b+0.2)
+
+    bars = sum([polygon([(a+deltax*u,0),(a+deltax*(u+1),0),(a+deltax*(u+1),f(a+deltax*u)),(a+deltax*u,f(a+deltax*u))],color="red",alpha=0.3,thickness=1, fill=False) for u in range(nn)])
+
+    P = P1 + bars
+    P.show()
+
+    print "the left endpoint approximation is", lea.n()
+    print "the exact answer is", exactint.n()
+    print "the error is", exactint.n()-lea.n()
+
+    return
+# input the n to compute S_n using LEA
+left_endpoint_approx(4)
+</script>
+</div>  
+    
+<h4>Right endpoint approximation</h4>
+
+ <div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+#REA
+f(x) = x^2 # change me!
+a = 0      # change me!
+b = 2      # change me!
+exactint = integral(f,x,a,b)
+
+def right_endpoint_approx( nn ): # tell it n as nn since n is predefined in sage
+    deltax = (b-a)/nn
+    rea = deltax*sum([f(a+(i+1)*deltax) for i in range(nn)])
+
+    P1 = plot(f, a-0.2,b+0.2)
+
+    bars = sum([polygon([(a+deltax*u,0),(a+deltax*(u+1),0),(a+deltax*(u+1),f(a+deltax*(u+1))),(a+deltax*u,f(a+deltax*(u+1)))],color="red",alpha=0.3,thickness=1, fill=False) for u in range(nn)])
+
+    P = P1 + bars
+    P.show()
+
+    print "the right endpoint approximation is", rea.n()
+    print "the exact answer is", exactint.n()
+    print "the error is", exactint.n()-rea.n()
+
+    return
+# input the n to compute S_n using REA
+right_endpoint_approx(4)
+</script>
+</div>    
+
+<h4>Midpoint approximation</h4>
+
+ <div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+# MPA
+f(x) = x^2 # change me!
+a = 0      # change me!
+b = 2      # change me!
+exactint = integral(f,x,a,b)
+
+def midpoint_approx( nn ): # tell it n as nn since n is predefined in sage
+    deltax = (b-a)/nn
+    mpa = deltax*sum([(f(a+i*deltax+(deltax/2))) for i in range(nn)])
+
+    P1 = plot(f, a-0.2,b+0.2)
+
+    bars = sum([polygon([(a+deltax*u,0),(a+deltax*(u+1),0),(a+deltax*(u+1),f(a+deltax*u+deltax/2)),(a+deltax*u,f(a+deltax*u+deltax/2))],color="red",alpha=0.3,thickness=1, fill=False) for u in range(nn)])
+
+    P = P1 + bars
+    P.show()
+
+    print "the midpoint approximation is", mpa.n()
+    print "the exact answer is", exactint.n()
+    print "the error is", exactint.n()-mpa.n()
+
+    return
+# input the n to compute S_n using MPA
+midpoint_approx(4)
+</script>
+</div>  
+    
+<h4>Trapezoid approximation</h4>
+
+ <div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+# trapezoidA
+f(x) = x^2 # change me!
+a = 0      # change me!
+b = 2      # change me!
+exactint = integral(f,x,a,b)
+
+def trapezoid_approx( nn ): # tell it n as nn since n is predefined in sage
+    deltax = (b-a)/nn
+    trapa = (deltax/2)*sum([(f(a+i*deltax)+f(a+(i+1)*deltax)) for i in range(nn)])
+
+
+    P1 = plot(f, a-0.2,b+0.2)
+
+    bars = sum([polygon([(a+deltax*u,0),(a+deltax*(u+1),0),(a+deltax*(u+1),f(a+deltax*(u+1))),(a+deltax*u,f(a+deltax*u))],color="red",alpha=0.3,thickness=1, fill=False) for u in range(nn)])
+
+    P = P1 + bars
+    P.show()
+
+    print "the trapezoid approximation is", trapa.n()
+    print "the exact answer is", exactint.n()
+    print "the error is", exactint.n()-trapa.n()
+
+    return
+# input the n to compute S_n using TRAPA
+trapezoid_approx(4)
+</script>
+</div> 
+    
+<h4>Simpson's Rule approximation</h4>
+
+ <div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+# Simpson's Rule
+f(x) = sin(x) # change me!
+a = 0      # change me!
+b = 2      # change me!
+exactint = integral(f,x,a,b)
+
+def simpson_approx( nn ): # tell it n as nn since n is predefined in sage
+    deltax = (b-a)/nn
+    n2 = int(nn/2)
+    simpa = (deltax/3)*sum([(f(a+(2*i)*deltax)+4*f(a+(2*i+1)*deltax)+f(a+(2*i+2)*deltax)) for i in range(n2)])
+
+    P1 = plot(f, a-0.2,b+0.2)
+
+    #bars = sum([polygon([(a+deltax*u,0),(a+deltax*(u+1),0),(a+deltax*(u+1),f(a+deltax*(u+1))),(a+deltax*u,f(a+deltax*u))],color="red",alpha=0.3,thickness=1, fill=False) for u in range(nn)]) # sorry couldn't figure out the graph of the parabolas in time!
+
+    P = P1 #+ bars
+    P.show()
+
+    print "the Simpson's Rule approximation is", simpa.n()
+    print "the exact answer is", exactint.n()
+    print "the error is", exactint.n()-simpa.n()
+
+    return
+# input the n to compute S_n using Simpson's Rule. Enter an EVEN number
+simpson_approx(6)
+</script>
+</div>     
+    
+<h4>Your calculations</h4>
+
+ <div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+</script>
+</div>     
+    
+     
+<a name="handouts"><h2>References</h2></a>
+
+<h4>CoCalc Website</h4>
+
+<ul>
+    <li>
+        CoCalc website: (<a href="https://cocalc.com/">here</a>)
+    </li>
+</ul>    
+    
+<h4>Book: Sage for Undergraduates</h4>
+
+<ul>
+    <li>
+        By Gregory Bard. Download it at his website: (<a href="http://www.gregorybard.com/Sage.html">here</a>)
+    </li>
+</ul>      
+
+<h4>Sage Tutorial - Online site</h4>
+
+<ul>
+    <li>
+        By Mike O'Sullivan. Available at his website: (<a href="https://mosullivan.sdsu.edu/sagetutorial/about.html#getting-started">here</a>)
+    </li>
+</ul>         
+    
+<h4>SageMath Advice for Calculus</h4>
+
+<ul>
+    <li>
+        By Tuan A. Le and Hieu D. Nguyen. Available: (<a href="http://users.rowan.edu/~nguyen/sage/SageMathAdviceforCalculus.pdf">here</a>)
+    </li>
+</ul>    
+    
+</div><!-- whole doc -->
+<div class="footer"></div>
+
+</BODY>
+</HTML>
