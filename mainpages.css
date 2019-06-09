@@ -124,12 +124,12 @@ body
     { div.footer { padding: 20px; display: block; width: device-width; margin: 20px auto 100px auto; font-size: 11px; color: #888888; }  }
 
 @media (min-width: 700px)
-    { img.a { margin-right: 14px; margin-left: 21px; float: right; max-width: 50% } }
+    { img.a { margin-right: 7px; margin-left: 7px; float: right; max-width: 50% } }
 @media (max-width: 699px)
     { img.a { margin-right: 2vw; margin-left: 3vw; float: right; max-width: 50% } }
 
 @media (min-width: 700px)
-    { img.flt { float:right; margin: 14px 14px 14px 21px; max-width:40% } }
+    { img.flt { float:right; margin: 14px 7px 7px 7px; max-width:40% } }
 @media (max-width: 699px)
     { img.flt { float:right; margin: 2vw 2vw 2vw 3vw; max-width:40% } }
 
@@ -213,6 +213,25 @@ td.box-alt {
 .week { color:#B78CA4; font-weight: bold; }
 .class { color:#8B5674; /*background-color: lightgrey; font-weight: bold;*/ }
 
+/* new summer 2019 website */
+
+.courseinfo {
+    background-color: #faebed; /* 95% of pink*/
+    padding: 0 0 0 10px;
+}
+
+.img-a {
+    float: right;
+    padding: 10px 10px 10px 10px;
+}
+
+h2 {
+    margin-bottom: 2px;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+
 /* make collapsible calendar -- code from W3schools */
 
 /* style the button that is used to open and close the collapsible content */
@@ -230,13 +249,15 @@ td.box-alt {
 }
 
 .announcementtitle h4 {
+    margin-top: 4px;
+    margin-bottom: 0px;
     background-color: #f0f0f5;
-    padding: 2px 7px 2px 7px;
+    padding: 2px 0px 0px 10px;
     border: none;
     outline: none;
     border-collapse: collapse;
     text-align: left;
-    font-size: 180%;
+    font-size: 160%;
     font-weight: 500;
     width: 50%;
     color: darkslategray;
@@ -256,7 +277,7 @@ td.box-alt {
     display: none;    
     overflow: hidden;
     border-collapse: collapse;
-    padding: 0 0 5px 0;
+    padding: 0 0 0px 0;
     width: 100%;
 }
 
