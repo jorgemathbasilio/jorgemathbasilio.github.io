@@ -5,19 +5,19 @@
 
 
 <HEAD>
-<meta charset="UTF-8">    
+<meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../../mainpages.css">
+<!--<link rel="stylesheet" type="text/css" href="../coursepages.css">-->
 
 <meta name=viewport content="width=device-width, initial-scale=1">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
-<TITLE>Math 5B - Calculus II - Home Page</TITLE>
-    
+<TITLE>Math 5C - Calculus III - Home Page</TITLE>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async>
-</script><!-- added to use Latex in HTML w AJAX...use \(x^2+1=0\)--> 
-
+</script><!-- added to use Latex in HTML w AJAX...use \(x^2+1=0\)-->  
+    
 <!-- for sagemath cells -->    
 <script src="https://sagecell.sagemath.org/static/jquery.min.js"></script>
 <script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script>
@@ -31,14 +31,17 @@
             evalButtonText: 'Evaluate'});
 });
 </script>    
-<link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css"><!-- to make sure the styling of the sage cells doesn't get screwed up by my own styles -->
+<link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css"><!-- to make sure the styling of the sage cells doesn't get screwed up by my own styles -->    
     
 </HEAD>
 
+
 <BODY link=darkblue vlink=darkblue>
-   
+
+
+    
 <div class="header">
-<span class="coursetitle">Math 5B</span>
+<span class="coursetitle">Math 5C</span>
 <span class="schoolsname">
     Pasadena City College
 </span>
@@ -46,83 +49,198 @@
 
 
 <div class="wholedoc">
-
-<img class="a" style="width:40%" src="slope_field.svg">
     
-<h1>Calculus II: Futher Study of Motion and Change</h1>
-
-<p><b>Course:</b>&nbsp;&nbsp;Math 5B &mdash; CRN 30719, Spring 2019</p>
-
-<p><b>Time &amp; Place:</b>&nbsp;&nbsp;TuTh 4-6:30 (R Bulding, Room 109)</p>
-
-
-<p><b>Instructor:</b>&nbsp;&nbsp;<a href="https://jorgemathbasilio.github.io/index.html" target="_blank">Jorge Basilio</a> (<a href="mailto:gbasilio@pasadena.edu">gbasilio@pasadena.edu</a>)</p>
-
-<p><b>Office:</b>&nbsp;&nbsp;MSC R-406</p>
+<div class="courseinfo">
+    <img class="img-a" style="width:40%" src="../mobius_escher.gif">
     
-<p><b>Office Hours:</b></p>
-<ul class="compact">
-<li class="compact">Th 11am-12pm </li>
-</ul>   
+    <h1>Calculus III: <br/>Multivariable and Vector Calculus</h1>
 
-<h2>Labs</h2>
+    <p><b>Course</b>&nbsp;&nbsp;Math 5C &mdash; CRN 53226, Summer 2019</p>
+
+    <p><b>Dates &amp; Time</b>&nbsp;&nbsp;MoTuThFr 7:30 am &mdash; 11:00 am</p>
     
-<table class="schedule">
-    <col width="210">
-    <col width="400">
-    <!--<col width="10">-->
-<tr><th>Lab</th> <th>Files</th> <th>Due Date</th></tr>
+    <p><b>Place</b>&nbsp;&nbsp;C Bulding, Room 304</p>
+
+    <p><b>Instructor</b>&nbsp;&nbsp;<a href="https://jorgemathbasilio.github.io/index.html" target="_blank">Jorge Basilio</a> (<a href="mailto:gbasilio@pasadena.edu">gbasilio@pasadena.edu</a>)</p>
+
+    <p><b>Office</b>&nbsp;&nbsp;MSC R-406</p>
     
-<tr>
-<td><span class="week">1</span></td>
-<td>
-    <ul>
-        <li>
-        Sage Worksheet of Lab_0 (<a href="Lab_0.sagews">here</a>)
-        </li>
-        <li>
-        Sage Worksheet of Lab_0 as HTML (<a href="Lab_0.sagews.html">here</a>)
-        </li>    
-        <li>
-        Sage Worksheet of Lab_0 as PDF (<a href="Lab_0.sagews.pdf">here</a>)
-        </li>    
-        <li>
-        Sage Worksheet of Lab_0 Write-up template (<a href="Math5B-Lab_0%E2%80%93%20YourLastName_YourFirstName-S19(template).sagews">here</a>)
-        </li>
-    </ul>  
-</td>
-<td>
-    April 9, , 11:59 PM via CoCalc 
-</td>
-</tr>
+    <p><b>Office Hours</b>&nbsp;&nbsp;TBA...</p>
+     
+    <b>Tutoring</b>
+
+    <!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Summer tutoring...
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content">
+        <div class="announcementcontent">
+        tba...
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE-->  
+</div><!--end courseinfo -->   
+
+
     
-<tr class="alt">
-<td>2</td>
-<td>
-    <ul>
-        <li>
-        Sage Juputer Notebook of Lab_1 (<a href="Lab_1.ipynb">here</a>)
-        </li>
-        <li>
-        Sage Juputer Notebook of Lab_1 as HTML (<a href="Lab_1.html">here</a>)
-        </li>    
-        <li>
-        Sage Juputer Notebook of Lab_1 as PDF (<a href="Lab_1.pdf">here</a>)
-        </li>    
-    </ul>
-</td>
-<td>
-    May 28, , 11:59 PM via CoCalc 
-</td>
-</tr>
     
-<tr>
-<td><span class="week">3</span></td>
-<td></td>
-<td></td>
-</tr>
+
+<!-- ANNOUNCEMENT COLLAPSIBLE --> 
+<!--  
+<button class="collapsible">
+<div class="announcementtitle">
+    <h4>
+    Sample Announcement title  
+    </h4>  
+</div>
+</button>
     
-</table>
+<div class="content">
+    <div class="announcementcontent">
+    Sample post   
+    </div>
+</div>
+-->
+<!-- END Announcement post COLLAPSIBLE--> 
+    
+<br/>
+<br/>
+<h1>Labs</h1>    
+    
+     <!-- 
+<div class="twocol">
+<div class="column">
+    <h2>Homework List</h2> 
+    
+    yo
+</div>   
+<div class="column">
+    <h2>Answer Key</h2> 
+
+    yo
+</div>   
+</div>
+    -->
+    
+<h2>SAGE Worksheets</h2>    
+    
+<div class="twocol"> <!-- TWO COL -->
+    <!-- column 1 -->
+<div class="column">   
+
+    <!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Chapter 12
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content">
+        <div class="announcementcontent">
+        <ul>
+            <li>
+            <a href=>&sect; 12.1</a>
+            </li>
+        </ul>  
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE-->
+
+    <!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Chapter 13
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content">
+        <div class="announcementcontent">
+        <ul>
+            <li>
+            <a href=>&sect; 13.1</a>
+            </li> 
+        </ul>  
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE-->
+    
+    <!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Chapter 14
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content">
+        <div class="announcementcontent">
+        <ul>
+            <li>
+            <a href=>&sect; 14.1</a>
+            </li>  
+        </ul>  
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE-->
+    
+</div> 
+    
+    <!-- column 2 -->
+<div class="column">
+
+    <!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Chapter 15
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content">
+        <div class="announcementcontent">
+        <ul>
+            <li>
+            <a href="Section%2051.pdf">&sect; 15.1</a>
+            </li>
+        </ul>  
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE--> 
+    
+    <!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Chapter 16
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content">
+        <div class="announcementcontent">
+        <ul>
+            <li>
+            <a href="Section%2061.pdf">&sect; 16.1</a>
+            </li>
+        </ul>  
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE--> 
+        
+</div> 
+</div><!-- END TWO COL -->    
+
     
 <h2>SageMathCloud</h2>
 
@@ -181,28 +299,65 @@ Type your own Sage computation below and click “Evaluate”.
 <div class="compute">
 <script type="text/x-sage">
 # you can edit this!
-plot(sin(x), (x, 0, 2*pi))
+u = vector([1,3,-6])
+show(u)
 </script>
 </div>
     
 <div class="compute">
 <script type="text/x-sage">
 # you can edit this!
-limit(1/x, x=2)
+u = vector([1,3,-6])
+v = vector([-2,0,3])
+show(2*u-7*v)
 </script>
 </div> 
 
 <div class="compute">
 <script type="text/x-sage">
 # you can edit this!
-derivative(sec(x), x)
+# create a matrix: Matrix( [ [row1], [row2], etc  ] ) # Notice extra [ ] sandwhiching the rows
+M = Matrix([ [1,2,3], [4,5,6], [7,8,9] ] ) # row1 = [1,2,3], row2 = [4,5,6] etc 
+show(M)
+Q = Matrix([ [1,2,3], [1,2,3], [1,2,3] ] )
+show(Q)
+# matrix arithmetic is easy!
+show(2*M+3*Q)
+show(2.0*M+3*Q)
 </script>
 </div>  
 
 <div class="compute">
 <script type="text/x-sage">
 # you can edit this!
-integral(sec(x), x)
+# EROs 
+#ER1 = swap rows
+#ER2 = multiply row by non-zero constant: A.rescale_row(i,a) means "a*r_i --> r_i"
+#ER3 = add multiple of one row to another: A.add_multiple_of_row(i,j,a) means "a*r_j + r_i --> r_i"
+
+# warning: SAGE (like programming languages like Python) start counting at 0. So programmers i=0 is mathematicians i=1
+ 
+A = Matrix(QQ, [ [1,-2,1], [3,-1,-1], [1,1,-4]])
+cA = copy(A) # make a copy of A to make changes to, leaving A unchanged
+cA.add_multiple_of_row(1,0,-3) # this does: (-3)*r1 + r2 --> r2
+    # working from Right to Left: a=-3 is the multiple, j=0 is r1: so a*r_j = (-3)*r1
+    #                             i=1 is r2 which we will add to (-3)*r1 and put into r2
+print "The original matrix A is"
+show(A)
+print "(-3)*r1 + r2 --> r2 gives"
+show(cA)
+print "(-1)*r1 + r3 --> r3 gives"
+cA.add_multiple_of_row(2,0,-1) # (-1)*r1 + r3 --> r3
+show(cA)
+print "(1/5)*r2 --> r2 gives"
+cA.rescale_row(1,1/5) # (1/5)*r2 --> r2
+show(cA)
+print "(-3)*r2 + r3 --> r3 gives"
+cA.add_multiple_of_row(2,1,-3) # (-3)*r2 + r3 --> r3
+show(cA)
+print "(-5/13)*r3 --> r3 gives"
+cA.rescale_row(2,-5/13) # (-5/13)*r3 --> r3
+show(cA)
 </script>
 </div>     
     
@@ -239,10 +394,42 @@ integral(sec(x), x)
     <li>
         By Tuan A. Le and Hieu D. Nguyen. Available: (<a href="http://users.rowan.edu/~nguyen/sage/SageMathAdviceforCalculus.pdf">here</a>)
     </li>
-</ul>    
-    
-</div><!-- whole doc -->
-<div class="footer"></div>
+</ul> 
 
+
+    
+    
+</div>
+    
+    
+<script> <!-- for drop-down schedule --> 
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>    
+
+<div class="footer"></div>
+    
 </BODY>
 </HTML>
+
+
+
+
+
+
+
+
+
+
