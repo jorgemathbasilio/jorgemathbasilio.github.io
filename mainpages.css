@@ -203,7 +203,8 @@ td.box-alt {
 }
 
 .boldred { color: red; font-weight: bold; }
-.boldorange { color: orange; font-weight: bold; }
+.boldorange { color: #f88a2d; font-weight: bold; }
+.alert1 { color: #5e61a5; font-weight: bold; }
 .alert2 { color: #41B348; font-weight: bold; }
 .boldblue { color: blue; font-weight: bold; }
 .boldfuchsia { color: fuchsia; font-weight: bold; }
