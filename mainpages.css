@@ -453,9 +453,38 @@ h2 {
     border-left-color: #f0c7cd;
     border-left-width: medium;
 }
+/* style the schedule table inside (show) */
+.schedulecontent-show {
+    /*display: none;*/    
+    overflow: hidden;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: none;
+    margin-top: 0px;
+    border: 0 0 10px 0;
+    padding: 0 10px 0px 0px;
+    border-left-style: solid;
+    border-left-color: #f0c7cd;
+    border-left-width: medium;
+}
 
 .schedulecontent-alt {
     display: none;
+    overflow: hidden;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: none;
+    padding: 0 10px 0px 0px;
+    border-left-style: solid;
+    border-left-color: #c2c2f0;
+    border-left-width: medium;
+}
+
+.schedulecontent-alt-show {
+    /*display: none;*/
     overflow: hidden;
     border-collapse: collapse;
     width: 100%;
