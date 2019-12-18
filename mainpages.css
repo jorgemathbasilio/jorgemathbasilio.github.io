@@ -158,6 +158,7 @@ a {text-decoration: none; color:#5e61a5; font-weight: bold;}
 a:hover {color: #f88a2d;}
     /* original link hover text-decoration: underline; 'color: red;' (remove 's) */
 ul { margin-top: 0.5em; margin-bottom:0em; list-style-type: none }
+ul.circ { margin-top: 0.5em; margin-bottom:0em; list-style-type: circle}
 li { margin-bottom: 0.5em}
 ul.compact { margin-top: -1em; margin-bottom:0em }
 li.compact { margin-bottom: 0em; margin-top: 0em }
