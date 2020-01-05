@@ -192,7 +192,9 @@ td.box {
     border-left-color: slategray;
     border-left-width: 2px;
     padding: 5px; 
-    font-size: 100%
+    font-size: 100%;
+    font-weight: bold;
+    color: slategray;
 }
 td.box-alt { 
     background-color: white;
@@ -200,7 +202,9 @@ td.box-alt {
     border-left-color: #f0f0f5;
     border-left-width: 2px;
     padding: 5px; 
-    font-size: 100%
+    font-size: 100%;
+    font-weight: bold;
+    color: slategray;
 }
 
 .boldred { color: red; font-weight: bold; }
