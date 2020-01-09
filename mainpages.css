@@ -319,6 +319,34 @@ h2 {
     color: darkslategray;
 }
 
+.video h4 {
+    background-color: #d1eaea;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0 0 0 10px;
+    border: none;
+    outline: none;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 160%;
+    font-weight: 500;
+    color: darkslategray;
+}
+
+.hw h4 {
+    background-color: #fcece8;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0 0 0 10px;
+    border: none;
+    outline: none;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 160%;
+    font-weight: 500;
+    color: darkslategray;
+}
+
 .scheduletitle-alt h4 {
     background-color: #d1eaea;
     margin-top: 0px;
@@ -368,6 +396,32 @@ h2 {
     color: darkslategray;
     border-left-style: solid;
     border-left-color: #f0f0f5;
+    border-left-width: medium;
+}
+
+.videocontent {
+    background-color: none;
+    margin-top: -7px;
+    margin-bottom: 0px;
+    border: none;
+    border-collapse: collapse;
+    padding: 0 0 0px 7px;
+    color: darkslategray;
+    border-left-style: solid;
+    border-left-color: #d1eaea;
+    border-left-width: medium;
+}
+
+.hwcontent {
+    background-color: none;
+    margin-top: -7px;
+    margin-bottom: 0px;
+    border: none;
+    border-collapse: collapse;
+    padding: 0 0 0 7px;
+    color: darkslategray;
+    border-left-style: solid;
+    border-left-color: #fcece8;
     border-left-width: medium;
 }
 /* doesn't work for some readson!!! fix later 
@@ -547,7 +601,13 @@ h2 {
     font-size: 150%;
     background-color: #ffffcc;
 }
-
+/* lab */
+.lab {
+    color: #46bdc6; /*#fff9f7*/
+    font-weight: bold;
+    font-size: 150%;
+    background-color: #fcece8;
+}
 
 
 
