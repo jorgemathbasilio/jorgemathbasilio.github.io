@@ -1,0 +1,461 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<HTML>
+
+
+<HEAD>
+<meta charset="UTF-8">    
+<link rel="stylesheet" type="text/css" href="../../mainpages.css">
+
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<TITLE>Stat 50 - Elementary Statistics - Labs</TITLE>
+    
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async>
+</script><!-- added to use Latex in HTML w AJAX...use \(x^2+1=0\)--> 
+
+<!-- for sagemath cells -->    
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script>
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script>
+<script>$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+        template:       sagecell.templates.minimal,
+            evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+            evalButtonText: 'Evaluate Sage'});
+});
+</script>  
+<script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate R Code'});
+});
+</script>   
+<link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css"><!-- to make sure the styling of the sage cells doesn't get screwed up by my own styles -->
+    
+</HEAD>
+
+<BODY link=darkblue vlink=darkblue>
+   
+<div class="header">
+<span class="coursetitle">Stats 50</span>
+<span class="schoolsname">
+    Pasadena City College
+</span>
+</div>  
+
+
+<div class="wholedoc">
+    
+<div class="courseinfo">
+    <img class="img-a" style="width:40%" src="scatterplot.png">
+    
+    <h1>Elementary Statistics</h1>
+
+    <p><b>Course</b>&nbsp;&nbsp;Stat 50/150 &mdash; CRN 11043/11395, Winter 2020</p>
+
+    <p><b>Dates &amp; Time</b>&nbsp;&nbsp;MoTuThFr 12:00 pm &mdash; 4:20 pm</p>
+    
+    <p><b>Place</b>&nbsp;&nbsp;C Bulding, Room 302</p>
+
+    <p><b>Instructor</b>&nbsp;&nbsp;<a href="https://jorgemathbasilio.github.io/index.html" target="_blank">Jorge Basilio</a> (<a href="mailto:gbasilio@pasadena.edu">gbasilio@pasadena.edu</a>)</p>
+
+    <p><b>Office</b>&nbsp;&nbsp;MSC R-406</p>
+    
+    <p><b>Office Hours</b>&nbsp;&nbsp;None in Winter session</p>
+      
+</div><!--end courseinfo -->     
+    
+    
+    
+
+<h2>Labs</h2>
+    
+All labs will be assigned, worked on, and submitted through the website: <a href="https://cocalc.com/">CoCalc</a> (short for "Collaborative Calculation"). 
+    
+
+<div class="twocol"> <!-- BEGIN TWO COLs -->
+    <!-- column 1 -->
+
+<div class="column">
+    
+    <h2>R Statistical Programming Language References</h2>
+    
+    <!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        R Quick Reference Card
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content-show">
+        <div class="announcementcontent">
+            <ul>
+                <li>
+                    <a href="handouts/stats_studycard_r.pdf">R Reference Card</a>
+                </li>
+            </ul>   
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE--> 
+    
+    <!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Stast books with R
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content">
+        <div class="announcementcontent">
+            <ul>
+                <li>
+                    <a href="ttps://www.math.csi.cuny.edu/Statistics/R/simpleR/">simpleR</a>, By John Verzani.
+                    Short book on using R with Statistics.
+                </li>
+                <li>
+                    <a href="http://faculty.sfasu.edu/judsontw/math-s304/prob-stats.html">Inquiries into Probability and Stats</a>, By Thomas W. Judson. A short online stats book.
+                </li>
+                <li>
+                    <a href="https://www.openintro.org/stat/textbook.php?stat_book=os">OpenIntro Statistics book.</a> 
+                </li>
+            </ul>   
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE--> 
+       
+ 
+</div><!-- END COL 1 --> 
+    
+    
+    <!-- column 2 -->
+
+<div class="column">
+    
+    <h2>Additional R References</h2>
+    
+        <!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Additional R References
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content-show">
+        <div class="announcementcontent">
+            <ul>
+                <li>
+                    <a href="http://www.r-tutor.com/elementary-statistics">R tutorial - elementary stats</a>
+                </li>
+                <li>
+                    <a href="https://kingaa.github.io/R_Tutorial/">R tutorial</a>
+                </li>
+                <li>
+                    <a href="http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html">
+                    Top 50 ggplots!</a>
+                </li>
+            </ul>   
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE--> 
+    
+</div><!-- END COL 2 --> 
+
+</div><!-- END TWO COLs --> 
+    
+    
+    
+    
+<center>    
+<table class="schedule">
+    <col width="210">
+    <col width="400">
+    <!--<col width="10">-->
+<tr><th>Lab</th> <th>Files</th> <th>Due Date</th></tr>
+    
+<tr>
+<td><span class="week">1</span></td>
+<td>
+    <ul>
+        <li>
+            Lab_1 as HTML (<a href="Lab1/Lab_1.html">here</a>)
+        </li>    
+        <li>
+            Lab_1 as PDF (<a href="Lab1/Lab_1.pdf">here</a>)
+        </li>    
+        <li>
+            Lab_1 Write-up template (<a href="Lab1/Stat50-Lab_1-YourLastName_YourFirstName-W20.ipynb">here</a>)
+        </li>
+        <li>
+            <span class="boldorange">Lab_1 SOLUTIONS</span> (<a href="Lab1/Stat50-Lab_1-Solutions.html">here</a>)
+        </li>
+    </ul>  
+</td>
+<td>
+    Due date <span >Thursday, Jan 16 at 11:59 pm</span> (via Cocalc)
+</td>
+</tr>
+    
+<tr class="alt">
+<td>2</td>
+<td>
+    <ul>
+        <li>
+            Lab_2 as HTML (<a href="Lab2/Lab_2.html">here</a>)
+        </li>    
+        <li>
+            Lab_2 as PDF (<a href="Lab2/Lab_2.pdf">here</a>)
+        </li>    
+        <li>
+            Lab_2 Write-up template (<a href="Lab2/Stat50-Lab_2-YourLastName_YourFirstName-W20.ipynb">here</a>)
+        </li>
+        <li>
+            <span class="boldorange">Lab_2 SOLUTIONS</span> (<a href="Lab2/Stat50-Lab_2-Solutions.html">here</a>)
+        </li>
+    </ul> 
+</td>
+<td>
+    Due date <span >Saturday, Feb 1 at 11:59 pm</span> (via Cocalc)
+</td>
+</tr>
+    
+<tr>
+<td><span class="week">3</span></td>
+<td>
+    <ul>
+        <li>
+            Lab_3 as HTML (<a href="Lab3/Lab_3.html">here</a>)
+        </li>    
+        <li>
+            Lab_3 as PDF (<a href="Lab3/Lab_3.pdf">here</a>)
+        </li>    
+        <li>
+            Lab_3 Write-up template (<a href="Lab3/Stat50-Lab_3-YourLastName_YourFirstName-W20.ipynb">here</a>)
+        </li>
+    </ul>     
+</td>
+<td>
+    Due date <span class="boldred">Friday, Feb 14 at 11:59 pm</span> (via Cocalc) 
+</td>
+</tr>
+<!--
+<tr class="alt">
+<td>4</td>
+<td>
+    <ul>
+        <li>
+            Lab_4 as HTML (<a href="">here</a>)
+        </li>    
+        <li>
+            Lab_4 as PDF (<a href="">here</a>)
+        </li>    
+        <li>
+            Lab_4 Write-up template (<a href="">here</a>)
+        </li>
+    </ul>     
+</td>
+<td>
+    Due date ADD
+</td>
+</tr>
+
+<tr>
+<td><span class="week">5</span></td>
+<td>
+    <ul>
+        <li>
+            Lab_5 (<a href="">here</a>)
+        </li>
+        <li>
+            Lab_5 as HTML (<a href="">here</a>)
+        </li>    
+        <li>
+            Lab_5 as PDF (<a href="">here</a>)
+        </li>    
+        <li>
+            Lab_5 Write-up template (<a href="">here</a>)
+        </li>
+    </ul>   
+</td>
+<td>
+    Due date ADD
+</td>
+</tr>
+-->    
+</table>
+</center>
+    
+    
+
+
+
+              
+    
+    
+    
+<h2>Using R Statistical Programming Language</h2>
+
+<h4>Your R Calculations</h4>  
+    
+<div class="sagecell-r">
+<script type="text/x-sage">
+# try me!
+
+</script>
+</div>    
+    
+    
+<h4>Mean, Median, Variance, Standard Deviation</h4>    
+
+<p>
+How to enter data and show it.<br/>
+    
+You can edit these examples to make your own computations below by clicking “Evaluate”.<br/>  
+    
+Note that hashtags (&#35;) are "comments" and are meant for humans to read but they are ignored by the program.     
+</p>   
+    
+<div class="sagecell-r">
+<script type="text/x-sage">
+# entering data
+my.cool.data = c(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5) # defines data, feel free to edit this!
+# to make it more readable
+print("the data `my.cool.data` is") # name of data and list of data
+my.cool.data
+</script>
+</div>
+
+<div class="sagecell-r">
+<script type="text/x-sage">
+# you can edit this!
+# entering data
+my.cool.data = c(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5) # defines data
+# mean
+print("the mean of `my.cool.data` is")
+mean(my.cool.data)
+
+</script>
+</div>
+    
+<div class="sagecell-r">
+<script type="text/x-sage">
+# you can edit this!
+# entering data
+my.cool.data = c(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5) # defines data
+# median
+print("the median of `my.cool.data` is")
+median(my.cool.data)
+</script>
+</div> 
+
+<div class="sagecell-r">
+<script type="text/x-sage">
+# you can edit this!
+# entering data
+my.cool.data = c(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5) # defines data
+# variance
+print("the variance of `my.cool.data` is")
+var(my.cool.data)
+</script>
+</div>    
+    
+<div class="sagecell-r">
+<script type="text/x-sage">
+# you can edit this!
+# entering data
+my.cool.data = c(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5) # defines data
+# standard deviation
+print("the standard deviation of `my.cool.data` is")
+sd(my.cool.data)
+</script>
+</div>   
+    
+    
+<h4>Histograms, Stemplots, Piecharts</h4>      
+    
+<p>We can create histograms. Note that R decides on the width of the bin.</p>
+    
+<div class="sagecell-r">
+<script type="text/x-sage">
+textbooks = c( 35, 42, 37, 60, 50, 42, 50, 16, 58, 39, 33, 39, 23, 53, 51, 48, 41, 49, 62, 40, 45, 37, 62, 30, 23)
+hist(textbooks, breaks=c(seq(10,70,10)), col = c("blue", "red", "gray", "blue", "red", "gray"))
+</script>
+</div>  
+    
+<!--
+hist(t, main="Distribution of Player Ratings",xlim = c(0,99), 
+       breaks=c(seq(40,99,5)), col = c("blue", "red", "gray", "green"))-->    
+    
+<p>Suppose that we want to a make a stem-and-leaf plot of Ruth's homeruns.</p>
+    
+<div class="sagecell-r">
+<script type="text/x-sage">
+ruth = c(22, 25, 34, 35, 41, 41, 46, 46, 46, 47, 49, 54, 54, 59, 60)
+stem(ruth)
+</script>
+</div>    
+    
+<p id="p-237">We can create pie charts.</p>
+    
+<div class="sagecell-r">
+<script type="text/x-sage">
+slices = c(4, 10 , 37, 8, 1)
+lbls = c("A", "B", "C", "D", "F")
+pie(slices, labels = lbls, main="Final Exam Grades for a Statistics Course")
+</script>
+</div> 
+
+<!--
+<p id="p-238">We can plot the time series for the 1918–1919 influenze epidemic.  The plot for the number of cases is in red, and the plot for 10 times the number of deaths is in blue.</p>
+    
+<div class="sagecell-r">
+<script type="text/x-sage">
+cases = c(36, 531, 4233, 8682, 7164, 2229, 600, 164, 57, 722, 1517, 1828, 1539, 2416, 3148, 3465, 1440)
+deaths = c(0, 0, 130, 552, 738, 414, 198, 90, 56, 50, 71, 137, 178, 194, 290, 310, 149) 
+plot(ts(cases), col="red", main="Influenza Epidemic")
+lines(ts(10*deaths),col="blue")
+</script>
+</div>       
+-->  
+    
+    
+
+
+    
+<script> <!-- for drop-down schedule --> 
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script> 
+    
+</div><!-- whole doc -->
+<div class="footer"></div>
+
+</BODY>
+</HTML>
