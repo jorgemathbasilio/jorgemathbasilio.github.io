@@ -290,6 +290,62 @@ h2 {
     color: darkslategray;
 }
 
+.announcementtitle-date {
+    margin-top: 4px;
+    margin-bottom: 0px;
+    margin-left: -10px;
+    margin-right:0px;
+    background-color: #f0f0f5;
+    padding: 2px 0px 0px 10px;
+    border-left-style: solid;
+    border-left-color: #f88a2d;
+    border-right-style: solid;
+    border-right-color: white;
+    border-right-width: 6px;
+    outline: none;
+    border-collapse: collapse;
+    text-align: center;
+    /*font-size: 160%;*/
+    font-weight: 500;
+    width: 50%;
+    color: #f88a2d;
+}
+
+.announcementtitle-text {
+    margin-top: 4px;
+    margin-right:10px;
+    margin-bottom: 0px;
+    background-color: #f0f0f5;
+    padding: 2px 0px 0px 10px;
+    border-left-style: solid;
+    outline: none;
+    border-collapse: collapse;
+    text-align: center;
+    /*font-size: 160%;*/
+    font-weight: 500;
+    width: 50%;
+    color: darkslategray;
+}
+
+
+.announcementtitle-big {
+    margin-top: 4px;
+    margin-bottom: 0px;
+    margin-left:15%;
+    margin-right:15%;
+    background-color: #f0f0f5;
+    padding: 2px 0px 0px 10px;
+    border: none;
+    outline: none;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 160%;
+    font-weight: 500;
+    width: 70%;
+    color: darkslategray;
+}
+
+
 .twocol .announcementtitle h4 {
     margin-top: 4px;
     margin-bottom: 0px;
@@ -396,6 +452,22 @@ h2 {
     color: darkslategray;
     border-left-style: solid;
     border-left-color: #f0f0f5;
+    border-left-width: medium;
+}
+
+.announcementcontent-big {
+    background-color: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+    border: none;
+    border-collapse: collapse;
+    padding: 0 0 0px 7px;
+    color: darkslategray;
+    border-left-style: solid;
+    border-left-color: #f88a2d;
     border-left-width: medium;
 }
 
@@ -610,7 +682,15 @@ h2 {
 }
 
 
-
+.moveleft {
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+    border-left-style: solid;
+    border-left-color: red;
+    padding-left: 10px;
+    background: #FAFAFA;/*#F8F8F8; #f0f0f5;*/ 
+}
 
 
 
