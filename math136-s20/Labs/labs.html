@@ -227,23 +227,12 @@ All labs will be assigned, worked on, and submitted through the website: <a href
 <td>
     <ul>
         <li>
-            Lab_1 as HTML (<a href="Lab1/Lab_1.html">here</a>)
+            "Lab_0" (ungraded): <a href="././intro_to_r.html">Intro to R page</a>
         </li>    
-        <li>
-            Lab_1 as PDF (<a href="Lab1/Lab_1.pdf">here</a>)
-        </li>    
-        <li>
-            Lab_1 Write-up template (<a href="Lab1/">here</a>)
-        </li>
-        <!--
-        <li>
-            <span class="boldorange">Lab_1 SOLUTIONS</span> (<a href="Lab1/Stat50-Lab_1-Solutions.html">here</a>)
-        </li>
-        -->
     </ul>  
 </td>
 <td>
-    Due date <span >TBA</span> (via Cocalc)
+    Due date <em>None; but I strongly recommend you spend some time looking at this before our first lab.</em>
 </td>
 </tr>
     
@@ -315,7 +304,6 @@ All labs will be assigned, worked on, and submitted through the website: <a href
     Due date <span class="">TBA</span> (via Cocalc)
 </td>
 </tr>
-<!--
 <tr>
 <td><span class="week">5</span></td>
 <td>
@@ -337,8 +325,7 @@ All labs will be assigned, worked on, and submitted through the website: <a href
 <td>
     Due date ADD
 </td>
-</tr>
--->    
+</tr>    
 </table>
 </center>
     
@@ -349,10 +336,9 @@ All labs will be assigned, worked on, and submitted through the website: <a href
               
     
     
+<h2>Your R Calculations</h2>  
     
-<h2>Using R Statistical Programming Language</h2>
-
-<h4>Your R Calculations</h4>  
+<p>Use the cell below to run short, single-output R code without installing or logging into anything :-)</p>    
     
 <div class="sagecell-r">
 <script type="text/x-sage">
@@ -361,213 +347,7 @@ All labs will be assigned, worked on, and submitted through the website: <a href
 </script>
 </div>    
     
-    
-<h4>Mean, Median, Variance, Standard Deviation</h4>    
 
-<p>
-How to enter data and show it.<br/>
-    
-You can edit these examples to make your own computations below by clicking “Evaluate”.<br/>  
-    
-Note that hashtags (&#35;) are "comments" and are meant for humans to read but they are ignored by the program.     
-</p>   
-    
-<div class="sagecell-r">
-<script type="text/x-sage">
-# entering data
-my.cool.data = c(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5) # defines data, feel free to edit this!
-# to make it more readable
-print("the data `my.cool.data` is") # name of data and list of data
-my.cool.data
-</script>
-</div>
-
-<div class="sagecell-r">
-<script type="text/x-sage">
-# you can edit this!
-# entering data
-my.cool.data = c(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5) # defines data
-# mean
-print("the mean of `my.cool.data` is")
-mean(my.cool.data)
-
-</script>
-</div>
-    
-<div class="sagecell-r">
-<script type="text/x-sage">
-# you can edit this!
-# entering data
-my.cool.data = c(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5) # defines data
-# median
-print("the median of `my.cool.data` is")
-median(my.cool.data)
-</script>
-</div> 
-
-<div class="sagecell-r">
-<script type="text/x-sage">
-# you can edit this!
-# entering data
-my.cool.data = c(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5) # defines data
-# variance
-print("the variance of `my.cool.data` is")
-var(my.cool.data)
-</script>
-</div>    
-    
-<div class="sagecell-r">
-<script type="text/x-sage">
-# you can edit this!
-# entering data
-my.cool.data = c(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5) # defines data
-# standard deviation
-print("the standard deviation of `my.cool.data` is")
-sd(my.cool.data)
-</script>
-</div>   
-    
-    
-<h4>Histograms, Stemplots, Piecharts</h4>      
-    
-<p>We can create histograms. Note that R decides on the width of the bin.</p>
-    
-<div class="sagecell-r">
-<script type="text/x-sage">
-textbooks = c( 35, 42, 37, 60, 50, 42, 50, 16, 58, 39, 33, 39, 23, 53, 51, 48, 41, 49, 62, 40, 45, 37, 62, 30, 23)
-hist(textbooks, breaks=c(seq(10,70,10)), col = c("blue", "red", "gray", "blue", "red", "gray"))
-</script>
-</div>  
-    
-<!--
-hist(t, main="Distribution of Player Ratings",xlim = c(0,99), 
-       breaks=c(seq(40,99,5)), col = c("blue", "red", "gray", "green"))-->    
-    
-<p>Suppose that we want to a make a stem-and-leaf plot of Ruth's homeruns.</p>
-    
-<div class="sagecell-r">
-<script type="text/x-sage">
-ruth = c(22, 25, 34, 35, 41, 41, 46, 46, 46, 47, 49, 54, 54, 59, 60)
-stem(ruth)
-</script>
-</div>    
-    
-<p id="p-237">We can create pie charts.</p>
-    
-<div class="sagecell-r">
-<script type="text/x-sage">
-slices = c(4, 10 , 37, 8, 1)
-lbls = c("A", "B", "C", "D", "F")
-pie(slices, labels = lbls, main="Final Exam Grades for a Statistics Course")
-</script>
-</div> 
-
-<!--
-<p id="p-238">We can plot the time series for the 1918–1919 influenze epidemic.  The plot for the number of cases is in red, and the plot for 10 times the number of deaths is in blue.</p>
-    
-<div class="sagecell-r">
-<script type="text/x-sage">
-cases = c(36, 531, 4233, 8682, 7164, 2229, 600, 164, 57, 722, 1517, 1828, 1539, 2416, 3148, 3465, 1440)
-deaths = c(0, 0, 130, 552, 738, 414, 198, 90, 56, 50, 71, 137, 178, 194, 290, 310, 149) 
-plot(ts(cases), col="red", main="Influenza Epidemic")
-lines(ts(10*deaths),col="blue")
-</script>
-</div>       
--->  
-    
-<h4>Distributions</h4>      
-    
-<p>Just like the Ti84 calculator, it is easy to compute probabilities using common distributions.</p>
-    
-<h5>Discrete Distributions</h5>
-    
-<div class="sagecell-r">
-<script type="text/x-sage">
-# Binomial Distribution:
-
-# in short: 
-# base distribution: binom()
-# there's 4 prefixes: d (exactly), p (cumulative), q (quartile aka "inverse"), r (random sample)
-
-# dbinom(x, size, prob) # probability of exactly x successess 
-    # x = number of successess, 
-    # size = number of trials, 
-    # prob = probability of success of single trial
-# pbinom(x, size, prob) # probability of at most x successess (cumulative)
-# qbinom(p, size, prob) # inverse binomial: finds z such that Pr(x <= z) = p (right-tail)
-# rbinom(n, size, prob) # generates required number of random values of given probability from a given sample
-    # n = number of observations 
-</script>
-</div>     
-   
-    
-<div class="sagecell-r">
-<script type="text/x-sage">
-# Binomial Distribution, "exactly x=a"
-dbinom(4, size=12, prob=0.2) # binomial probability with exactly x=4, n=12, p=0.2
-</script>
-</div> 
-    
-<div class="sagecell-r">
-<script type="text/x-sage">
-# Binomial Distribution, cumulative "at most x=a"
-pbinom(4, size=12, prob=0.2) # binomial probability with x=0,1,2,3,4, n=12, p=0.2 (cumulative)
-</script>
-</div>   
-    
-<div class="sagecell-r">
-<script type="text/x-sage">
-# Binomial Distribution, inverse find z
-qbinom(0.2, size=12, prob=0.5) # z score such that Pr( x <= z) = 0.2 with binom prob=0.5
-    # tells us numbers of "heads" out of 12 flips to get probability 0.2
-</script>
-</div>       
-    
-<div class="sagecell-r">
-<script type="text/x-sage">
-# Binomial Distribution, take a random sample
-rbinom(50, size=100, prob=0.5) # 50 observations (random samples) from 100 trials with prob=0.5
-</script>
-</div>       
-    
-<div class="sagecell-r">
-<script type="text/x-sage">
-# Binomial Distribution, take a random sample
-x <- rbinom(50, size=100, prob=0.5) # 50 observations (random samples) from 100 trials with prob=0.5
-summary(x)
-hist(x)
-</script>
-</div>  
-    
-<h5>Continuous Distributions</h5>  
-    
-<div class="sagecell-r">
-<script type="text/x-sage">
-# Continuous Distributions:
-# norm()  # normal distribution
-# unif()  # uniform continuous distribution
-# t()     # student's t-distribution
-# F()     # F-distribution
-# chisq() # Chi-Squared distribution
-
-# with each distribution there's four prefixes:
-    # d (exactly), p (cumulative), q (quartile aka "inverse"), r (random sample)
-</script>
-</div>
-    
-<div class="sagecell-r">
-<script type="text/x-sage">
-# Normal Distributions: find probability
-
-a <- pnorm(1, mean=0, sd=1) # Pr(x <= 1) prob of 1 or less
-b <- pnorm(1, mean=0, sd=1, lower.tail=FALSE) # Pr(1 <= x) prob of 1 or more
-c <- 1-a # check that this is b
-
-print(a)
-print(b)
-print(c)
-</script>
-</div>    
 
 
     
