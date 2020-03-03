@@ -216,10 +216,11 @@ The Sage cell server looks like the box below. It offers a very convenient way t
 # try me!
 32+43
 </script>
-</div>  
+</div>
+<br/><br/>
  
     
-<h2>Arithmetic</h2>   
+<h1>Arithmetic</h1>   
     
 Obviously, you don't need R to handle basic arithmetic. But, you do need to know how it works. This is especially true when you do arthimetic while programming more complicated functions.
 
@@ -248,6 +249,26 @@ Try the next few calculations in the cell above:
         </li>
     </ol>
     <br/>
+    
+    
+    
+    
+    
+
+    
+<h1>Random Samples</h1>      
+    
+<p>It is very easy to get all sorts of random samples in R.</p>   
+    
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Random Sample
+# Pick 7 numbers at random that lie between 1 and 22.
+sample(1:22, size=7, replace=FALSE) # without replacement
+#sample(1:22, size=7, replace=TRUE) # with replacement
+</script>
+</div>     
+<br/><br/>    
     
   
     
@@ -364,19 +385,7 @@ lines(ts(10*deaths),col="blue")
 
     
   
-<h1>Random Samples</h1>      
-    
-<p>It is very easy to get all sorts of random samples in R.</p>   
-    
-<div class="sagecell-r">
-<script type="text/x-sage">
-# Random Sample
-# Pick 7 numbers at random that lie between 1 and 22.
-sample(1:22, size=7, replace=FALSE) # without replacement
-#sample(1:22, size=7, replace=TRUE) # with replacement
-</script>
-</div>     
-<br/><br/>
+
     
     
     
