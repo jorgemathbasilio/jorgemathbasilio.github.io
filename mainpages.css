@@ -702,7 +702,33 @@ h2 {
     background: #FAFAFA;/*#F8F8F8; #f0f0f5;*/ 
 }
 
+/* blinking for coronavirus */
+.blink_text {
 
+    animation:1s blinker linear infinite;
+    -webkit-animation:1s blinker linear infinite;
+    -moz-animation:1s blinker linear infinite;
+
+     color: red;
+    }
+
+    @-moz-keyframes blinker {  
+     0% { opacity: 1.5; }
+     50% { opacity: 0.2; }
+     100% { opacity: 1.5; }
+     }
+
+    @-webkit-keyframes blinker {  
+     0% { opacity: 1.5; }
+     50% { opacity: 0.2; }
+     100% { opacity: 1.5; }
+     }
+
+    @keyframes blinker {  
+     0% { opacity: 1.5; }
+     50% { opacity: 0.2; }
+     100% { opacity: 1.5; }
+     }
 
 
 
