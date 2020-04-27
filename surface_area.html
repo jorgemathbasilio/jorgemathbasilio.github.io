@@ -1,0 +1,374 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<HTML>
+
+
+<HEAD>
+<meta charset="UTF-8">    
+<link rel="stylesheet" type="text/css" href="mainpages.css">
+
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<TITLE>Differential Geometry</TITLE>
+    
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async>
+</script><!-- added to use Latex in HTML w AJAX...use \(x^2+1=0\)--> 
+
+<!-- for sagemath cells -->    
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script>
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script>
+<script>$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+            template: sagecell.templates.minimal,
+            evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+            evalButtonText: 'Evaluate Sage Code'});
+});
+</script>  
+<script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate R Code'});
+});
+</script>   
+<link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css"><!-- to make sure the styling of the sage cells doesn't get screwed up by my own styles -->
+    
+</HEAD>
+    
+<BODY link=darkblue vlink=darkblue>
+   
+<div class="header">
+<span class="coursetitle">Differential Geometry</span>
+<span class="schoolsname">
+    
+</span>
+</div>  
+
+
+<div class="wholedoc">
+    
+<div class="courseinfo">
+    <img class="img-a" style="width:20%" src="images/wormhole2.png">
+    
+    <h1>Surface Area and Wormholes</h1>
+    
+    <h2>for Professor Sormani's <em>Inspiring Talks</em> series</h2>
+    
+    <h4><a href="https://jorgemathbasilio.github.io/index.html" target="_blank">Dr. Jorge Basilio</a> (<a href="mailto:gbasilio@ucla.edu">gbasilio@ucla.edu</a>)</h4>
+    
+    <h3><span class="boldorange">Updated: April 24, 2020</span></h3>
+    
+</div><!--end courseinfo -->    
+    
+<h2>Surface Area</h2>
+    
+<div class="twocol"> <!-- TWO COL -->
+    <!-- column 1 -->
+<div class="column">
+    
+    <h2>Lecture Notes</h2> 
+    
+    <!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Lecture Notes
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content-show">
+        <div class="announcementcontent">
+        <ul>
+            <li><a href=>Blank notes</a></li>
+            <li><a href=>Completed notes</a></li>
+        </ul>  
+        </div>
+        
+    </div>
+    <!-- END Announcement post COLLAPSIBLE--> 
+    
+</div> 
+    
+<!-- column 2 -->
+<div class="column">
+    
+    
+    <h2>Video Lectures</h2> 
+    
+    <!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Video Lectures
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content-show">
+        <div class="announcementcontent">
+        <ul>
+            <li><a href="">Introduction</a></li>
+            <li><a href="">Part 1</a></li>
+            <li><a href="">Part 2</a></li>
+            <li><a href="">Q &amp; A</a></li>
+        </ul>  
+        </div>
+        
+    </div>
+    <!-- END Announcement post COLLAPSIBLE--> 
+
+</div>     
+</div><!-- END TWO COL -->     
+    
+
+    
+ 
+    
+    
+<h2>Surfaces of Revolution</h2>
+      
+    
+Click the “Activate” button below to run an application that investigages wormholes as surfaces of revolution.  
+    
+<div id="mycell">
+<script type="text/x-sage">
+# Example: Surface of Revolution
+
+# try:
+# (1/2)*x^2 + 1, from [-1,1]
+# cosh(x), from [-2,2]
+
+@interact
+def _(Function = selector( [ cosh(x), (1/2)*x^2+1, cos(x)+2 ], label="Polynomial: " ), a = -2,b = 2):
+    html('Surface of Revolution.')
+    html('Select a function and change the interval $%I=(a,b)$.')
+    html('The parametrization is:')
+    revolution_plot3d(Function, (x,a,b),
+                      parallel_axis='x',
+                      show_curve = True,
+                      thickness = 5,
+                      frame = False,
+                      #spin = True,
+                      mesh = True,
+                      print_vector=True,
+                      color='seagreen',
+                      opacity=0.3).show(aspect_ratio=(1,1,1))
+</script>
+</div>  
+    
+    
+    
+<h4>Example: Wormhole 1</h4>  
+    
+We investigate the surface of revolution determined by the curve: 
+
+\( 
+C: 
+\begin{cases}
+x = t \\
+y = \cosh(t)
+\end{cases}
+\)    
+for 
+\( t \in (-1,1) \)
+     
+<div class="compute">
+<script type="text/x-sage">
+# Example: Compute Surface Area for SOR
+f(x) = cosh(x)
+a = -1
+b = 1
+
+fprime = derivative(f,x)
+dA = f*sqrt(1+(fprime)^2)
+
+surfA = 2*pi*integral(dA,x,a,b)
+print('The surface area is')
+surfA.show()
+print('or approximately')
+show(surfA.n())
+</script>
+</div>
+    
+<h4>Example: Wormhole 2</h4>  
+    
+We investigate the surface of revolution determined by the curve: 
+
+\( 
+C: 
+\begin{cases}
+x = t \\
+y = (1/2)t^2 + 1
+\end{cases}
+\)    
+for 
+\( t \in (-1,1) \)
+     
+<div class="compute">
+<script type="text/x-sage">
+# Example: Compute Surface Area for SOR
+f(x) = (1/2)*x^2 + 1
+a = -2
+b = 2
+
+fprime = derivative(f,x)
+dA = f*sqrt(1+(fprime)^2)
+
+surfA = 2*pi*integral(dA,x,a,b)
+print('The surface area is')
+surfA.show()
+print('or approximately')
+show(surfA.n())
+</script>
+</div> 
+    
+    
+    
+<h4>Example: Wormhole 3</h4>  
+    
+We investigate the surface of revolution determined by the curve: 
+
+\( 
+C: 
+\begin{cases}
+x = t \\
+y = 2+\cos(t) 
+\end{cases}
+\)    
+for 
+\( t \in (0,2\pi) \)
+     
+<div class="compute">
+<script type="text/x-sage">
+# Example: Compute Surface Area for SOR
+f(x) = 2 + cos(x)
+a = 0
+b = 2*pi
+
+fprime = derivative(f,x)
+dA = f*sqrt(1+(fprime)^2)
+
+surfA = 2*pi*integral(dA,x,a,b)
+print('The surface area is')
+surfA.show()  
+</script>
+</div>     
+    
+    
+    
+    
+    
+    
+<h2>Arclength</h2>
+    
+    
+<p>Click the “Evaluate Sage Code” button below to run an application that numerical approximation to arclength.</p>
+    
+<div class="compute">
+<script type="text/x-sage">
+# Example: Compute integral numerically (Interactive!) 
+@interact
+def _(Function = 2 + cos(x), a = 0,b = 2*pi, n=slider(4,50,1,6)):
+    f(x) = Function
+    dx = ((b-a)/n)
+    k = var('k')
+    m(k) = (f(a+k*dx) - f(a + (k-1)*dx))/dx
+    S = dx*sum([sqrt(1+(m(k))^2) for k in [1..n]])
+    html('Arc length approximation: $%s$' %N(S))
+    g=diff(f,x)
+    html('Exact arc length: $%s$' %numerical_integral(sqrt(1+g(x)^2),a,b)[0])
+    #show(N(integral(sqrt(1+g(x)^2),(x,a,b))))
+    P1 = plot( f(x), (x, a, b), thickness=3)
+    P2 = line([(a+k*dx, f(a+k*dx)) for k in [0..n]], color='red', thickness=1.5)
+    show(P1+P2)
+</script>
+</div>  
+    
+<p>Notice that computing the arclength of \(f(t)=2+\cos(t)\) leads to a difficult integral that SAGE can't compute a closed form answer.   
+This is a so-called <b>elliptic integral</b> and there is no "elementary function" that gives us this value.</p>
+
+<p>We need to compute the integral numerically as above.</p>
+    
+<p>If you want to see SAGE struggle and try to give the exact answer, run the code below (warning: might take a loooong time to evaluate).</p>
+    
+<div class="compute">
+<script type="text/x-sage">
+# Example: Compute arclength
+
+#set-up
+f(x) = 2 + cos(x)
+a=0
+b=2*pi
+fprime = diff(f,x)
+ds = sqrt(1+(fprime)^2)
+# compute arclength
+arclength = integral(ds,x,a,b)
+print("The arclength of", f(x), "from", "x=", a, "to x=", b, "is:")
+show(arclength)
+
+#graph of f and the arc
+plotf   = plot(f,(x,a-1,b+1))
+plotarc = plot(f,(x,a,b),color='red',thickness=3)
+Pta    = point([a,f(a)], color='red', size=50)
+Ptb    = point([b,f(b)], color='red', size=50)
+show(plotf + plotarc + Pta + Ptb)   
+</script>
+</div> 
+
+  
+  
+
+
+    
+  
+ 
+    
+    
+    
+  
+<h2>Your own SAGE calculations</h2>    
+    
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+2+2
+</script>
+</div>      
+
+    
+
+
+
+    
+<script> <!-- for drop-down schedule --> 
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script> 
+    
+</div><!-- whole doc -->
+<div class="footer"></div>
+
+</BODY>
+</HTML>
