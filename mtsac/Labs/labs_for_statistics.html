@@ -1,0 +1,404 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<HTML>
+
+
+<HEAD>
+<meta charset="UTF-8">    
+<link rel="stylesheet" type="text/css" href="../../mainpages.css">
+
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<TITLE>Math 136 - Statistics - LABS</TITLE>
+    
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async>
+</script><!-- added to use Latex in HTML w AJAX...use \(x^2+1=0\)--> 
+
+<!-- for sagemath cells -->    
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script>
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script>
+<script>$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+        template:       sagecell.templates.minimal,
+            evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+            evalButtonText: 'Evaluate Sage'});
+});
+</script>  
+<script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate R Code'});
+});
+</script>   
+<link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css"><!-- to make sure the styling of the sage cells doesn't get screwed up by my own styles -->
+    
+</HEAD>
+
+<BODY link=darkblue vlink=darkblue>
+   
+<div class="header">
+<span class="coursetitle">MATH 136</span>
+<span class="schoolsname">
+    Glendale Community College
+</span>
+</div>  
+
+
+<div class="wholedoc">
+    
+<div class="courseinfo">
+    <img class="img-a" style="width:40%" src="scatterplot.png">
+    
+    <h1>Statistics</h1>
+
+    <p><b>Course</b>&nbsp;&nbsp;Math 136 &mdash; CN 1959, Spring 2020</p>
+
+    <p><b>Dates &amp; Time</b><br/>
+        &nbsp;&nbsp;MonWed 10:45 am &mdash; 11:50 am<br/>
+        &nbsp;&nbsp;TuesThurs 10:45 am &mdash; 11:35 am
+    </p>
+    
+    <p><b>Place</b>&nbsp;&nbsp;Arroyo Secco Room 102</p>
+
+    <p><b>Instructor</b>&nbsp;&nbsp;<a href="https://jorgemathbasilio.github.io/index.html" target="_blank">Jorge Basilio</a> (<a href="mailto:jbasilio@glendale.edu">jbasilio@glendale.edu</a>)</p>
+
+    <p><b>Office</b>&nbsp;&nbsp;N/A</p>
+    
+    <p><b>Office Hours</b><br/>
+        &nbsp;&nbsp;Mon 11:50 &mdash; 12:20 in AS 102 or SG 140<br/>
+        &nbsp;&nbsp;TuesThurs 11:35 &mdash; 12:35 in AS 102 or SG 140
+    </p>
+     
+    <b>Tutoring</b>
+
+ <!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Spring tutoring hours <span class="alert2">*New!*</span>
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content">
+        <div class="announcementcontent">
+            <span class="alert1">&#64; MDC Center Hours:</span> <span class="boldorange">Tutoring begings on Feb 20th</span> 
+            
+            <ul style="padding-left: 40px">
+                <li>
+                    <span>Mon &mdash; Thurs: 8:00 am &mdash; 9:00 pm</span>
+                </li>
+                <li>
+                    <span>Fri: 8:00 am &mdash; 2:00 pm</span>
+                </li>
+                <li>
+                    <span>Sat: 10:00 am &mdash; 2:00 pm</span>
+                </li>
+            </ul>  
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE-->  
+</div><!--end courseinfo -->    
+    
+    
+
+<h2>Labs</h2>
+    
+All labs will be assigned, worked on, and submitted through the website: <a href="https://cocalc.com/">CoCalc</a> (short for "Collaborative Calculation"). 
+    
+
+<div class="twocol"> <!-- BEGIN TWO COLs -->
+    <!-- column 1 -->
+
+<div class="column">
+    
+    <h2>R Statistical Programming Language References</h2>
+    
+    <!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        R Quick Reference Card
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content-show">
+        <div class="announcementcontent">
+            <ul>
+                <li>
+                    <a href="../handouts/stats_studycard_r.pdf">R Reference Card</a>
+                </li>
+            </ul>   
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE--> 
+    
+    <!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Stast books with R
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content">
+        <div class="announcementcontent">
+            <ul>
+                <li>
+                    <a href="ttps://www.math.csi.cuny.edu/Statistics/R/simpleR/">simpleR</a>, By John Verzani.
+                    Short book on using R with Statistics.
+                </li>
+                <li>
+                    <a href="http://faculty.sfasu.edu/judsontw/math-s304/prob-stats.html">Inquiries into Probability and Stats</a>, By Thomas W. Judson. A short online stats book.
+                </li>
+                <li>
+                    <a href="https://www.openintro.org/stat/textbook.php?stat_book=os">OpenIntro Statistics book.</a> 
+                </li>
+            </ul>   
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE--> 
+       
+ 
+</div><!-- END COL 1 --> 
+    
+    
+    <!-- column 2 -->
+
+<div class="column">
+    
+    <h2>Additional R References</h2>
+    
+        <!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Additional R References
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content-show">
+        <div class="announcementcontent">
+            <ul>
+                <li>
+                    <a href="http://www.r-tutor.com/elementary-statistics">R tutorial - elementary stats</a>
+                </li>
+                <li>
+                    <a href="https://kingaa.github.io/R_Tutorial/">R tutorial</a>
+                </li>
+                <li>
+                    <a href="http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html">
+                    Top 50 ggplots!</a>
+                </li>
+            </ul>   
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE--> 
+    
+</div><!-- END COL 2 --> 
+
+</div><!-- END TWO COLs --> 
+    
+    
+    
+    
+<center>    
+<table class="schedule">
+    <col width="210">
+    <col width="400">
+    <!--<col width="10">-->
+<tr><th>Lab</th> <th>Files</th> <th>Due Date</th></tr>
+    
+<tr>
+<td><span class="week">0</span></td>
+<td>
+    <ul>
+        <li>
+            "Lab_0"
+        </li>
+        <li>
+            <a href="../../intro_to_r.html">Intro to R page</a>  
+        </li>    
+        <li>
+            No official due date; but I strongly recommend you spend some time looking at this before our first lab.
+        </li>
+    </ul>  
+</td>
+<td>
+    <em>None</em>
+</td>
+</tr>
+    
+<tr class="alt">
+<td>1</td>
+<td>
+    <ul>
+        <li>
+            Lab_1 as HTML (<a href="Lab1/Lab_1.html">here</a>)
+        </li>    
+        <li>
+            Lab_1 as PDF (<a href="Lab1/Lab_1.pdf">here</a>)
+        </li>    
+        <li>
+            Lab_1 Write-up template (<a href="Lab1/Math136-Lab_1-YourLastName_YourFirstName-S20.ipynb">here</a>)
+        </li>
+        <li>
+            <span class="boldorange">Lab_1 SOLUTIONS</span> (<a href="Lab1/Math136-Lab_1-Solutions-S20.html">here</a>)
+        </li>
+    </ul> 
+</td>
+<td>
+    Due date <span class="boldred">Friday, March 13, by 11:59 pm</span> (via Cocalc)
+</td>
+</tr>
+    
+<tr>
+<td><span class="week">2</span></td>
+<td>
+    <ul>
+        <li>
+            Lab_2 as HTML (<a href="Lab2/Lab_2.html">here</a>)
+        </li>    
+        <li>
+            Lab_2 as PDF (<a href="Lab2/Lab_2.pdf">here</a>)
+        </li>    
+        <li>
+            Lab_2 Write-up template (<a href="Lab2/">here</a>)
+        </li>
+        <li>
+            <span class="boldorange">Lab_2 SOLUTIONS</span> (<a href="Lab2/Math136-Lab_2-Solutions-S20.html">here</a>)
+        </li>
+    </ul>     
+</td>
+<td>
+    Due date <span class="boldred">Friday, March 29, by 11:59 pm</span> (via Cocalc) 
+</td>
+</tr>
+<tr class="alt">
+<td>3</td>
+<td>
+    <ul>
+        <li>
+            Lab_3 as HTML (<a href="Lab3/Lab_3.html">here</a>)
+        </li>    
+        <li>
+            Lab_3 as PDF (<a href="Lab3/Lab_3.pdf">here</a>)
+        </li>    
+        <li>
+            Lab_3 Write-up template (<a href="Lab3/Math136-Lab_3-YourLastName_YourFirstName-S20.ipynb">here</a>)
+        </li>
+        <!--
+        <li>
+            <span class="boldorange">Lab_4 SOLUTIONS</span> (<a href="">here</a>)
+        </li>
+        -->
+    </ul>     
+</td>
+<td>
+    Due date <span class="boldred">Friday, April 10, by 11:59 pm</span> (via Cocalc) 
+</td>
+</tr>
+<tr>
+<td><span class="week">4</span></td>
+<td>
+    <ul>
+        <li>
+            Lab_4 as HTML (<a href="">here</a>)
+        </li>    
+        <li>
+            Lab_4 as PDF (<a href="">here</a>)
+        </li>    
+        <li>
+            Lab_4 Write-up template (<a href="">here</a>)
+        </li>
+    </ul>   
+</td>
+<td>
+    Due date <span class="">TBA</span> (via Cocalc)
+</td>
+</tr>
+<tr class="alt">
+<td>5</td>
+<td>
+    <ul>
+        <li>
+            Lab_5 as HTML (<a href="">here</a>)
+        </li>    
+        <li>
+            Lab_5 as PDF (<a href="">here</a>)
+        </li>    
+        <li>
+            Lab_5 Write-up template (<a href="">here</a>)
+        </li>
+        <!--
+        <li>
+            <span class="boldorange">Lab_4 SOLUTIONS</span> (<a href="">here</a>)
+        </li>
+        -->
+    </ul>     
+</td>
+<td>
+    Due date <span class="">TBA</span> (via Cocalc)
+</td>
+</tr>
+<tr>    
+</table>
+</center>
+    
+    
+
+
+
+              
+    
+    
+<h2>Your R Calculations</h2>  
+    
+<p>Use the cell below to run short, single-output R code without installing or logging into anything :-)</p>    
+    
+<div class="sagecell-r">
+<script type="text/x-sage">
+# try me!
+
+</script>
+</div>    
+    
+
+
+
+    
+<script> <!-- for drop-down schedule --> 
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script> 
+    
+</div><!-- whole doc -->
+<div class="footer"></div>
+
+</BODY>
+</HTML>

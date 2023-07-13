@@ -148,50 +148,7 @@
 <br/>    
 Please go to our <a href="https://cocalc.com">CoCalc </a> course for much, much more!
     
-<h2>SageMathCloud</h2>
-
-<h4>Tangent Line Applet</h4>
-    
-Click the “Activate” button below to run an application that investigages the tangent line.    
-<div id="mycell">
-<script type="text/x-sage">
-
-f(x) = x^3 - x
-
-f_prime(x) = diff( f(x), x)
-
-@interact
-def tangent_at_point( x_0 = slider(-2, 2, 0.1, -1.5, label="x-coordinate") ):
-    y_0 = f( x_0 )
-    m = f_prime( x_0 )
-
-    # because y - y_0 = m(x - x_0) we know that
-    # y - y_0 = mx - m*x_0
-    # y = mx + y_0 - m*x_0
-    # therefore b = y_0 - m*x_0
-
-    b = y_0 - m*x_0
-
-    P1 = plot( f(x), -2, 2, color='blue', ymin=-6, ymax=6, gridlines='minor', thickness=2)
-    P2 = plot( m*x + b, -2, 2, color='red', ymin=-6, ymax=6, thickness=4)
-    P3 = point( (x_0, y_0), color='green', size=80, zorder=10)
-
-    P = P1+P2+P3
-
-    P.show()
-
-    print
-    print "x_0 = ", x_0
-    print "y_0 = f(x_0) = ", y_0
-    print "m = f'(x_0) = ", m
-    print "tangent line: y = (", m, ")*x + (", b, ")"
-
-    return
-
-</script>
-</div>
-    
-<h2>Your own computations</h2>
+<h2>Your own computations on SageMathCloud</h2>
     
 <h4>Vector Arithmetic</h4>    
 

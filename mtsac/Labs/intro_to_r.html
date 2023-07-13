@@ -1,0 +1,566 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<HTML>
+
+
+<HEAD>
+<meta charset="UTF-8">    
+<link rel="stylesheet" type="text/css" href="mainpages.css">
+
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<TITLE>INTRO TO R</TITLE>
+    
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async>
+</script><!-- added to use Latex in HTML w AJAX...use \(x^2+1=0\)--> 
+
+<!-- for sagemath cells -->    
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script>
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script>
+<script>$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+        template:       sagecell.templates.minimal,
+            evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+            evalButtonText: 'Evaluate Sage'});
+});
+</script>  
+<script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate R Code'});
+});
+</script>   
+<link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css"><!-- to make sure the styling of the sage cells doesn't get screwed up by my own styles -->
+    
+</HEAD>
+
+<BODY link=darkblue vlink=darkblue>
+   
+<div class="header">
+<span class="coursetitle">Introduction to R</span>
+<span class="schoolsname">
+    Statistics
+</span>
+</div>  
+
+
+<div class="wholedoc">  
+    
+<h1>Using the R Statistical Programming Language</h1>
+    
+    <center> 
+        <img class="img-a" style="width:40%" src="scatterplot.png">  
+    </center>     
+
+<div class="twocol"> <!-- BEGIN TWO COLs -->
+    <!-- column 1 -->
+
+<div class="column">
+    
+    <h2>R References</h2>
+    
+    <!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Stast books with R
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content-show">
+        <div class="announcementcontent">
+            <ul>
+                <li>
+                    <a href="ttps://www.math.csi.cuny.edu/Statistics/R/simpleR/">simpleR</a>, By John Verzani.
+                    Short book on using R with Statistics.
+                </li>
+                <li>
+                    <a href="http://faculty.sfasu.edu/judsontw/math-s304/prob-stats.html">Inquiries into Probability and Stats</a>, By Thomas W. Judson. A short online stats book.
+                </li>
+                <li>
+                    <a href="https://www.openintro.org/stat/textbook.php?stat_book=os">OpenIntro Statistics book.</a> 
+                </li>
+            </ul>   
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE--> 
+       
+ 
+</div><!-- END COL 1 --> 
+    
+    
+    <!-- column 2 -->
+
+<div class="column">
+    
+    <h2>Additional R References</h2>
+    
+    <!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        R Quick Reference Card
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content-show">
+        <div class="announcementcontent">
+            <ul>
+                <li>
+                    <a href="../handouts/stats_studycard_r.pdf">R Reference Card</a>
+                </li>
+            </ul>   
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE--> 
+    
+    <!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Additional R References
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content-show">
+        <div class="announcementcontent">
+            <ul>
+                <li>
+                    <a href="http://www.r-tutor.com/elementary-statistics">R tutorial - elementary stats</a>
+                </li>
+                <li>
+                    <a href="https://kingaa.github.io/R_Tutorial/">R tutorial</a>
+                </li>
+                <li>
+                    <a href="http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html">
+                    Top 50 ggplots!</a>
+                </li>
+                <li>
+                    <a href="https://youtu.be/_V8eKsto3Ug">A 2 hour video course</a>
+                </li>
+            </ul>   
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE--> 
+    
+</div><!-- END COL 2 --> 
+
+</div><!-- END TWO COLs --> 
+    
+    
+      
+    
+    
+    
+    
+
+<h1>Your R Calculations</h1>  
+    
+<div class="sagecell-r">
+<script type="text/x-sage">
+# try me!
+</script>
+</div>  
+<br/>
+<br/>
+    
+    
+    
+<h1>Quick Start</h1>
+    
+<h2>What is R?</h2>
+    
+<center>    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XcBLEVknqvY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br/>
+</center>
+    
+R is a powerful, comprehensive, open-source software framework for doing statistics. It is possible to download and install the software on computers, or to use it through a website-interface without downloading anything.
+    
+In our class, we will learn how to access R through the CoCalc website-interface, and how to do some basic statistical computations and graphics. 
+    
+To get started, log on to the CoCalc server (create an account using your school email) and open a blank "Jupyter notebook" (or you can also open a "sage worksheet" but you will need to type `%r` at the beginning of each cell). Select R for your kernel (language you want to use). 
+    
+Try some basic arithmetic computations in your worksheet. For example, compute/ enter the following commands
+    
+<ol>
+    <li>
+        `32+43`
+    </li>
+    <li>
+        `e^{-\sqrt(5.5*\pi)}`
+    </li>
+    <li>
+        `x=2.59;\qquad   y=-6.44;\qquad   x^2*\pi^y`
+    </li>
+</ol>
+
+
+
+The Sage cell server looks like the box below. It offers a very convenient way to do short computations and graphics without logging on to the CoCalc server (or having to mess with downloading anything). Try it! <br/><br/>
+    
+<div class="sagecell-r">
+<script type="text/x-sage">
+# try me!
+32+43
+</script>
+</div>
+<br/><br/>
+ 
+    
+<h1>Arithmetic</h1>   
+    
+Obviously, you don't need R to handle basic arithmetic. But, you do need to know how it works. This is especially true when you do arthimetic while programming more complicated functions.
+
+We start with:
+
+    $$ 3 \cdot (8-6)^3 - 5$$
+    
+    
+<div class="sagecell-r">
+<script type="text/x-sage">
+# you can edit me!        
+3*(8-6)^3 - 5
+</script>
+</div>
+    
+Try the next few calculations in the cell above:    
+    <ol>
+        <li>
+            `\frac{(11-5)^2+(3-5)^2}{2}`
+        </li>
+        <li>
+            `\sqrt{4*5+(8-3)}`
+        </li>
+        <li>
+            `\frac{(11-5)^2+(3-5)^2+(1-5)^2+(6-5)^2}{4}`
+        </li>
+    </ol>
+    <br/>
+    
+    
+    
+    
+    
+
+    
+<h1>Random Samples</h1>      
+    
+<p>It is very easy to get all sorts of random samples in R.</p>   
+    
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Random Sample
+# Pick 7 numbers at random that lie between 1 and 22.
+sample(1:22, size=7, replace=FALSE) # without replacement
+#sample(1:22, size=7, replace=TRUE) # with replacement
+</script>
+</div>     
+<br/><br/>    
+    
+  
+    
+    
+<h1>Descriptive Stastistics</h1>    
+    
+<p>Click on the boxes below to see R code.</p>  
+    
+    
+<!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Mean, Median, Variance, Standard Deviation
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content">
+        <div class="announcementcontent">
+
+Here's a basic example showing how to save a simple data set \(\{1,2,2,3,3,3,4,4,4,4,5,5,5,5,5,10\}\) 
+and store it to the variable name \(\text{my_cool_data}\).<br/>
+            
+<div class="sagecell-r">
+<script type="text/x-sage">
+# you can edit this!
+# entering and save data to a variable called `my_cool_data`
+my_cool_data <- c(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5,10) 
+# mean
+mean(my_cool_data)
+</script>
+</div>  
+    
+Note that hashtags (&#35;) are "comments" and are meant for humans to read but they are ignored by the program.<br/>
+            
+You can edit these examples to make your own computations below by clicking “Evaluate”. Try to compute the following:<br/>              
+            
+    <ol>
+        <li>Mean: mean()</li>  
+        <li>Median: median()</li>
+        <li>Variance: var()</li>
+        <li>Standard Deviation: sd()</li>
+    </ol>
+            
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE--> 
+    
+    
+    
+    
+    
+<!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Histograms, Stemplots, Piecharts
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content">
+        <div class="announcementcontent">
+
+We can create histograms. Note that R automatically decides on the width of the bins/classes.<br/><br/>
+            
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Histogram
+textbooks <- c( 35, 42, 37, 60, 50, 42, 50, 16, 58, 39, 33, 39, 23, 53, 51, 48, 41, 49, 62, 40, 45, 37, 62, 30, 23)
+hist(textbooks, breaks=c(seq(10,70,10)), col = c("blue", "red", "gray", "blue", "red", "gray"))
+</script>
+</div>
+    
+<p>Suppose that we want to a make a stem-and-leaf plot of Ruth's homeruns:</p>          
+            
+<div class="sagecell-r">
+<script type="text/x-sage">
+ruth <- c(22, 25, 34, 35, 41, 41, 46, 46, 46, 47, 49, 54, 54, 59, 60)
+stem(ruth)
+</script>
+</div> 
+            
+<p>We can create pie charts:</p>        
+            
+<div class="sagecell-r">
+<script type="text/x-sage">
+slices <- c(4, 10 , 37, 8, 1)
+lbls <- c("A", "B", "C", "D", "F")
+pie(slices, labels = lbls, main="Final Exam Grades for a Statistics Course")
+</script>
+</div> 
+ 
+<p>We can plot the time series for the 1918–1919 influenze epidemic.  The plot for the number of cases is in red, and the plot for 10 times the number of deaths is in blue.</p>
+    
+<div class="sagecell-r">
+<script type="text/x-sage">
+cases <- c(36, 531, 4233, 8682, 7164, 2229, 600, 164, 57, 722, 1517, 1828, 1539, 2416, 3148, 3465, 1440)
+deaths <- c(0, 0, 130, 552, 738, 414, 198, 90, 56, 50, 71, 137, 178, 194, 290, 310, 149) 
+plot(ts(cases), col="red", main="Influenza Epidemic")
+lines(ts(10*deaths),col="blue")
+</script>
+</div>              
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE-->     
+<br/><br/>
+
+   
+    
+
+    
+
+    
+  
+
+    
+    
+    
+    
+    
+    
+<h1>Distributions</h1>
+    
+<p>Click on the boxes below to learn how to use R.</p>   
+    
+<p>Just like the Ti84 calculator, it is easy to compute probabilities using common distributions.</p>    
+    
+
+<!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Discrete Distributions
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content">
+        <div class="announcementcontent">
+            
+Binomial Distributions:
+            
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Binomial Distribution:
+
+# in short: 
+# base distribution: binom()
+# there's 4 prefixes: d (exactly), p (cumulative), q (quartile aka "inverse"), r (random sample)
+
+# dbinom(x, size, prob) # probability of exactly x successess 
+    # x = number of successess, 
+    # size = number of trials, 
+    # prob = probability of success of single trial
+# pbinom(x, size, prob) # probability of at most x successess (cumulative)
+# qbinom(p, size, prob) # inverse binomial: finds z such that Pr(x <= z) = p (right-tail)
+# rbinom(n, size, prob) # generates required number of random values of given probability from a given sample
+    # n = number of observations 
+</script>
+</div>               
+            
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Binomial Distribution, "exactly x=a"
+dbinom(4, size=12, prob=0.2) # binomial probability with exactly x=4, n=12, p=0.2
+</script>
+</div> 
+    
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Binomial Distribution, cumulative "at most x=a"
+pbinom(4, size=12, prob=0.2) # binomial probability with x=0,1,2,3,4, n=12, p=0.2 (cumulative)
+</script>
+</div>   
+    
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Binomial Distribution, inverse find z
+qbinom(0.2, size=12, prob=0.5) # z score such that Pr( x <= z) = 0.2 with binom prob=0.5
+    # tells us numbers of "heads" out of 12 flips to get probability 0.2
+</script>
+</div>       
+    
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Binomial Distribution, take a random sample
+rbinom(50, size=100, prob=0.5) # 50 observations (random samples) from 100 trials with prob=0.5
+</script>
+</div>       
+    
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Binomial Distribution, take a random sample
+x <- rbinom(50, size=100, prob=0.5) # 50 observations (random samples) from 100 trials with prob=0.5
+summary(x)
+hist(x)
+</script>
+</div>
+            
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE--> 
+    
+    
+    
+    
+    
+    
+    
+<!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Continuous Distributions
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content">
+        <div class="announcementcontent">
+            
+Continuous Distributions:
+            
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Continuous Distributions:
+# norm()  # normal distribution
+# unif()  # uniform continuous distribution
+# t()     # student's t-distribution
+# F()     # F-distribution
+# chisq() # Chi-Squared distribution
+
+# with each distribution there's four prefixes:
+    # d (exactly), p (cumulative), q (quartile aka "inverse"), r (random sample)
+</script>
+</div>
+            
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE-->     
+    <br/><br/>
+    
+    
+    
+    
+    
+    
+    
+  
+    
+<h1>Inference</h1>
+    
+<h2>Scatter Plots and Linear Regression</h2>
+    
+<p>Coming soon...</p>   
+    
+<h2>Confidence Intervals and Hypothesis Tests</h2>
+    
+<p>Coming soon...</p>       
+
+    
+
+   
+    
+  
+
+    
+    
+
+
+    
+<script> <!-- for drop-down schedule --> 
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script> 
+    
+</div><!-- whole doc -->
+<div class="footer"></div>
+
+</BODY>
+</HTML>
