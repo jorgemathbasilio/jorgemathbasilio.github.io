@@ -193,13 +193,16 @@ show(a)
 <script type="text/x-sage">
 # you can edit this!
 # create a matrix: Matrix( [ [row1], [row2], etc  ] ) # Notice extra [ ] sandwhiching the rows
+
 M = Matrix([ [1,2,3], [4,5,6], [7,8,9] ] ) # row1 = [1,2,3], row2 = [4,5,6] etc 
 show(M)
+
 Q = Matrix([ [1,2,3], [1,2,3], [1,2,3] ] )
 show(Q)
+
 # matrix arithmetic is easy!
-show(2*M+3*Q)
-show(2.0*M+3*Q)
+show(2*M + 3*Q)
+show(2.0*M + 3*Q)
 </script>
 </div>  
     
@@ -217,7 +220,9 @@ When you need to compute RREF(A) in a hurry:
 A = Matrix([ [1,-2,1], 
              [3,-1,-1], 
              [1,1,-4] ])
+             
 cA = copy(A) # make a copy of A to make changes to, leaving A unchanged
+
 show("A is", A) # shows original A
 show("RREF(A) is", cA.rref()) # shows RREF(A)
 </script>
@@ -271,16 +276,19 @@ show(cA)
 <div class="compute">
 <script type="text/x-sage">
 # you can edit this!
-# Check if diagonalizable:
+# Check if invertible:
 
 A = matrix([ [-12,15],
              [-10,13] ])
+                          
+show("A=",A)
+show("A^(-1)=", A.inverse()) 
+
 C = matrix([ [1,3],
              [1,2] ])
-show("A=",A)
+             
 show("C=",C)
-Cinv = C.inverse()
-show("C^(-1)=",Cinv)  
+show("C^(-1)=", C.inverse())   
 </script>
 </div>      
     
