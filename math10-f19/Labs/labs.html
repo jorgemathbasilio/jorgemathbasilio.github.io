@@ -338,6 +338,13 @@ show("A=",A)
 show("C=",C)
 Cinv = C.inverse()
 show("C^(-1)=",Cinv)  
+
+# check: C^(-1)*A*C
+show("C^(-1)*A*C =",Cinv*A*C) 
+
+# Note: $C^{-1}*A*C$ is diagonal and the diagonal entries are the eigenvalues of $A$.
+
+# Note: In our class, we use the convention that we order the eigenvalues in **INCREASING order**.
 </script>
 </div>      
     
