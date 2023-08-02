@@ -284,11 +284,17 @@ A = matrix([ [-12,15],
 show("A=",A)
 show("A^(-1)=", A.inverse()) 
 
+# check
+show( A * A.inverse() )
+
 C = matrix([ [1,3],
              [1,2] ])
              
 show("C=",C)
-show("C^(-1)=", C.inverse())   
+show("C^(-1)=", C.inverse())
+
+# check
+show( C * C.inverse() )
 </script>
 </div>      
     
