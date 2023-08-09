@@ -1,0 +1,405 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<HTML>
+
+
+<HEAD>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="mainpages.css">
+<!--<link rel="stylesheet" type="text/css" href="../coursepages.css">-->
+
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<TITLE>Linear Algebra &amp; SageMath</TITLE>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async>
+</script><!-- added to use Latex in HTML w AJAX...use \(x^2+1=0\)-->  
+    
+<!-- for sagemath cells -->    
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script>
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script>
+<script>$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+        template:       sagecell.templates.minimal,
+            evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+            evalButtonText: 'Evaluate'});
+});
+</script>    
+<link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css"><!-- to make sure the styling of the sage cells doesn't get screwed up by my own styles -->    
+    
+</HEAD>
+
+
+<BODY link=darkblue vlink=darkblue>
+
+
+    
+<div class="header">
+<span class="coursetitle">Linear Algebra and SageMath</span>
+<span class="schoolsname">
+    Dr. Jorge Eduardo Basilio
+</span>
+</div>  
+
+
+<div class="wholedoc">
+    
+
+<!-- ANNOUNCEMENT COLLAPSIBLE --> 
+<!-- 
+<button class="collapsible">
+<div class="announcementtitle">
+    <h4>
+    Sample Announcement title  
+    </h4>  
+</div>
+</button>
+    
+<div class="content">
+    <div class="announcementcontent">
+    Sample post   
+    </div>
+</div>
+-->
+<!-- END Announcement post COLLAPSIBLE--> 
+      
+    
+     <!-- 
+<div class="twocol">
+<div class="column">
+    <h2>Homework List</h2> 
+    
+    yo
+</div>   
+<div class="column">
+    <h2>Answer Key</h2> 
+
+    yo
+</div>   
+</div>
+    -->
+<center><img src="math10-f19/determinant.gif" style="width:60%; text-align: center;"><br><br></center> 
+
+    
+
+    
+<h1>Your own computations on SageMathCloud</h1>
+    
+<h4>Vector Arithmetic</h4>    
+
+Type your own Sage computation below and click “Evaluate”.   
+    
+    
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+2+2
+</script>
+</div>    
+
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+u = vector([1,3,-6])
+show(u)
+</script>
+</div>
+    
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+u = vector([1,3,-6])
+v = vector([-2,0,3])
+show(2*u-7*v)
+
+# Length of a vector
+n = norm(u)
+show(n)
+
+# Dot Products
+a = u.dot_product(v)
+show(a)
+</script>
+</div> 
+    
+<h4>Matrix Arithmetic</h4>        
+
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+# create a matrix: Matrix( [ [row1], [row2], etc  ] ) # Notice extra [ ] sandwhiching the rows
+
+M = Matrix([ [1,2,3], [4,5,6], [7,8,9] ] ) # row1 = [1,2,3], row2 = [4,5,6] etc 
+show(M)
+
+Q = Matrix([ [1,2,3], [1,2,3], [1,2,3] ] )
+show(Q)
+
+# matrix arithmetic is easy!
+show(2*M + 3*Q)
+show(2.0*M + 3*Q)
+</script>
+</div>  
+    
+    
+<h4>Gauss-Jordan Elimination &amp; RREF</h4> 
+    
+When you need to compute RREF(A) in a hurry:    
+    
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+# RREF
+ 
+# define matrix A 
+A = Matrix([ [1,-2,1], 
+             [3,-1,-1], 
+             [1,1,-4] ])
+             
+cA = copy(A) # make a copy of A to make changes to, leaving A unchanged
+
+show("A is", A) # shows original A
+show("RREF(A) is", cA.rref()) # shows RREF(A)
+</script>
+</div>  
+    
+<h4>Elementary Row Operations</h4>      
+    
+When you want to check your EROs:    
+
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+# EROs 
+#ER1 = swap rows
+#ER2 = multiply row by non-zero constant: A.rescale_row(i,a) means "a*r_i --> r_i"
+#ER3 = add multiple of one row to another: A.add_multiple_of_row(i,j,a) means "a*r_j + r_i --> r_i"
+
+# warning: SAGE (like programming languages like Python) start counting at 0. So programmers i=0 is mathematicians i=1
+ 
+A = Matrix(QQ, [ [1,-2,1], [3,-1,-1], [1,1,-4]])
+
+print("The original matrix A is")
+show(A)
+
+cA = copy(A) # make a copy of A to make changes to, leaving A unchanged
+
+print("(-3)*r1 + r2 --> r2 gives")
+cA.add_multiple_of_row(1,0,-3) 
+show(cA)
+
+print("(-1)*r1 + r3 --> r3 gives")
+cA.add_multiple_of_row(2,0,-1) 
+show(cA)
+
+print("(1/5)*r2 --> r2 gives")
+cA.rescale_row(1,1/5) 
+show(cA)
+
+print("(-3)*r2 + r3 --> r3 gives")
+cA.add_multiple_of_row(2,1,-3) 
+show(cA)
+
+print("(-5/13)*r3 --> r3 gives")
+cA.rescale_row(2,-5/13) 
+show(cA)
+</script>
+</div>   
+    
+<h4>Inverse of a Matrix</h4>  
+    
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+# Check if invertible:
+
+A = matrix([ [-12,15],
+             [-10,13] ])
+                          
+show("A=",A)
+show("A^(-1)=", A.inverse()) 
+
+# check
+show( A * A.inverse() )
+
+C = matrix([ [1,3],
+             [1,2] ])
+             
+show("C=",C)
+show("C^(-1)=", C.inverse())
+
+# check
+show( C * C.inverse() )
+</script>
+</div>      
+    
+<h4>Determinants</h4>     
+    
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+# Determinants
+ 
+A = matrix(QQ, [ [8,-2,3],
+                 [-3,0,4],
+                 [6,2,-1] ])
+show("A=",A)
+show("det(A)=",A.determinant())
+</script>
+</div>  
+    
+<h4>Eigentheory</h4>     
+    
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+# Eigentheory
+
+A = matrix([ [2,2],
+             [-4,8] ])
+             
+# Eigenvalues
+show("A=",A)
+show("Eigenvalues are",A.eigenvalues())
+
+#Finding characteristic polynomial 
+p(x) = A.characteristic_polynomial()
+show("characteristic polynomial =", p(x))
+
+# Solving a characetristic polynomial
+show(solve(p(x) == 0,x))
+
+# Finding eigenvectors
+show("The eigenvectors are", A.eigenvectors_right())
+</script>
+</div>   
+       
+<h4>Diagonalization</h4> 
+    
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+# Check if diagonalizable:
+
+A = matrix([ [-12,15],
+             [-10,13] ])
+show("A=",A)
+
+# Finding eigenvectors
+show("The eigenvectors are", A.eigenvectors_right())
+
+# put eigenvectors into columns of C (or rescaled ones to get integer coefficients):
+C = matrix([ [1,3],
+             [1,2] ])
+show("C=",C)
+
+# confirm C is invertible
+Cinv = C.inverse()
+show("C^(-1)=",Cinv)  
+
+# check that C^(-1)*A*C is a diagonal matrix D
+show("C^(-1)*A*C =",Cinv*A*C) 
+
+# Note: $C^{-1}*A*C$ is diagonal and the diagonal entries are the eigenvalues of $A$ (corresponding to the eigenvectors).
+
+# Note: In our class, we use the convention that we order the eigenvalues in **INCREASING order**.
+</script>
+</div>      
+    
+ <!--   
+<h4>Inner Product Spaces &amp; Orthogonal Spaces</h4>     
+    
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+# Inner Product Spaces & Orthogonal Spaces
+ 
+
+</script>
+</div>   
+
+-->
+     
+<a name="handouts"><h2>References</h2></a>
+
+<h4>CoCalc Website</h4>
+
+<ul>
+    <li>
+        CoCalc website: (<a href="https://cocalc.com/">here</a>)
+    </li>
+</ul>    
+        
+<h4>Lab Manual for Linear Algebra</h4>    
+<ul>
+    <li>
+        By Jim Hefferson. Free and online:
+        (<a href="http://joshua.smcvt.edu/linearalgebra/lab.pdf">here</a>)
+    </li>
+</ul>
+    
+<h4>First Course in Linear Algebra</h4>    
+<ul>
+    <li>
+        By Robert Beezer. Free and online:
+        (<a href="http://linear.ups.edu/">here</a>)
+    </li>
+</ul>
+        
+    
+<h4>Book: Sage for Undergraduates</h4>
+
+<ul>
+    <li>
+        By Gregory Bard. Download it at his website: (<a href="http://www.gregorybard.com/Sage.html">here</a>)
+    </li>
+</ul>    
+
+<h4>Sage Tutorial - Online site</h4>
+
+<ul>
+    <li>
+        By Mike O'Sullivan. Available at his website: (<a href="https://mosullivan.sdsu.edu/sagetutorial/about.html#getting-started">here</a>)
+    </li>
+</ul>         
+        
+</div>
+    
+    
+<script> <!-- for drop-down schedule --> 
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>    
+
+<div class="footer"></div>
+    
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
