@@ -138,6 +138,8 @@ add
 
 <div class="content">
 <div class="announcementcontent">
+    
+A few useful things you can do with vectors:    
 
 <div class="compute">
 <script type="text/x-sage">
@@ -181,6 +183,8 @@ show(a)
 
 <div class="content">
 <div class="announcementcontent">
+    
+Basic matrix arithmetic:
 
 <div class="compute">
 <script type="text/x-sage">
@@ -214,15 +218,16 @@ show(2.0*M + 3*Q)
 <button class="collapsible">
 <div class="announcementtitle">
     <h4>
-    Gauss-Jordan Elimination &amp; RREF
+    Gauss-Jordan Elimination &amp; RREF &amp; EROs
     </h4>  
 </div>
 </button>
+    
 
 <div class="content">
 <div class="announcementcontent">
 
-When you need to compute RREF(A) in a hurry:    
+Gauss-Jordan Algorithm can be done in an instant using RREF(A) when you are in a hurry:    
     
 <div class="compute">
 <script type="text/x-sage">
@@ -243,10 +248,9 @@ show("RREF(A) is", cA.rref()) # shows RREF(A)
     
     
     
-    
 <h4>Elementary Row Operations</h4>      
     
-When you want to check your EROs:    
+When you want to check your individual elementary row operations (EROs):    
 
 <div class="compute">
 <script type="text/x-sage">
@@ -310,6 +314,8 @@ show(cA)
 <div class="content">
 <div class="announcementcontent">
 
+Find the inverse of a matrix:
+
 <div class="compute">
 <script type="text/x-sage">
 # you can edit this!
@@ -359,6 +365,8 @@ show( C * C.inverse() )
 
 <div class="content">
 <div class="announcementcontent">
+    
+Compute a determinant of a square matrix:
 
 <div class="compute">
 <script type="text/x-sage">
@@ -393,6 +401,8 @@ show("det(A)=",A.determinant())
 
 <div class="content">
 <div class="announcementcontent">
+    
+Basic Eigentheory:
 
 <div class="compute">
 <script type="text/x-sage">
@@ -440,6 +450,8 @@ show("The eigenvectors are", A.eigenvectors_right())
 
 <div class="content">
 <div class="announcementcontent">
+    
+A few results about diagonalizable matrices:
 
 <div class="compute">
 <script type="text/x-sage">
@@ -498,6 +510,21 @@ show("C^(-1)*A*C =",Cinv*A*C)
 
 <div class="content">
 <div class="announcementcontent">
+    
+Here's how you can check your work after doing the Gram-Schmidt Algorithm by hand.
+    
+<ul>
+    <li> \( A=[\vec{v}_1 | \cdots | \vec{v}_k] \) for matrix with vectors \( S=\{ \vec{v}_1,\ldots,\vec{v}_k \} \) put into the columns</li>
+    <li> Compute: \( \boxed{\, A^{\top} * A\, } \), call this matrix \( B\).</li>
+    <li>Interpret results:
+        <ul>
+            <li>\( B\) is a diagonal matrix if and only if \( S \) is an orthogonal set</li>
+            <li>\( B\) is the identity matrix \( I_n \) if and only if \( S \) is an orthonormal set</li>
+        </ul>
+    </li>
+</ul>
+  
+Observe that this works because the ith row times jth column of \( A^{\top}*A \) is the dot product \( \vec{v}_i \circ \vec{v}_j \).    
 
 <div class="compute">
 <script type="text/x-sage">
@@ -664,6 +691,8 @@ for i in range(4):
 
 <div class="content">
 <div class="announcementcontent">
+    
+Here we use Sage to help us build and check the theory of projection transformations and their matrices:
 
 <div class="compute">
 <script type="text/x-sage">
