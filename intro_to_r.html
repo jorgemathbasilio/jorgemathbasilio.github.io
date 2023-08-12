@@ -523,16 +523,50 @@ Continuous Distributions:
     
 <h1>Inference</h1>
     
+    
+<!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Confidence Intervals and Hypothesis Tests
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content">
+        <div class="announcementcontent">
+            
+Confidence Intervals and Hypothesis Tests
+            
+One Proportion p-test. You can ignore             
+            
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Hypothesis Testing: One Proportion
+
+# sample proportion: p_hat = x/N, where x = # of success, N = sample size
+# p_null = proportion from null hypotheis (past proportion)
+
+# example: 
+# sample: x=16, N=30, (p_hat = x/n = 0.533)
+# null hypothesis: p_null = 0.35
+# alternative = "two.sided", "less", "greater" (choose one)
+# level of significance = LOS = 0.05, confidence level = 1 - LOS = 1 - 0.05
+
+prop.test(16, n = 30, p = 0.35, alternative = "greater", conf.level = 0.95 )
+</script>
+</div>
+            
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE-->     
+    <br/><br/>
+    
+    
+    
 <h2>Scatter Plots and Linear Regression</h2>
     
 <p>Coming soon...</p>   
-    
-<h2>Confidence Intervals and Hypothesis Tests</h2>
-    
-<p>Coming soon...</p>       
-
-    
-
    
     
   
