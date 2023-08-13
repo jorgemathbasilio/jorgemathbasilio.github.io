@@ -410,9 +410,42 @@ lines(ts(10*deaths),col="blue")
 
     <div class="content">
         <div class="announcementcontent">
+                        
+<p><b>Binomial Distributions</b> compute the robability of exactly \(x\) successess in \(n\) trials of a binomial probability distribution with probability of success \(p\).</p>
             
-Binomial Distributions:
+<p>Syntax in R: base distribution: \( binom() \).</p>
             
+<p>There's 4 prefixes: \( d \) (exactly), \( p \) (cumulative), \( q \) (quartile aka "inverse"), \( r \) (random sample).</p>
+
+<pre>
+Exactly:
+dbinom(x = #, size = #, prob = #) 
+    # computes the probability of exactly x successess 
+        # x = number of successess, 
+        # size = number of trials, 
+        # prob = probability of success of single trial
+ 
+Cumulative:
+pbinom(#, size = #, prob = #) 
+    # computes the probability of at most x = # successess (cumulative)
+    # note: need to remove 'x=' from first argument for cumulative
+</pre>
+            
+Inverse:<br>
+qbinom(p = #, size = #, prob = #)<br> 
+        # inverse binomial: finds z such that \( Pr(x &lt;= z) = p \) (right-tail)<br>
+
+<pre>
+Random samples:
+rbinom(n = #, size = #, prob = #) 
+    # generates required number of random values of given probability from a given sample
+    # n = number of observations     
+</pre>
+ 
+
+        
+
+
 <div class="sagecell-r">
 <script type="text/x-sage">
 # Binomial Distribution:
@@ -435,21 +468,89 @@ Binomial Distributions:
 <div class="sagecell-r">
 <script type="text/x-sage">
 # Binomial Distribution, "exactly x=a"
-dbinom(4, size=12, prob=0.2) # binomial probability with exactly x=4, n=12, p=0.2
+
+b1 <- dbinom(x = 4, size = 12, prob = 0.2) 
+    # binomial probability with exactly x=4, n=12, p=0.2
+cat("binompdf(n,p,x)=", b1, "\n") 
+
+# Binomial Distribution, cumulative "at most x=a"
+
+b2 <- pbinom(4, size = 12, prob = 0.2) 
+    # binomial probability with x=0,1,2,3,4, n=12, p=0.2 (cumulative)
+    # note: we can't put "x = " here like in the previous example
+cat("binomcdf(n,p,x) =", b2, "\n") 
+
+# Binomial Distribution, inverse find z
+z1 <- qbinom(p = 0.2, size = 12, prob = 0.5) 
+    # z score such that Pr( x <= z) = 0.2 with binom prob=0.5
+    # tells us numbers of "heads" out of 12 flips to get probability 0.2
+cat("inverse Binomial =", z1)
+
+print("done")
+</script>
+</div>
+
+            
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Binomial Distribution, take a random sample
+
+rbinom(n = 50, size = 100, prob = 0.5) 
+    # 50 observations (random samples) from 100 trials with prob=0.5
+
+# Binomial Distribution, take a random sample
+
+x <- rbinom(n = 50, size = 100, prob = 0.5) 
+    # 50 observations (random samples) from 100 trials with prob=0.5
+summary(x)
+hist(x)
+</script>
+</div>
+
+<!--            
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Binomial Distribution:
+
+# in short: 
+# base distribution: binom()
+# there's 4 prefixes: d (exactly), p (cumulative), q (quartile aka "inverse"), r (random sample)
+
+# dbinom(x, size, prob) # probability of exactly x successess 
+    # x = number of successess, 
+    # size = number of trials, 
+    # prob = probability of success of single trial
+# pbinom(x, size, prob) # probability of at most x successess (cumulative)
+# qbinom(p, size, prob) # inverse binomial: finds z such that Pr(x <= z) = p (right-tail)
+# rbinom(n, size, prob) # generates required number of random values of given probability from a given sample
+    # n = number of observations 
+</script>
+</div>               
+            
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Binomial Distribution, "exactly x=a"
+
+dbinom(x = 4, size = 12, prob = 0.2) 
+    # binomial probability with exactly x=4, n=12, p=0.2
 </script>
 </div> 
     
 <div class="sagecell-r">
 <script type="text/x-sage">
 # Binomial Distribution, cumulative "at most x=a"
-pbinom(4, size=12, prob=0.2) # binomial probability with x=0,1,2,3,4, n=12, p=0.2 (cumulative)
+
+pbinom(x = 4, size = 12, prob = 0.2) 
+    # binomial probability with x=0,1,2,3,4, n=12, p=0.2 (cumulative)
 </script>
 </div>   
     
 <div class="sagecell-r">
 <script type="text/x-sage">
 # Binomial Distribution, inverse find z
-qbinom(0.2, size=12, prob=0.5) # z score such that Pr( x <= z) = 0.2 with binom prob=0.5
+
+qbinom(p = 0.2, size = 12, prob = 0.5) 
+    # z score such that Pr( x <= z) = 0.2 with binom prob=0.5
     # tells us numbers of "heads" out of 12 flips to get probability 0.2
 </script>
 </div>       
@@ -457,18 +558,23 @@ qbinom(0.2, size=12, prob=0.5) # z score such that Pr( x <= z) = 0.2 with binom 
 <div class="sagecell-r">
 <script type="text/x-sage">
 # Binomial Distribution, take a random sample
-rbinom(50, size=100, prob=0.5) # 50 observations (random samples) from 100 trials with prob=0.5
+
+rbinom(n = 50, size = 100, prob = 0.5) 
+    # 50 observations (random samples) from 100 trials with prob=0.5
 </script>
 </div>       
     
 <div class="sagecell-r">
 <script type="text/x-sage">
 # Binomial Distribution, take a random sample
-x <- rbinom(50, size=100, prob=0.5) # 50 observations (random samples) from 100 trials with prob=0.5
+
+x <- rbinom(n = 50, size = 100, prob = 0.5) 
+    # 50 observations (random samples) from 100 trials with prob=0.5
 summary(x)
 hist(x)
 </script>
 </div>
+-->    
             
         </div>
     </div>
@@ -553,7 +659,7 @@ One Proportion p-test. You can ignore
 # alternative = "two.sided", "less", "greater" (choose one)
 # level of significance = LOS = 0.05, confidence level = 1 - LOS = 1 - 0.05
 
-prop.test(16, n = 30, p = 0.35, alternative = "greater", conf.level = 0.95 )
+prop.test(x = 16, n = 30, p = 0.35, alternative = "greater", conf.level = 0.95 )
 </script>
 </div>
             
