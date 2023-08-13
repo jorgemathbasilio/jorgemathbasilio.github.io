@@ -729,7 +729,16 @@ h2 {
      100% { opacity: 1.5; }
      }
 
+/* my code blocks */
+.mycode {
+    background-color: #d1eaea;
+    /*background-color: #f0f0f5;*/
+}
 
+code {
+    background-color: #d1eaea;
+    padding: 1px;
+}
 
 
 

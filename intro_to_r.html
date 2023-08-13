@@ -214,7 +214,7 @@ Of course, you can also use this website for quick R Calculations without loggin
 <div class="sagecell-r">
 <script type="text/x-sage">
 # try me!
-32+43
+32 + 43
 </script>
 </div>
 <br/><br/>
@@ -411,60 +411,52 @@ lines(ts(10*deaths),col="blue")
     <div class="content">
         <div class="announcementcontent">
                         
-<p><b>Binomial Distributions</b> compute the robability of exactly \(x\) successess in \(n\) trials of a binomial probability distribution with probability of success \(p\).</p>
+<p><b>Binomial Distributions</b> compute the probability of exactly \(x\) successess in \(n\) trials of a binomial probability distribution with probability of success \(p\).</p>
             
-<p>Syntax in R: base distribution: \( binom() \).</p>
+<p>Syntax in R: base distribution: <code>binom()</code>.</p>
             
-<p>There's 4 prefixes: \( d \) (exactly), \( p \) (cumulative), \( q \) (quartile aka "inverse"), \( r \) (random sample).</p>
+<p>There's 4 prefixes: <code>d</code> (exactly), <code>p</code> (cumulative), <code>q</code> (quartile aka "inverse"), <code>r</code> (random sample).</p>
 
-<pre>
 Exactly:
+<div class="mycode">
+<pre>
 dbinom(x = #, size = #, prob = #) 
     # computes the probability of exactly x successess 
         # x = number of successess, 
         # size = number of trials, 
         # prob = probability of success of single trial
- 
+</pre>
+</div>
+
 Cumulative:
+<div class="mycode">
+<pre>
 pbinom(#, size = #, prob = #) 
     # computes the probability of at most x = # successess (cumulative)
     # note: need to remove 'x=' from first argument for cumulative
 </pre>
+</div>
             
-Inverse:<br>
-qbinom(p = #, size = #, prob = #)<br> 
-        # inverse binomial: finds z such that \( Pr(x &lt;= z) = p \) (right-tail)<br>
 
+Inverse:        
+<div class="mycode">
 <pre>
+qbinom(p = #, size = #, prob = #)
+    # inverse binomial: finds z such that P(x &lt;= z) = p (right-tail)
+</pre>
+</div>
+
 Random samples:
+<div class="mycode">
+<pre>
 rbinom(n = #, size = #, prob = #) 
     # generates required number of random values of given probability from a given sample
     # n = number of observations     
 </pre>
- 
+</div>
 
-        
+Here are a few examples. Hit the 'Evaluate R Code' button to see the outputs.
 
-
-<div class="sagecell-r">
-<script type="text/x-sage">
-# Binomial Distribution:
-
-# in short: 
-# base distribution: binom()
-# there's 4 prefixes: d (exactly), p (cumulative), q (quartile aka "inverse"), r (random sample)
-
-# dbinom(x, size, prob) # probability of exactly x successess 
-    # x = number of successess, 
-    # size = number of trials, 
-    # prob = probability of success of single trial
-# pbinom(x, size, prob) # probability of at most x successess (cumulative)
-# qbinom(p, size, prob) # inverse binomial: finds z such that Pr(x <= z) = p (right-tail)
-# rbinom(n, size, prob) # generates required number of random values of given probability from a given sample
-    # n = number of observations 
-</script>
-</div>               
-            
 <div class="sagecell-r">
 <script type="text/x-sage">
 # Binomial Distribution, "exactly x=a"
@@ -485,8 +477,6 @@ z1 <- qbinom(p = 0.2, size = 12, prob = 0.5)
     # z score such that Pr( x <= z) = 0.2 with binom prob=0.5
     # tells us numbers of "heads" out of 12 flips to get probability 0.2
 cat("inverse Binomial =", z1)
-
-print("done")
 </script>
 </div>
 
@@ -505,6 +495,13 @@ x <- rbinom(n = 50, size = 100, prob = 0.5)
 summary(x)
 hist(x)
 </script>
+</div>
+
+<div class="sagecell-r">
+    <script type="text/x-sage">
+    # Your code here!
+
+    </script>
 </div>
 
 <!--            
@@ -595,10 +592,10 @@ hist(x)
     </div>
     </button>
 
-    <div class="content">
+    <div class="content-show">
         <div class="announcementcontent">
             
-Continuous Distributions:
+OLD Continuous Distributions:
             
 <div class="sagecell-r">
 <script type="text/x-sage">
@@ -612,6 +609,103 @@ Continuous Distributions:
 # with each distribution there's four prefixes:
     # d (exactly), p (cumulative), q (quartile aka "inverse"), r (random sample)
 </script>
+</div>
+
+END OLD
+
+<p><b>Continuous Distributions</b> compute the probability of a range of values from a given distribution.</p>
+
+<p>Let's start with the Normal Distributions.</p>
+            
+<p>Syntax in R: base distribution: <code>norm()</code>.</p>
+            
+<p>There's 4 prefixes: <code>d</code> (exactly), <code>p</code> (cumulative), <code>q</code> (quartile aka "inverse"), <code>r</code> (random sample).</p>
+
+Exactly:
+<div class="mycode">
+<pre>
+norm(x = #, size = #, prob = #) 
+    # computes the probability of exactly x successess 
+        # x = number of successess, 
+        # size = number of trials, 
+        # prob = probability of success of single trial
+</pre>
+</div>
+
+Cumulative:
+<div class="mycode">
+<pre>
+pbinom(#, size = #, prob = #) 
+    # computes the probability of at most x = # successess (cumulative)
+    # note: need to remove 'x=' from first argument for cumulative
+</pre>
+</div>
+            
+
+Inverse:        
+<div class="mycode">
+<pre>
+qbinom(p = #, size = #, prob = #)
+    # inverse binomial: finds z such that P(x &lt;= z) = p (right-tail)
+</pre>
+</div>
+
+Random samples:
+<div class="mycode">
+<pre>
+rbinom(n = #, size = #, prob = #) 
+    # generates required number of random values of given probability from a given sample
+    # n = number of observations     
+</pre>
+</div>
+
+Here are a few examples. Hit the 'Evaluate R Code' button to see the outputs.
+
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Binomial Distribution, "exactly x=a"
+
+b1 <- dbinom(x = 4, size = 12, prob = 0.2) 
+    # binomial probability with exactly x=4, n=12, p=0.2
+cat("binompdf(n,p,x)=", b1, "\n") 
+
+# Binomial Distribution, cumulative "at most x=a"
+
+b2 <- pbinom(4, size = 12, prob = 0.2) 
+    # binomial probability with x=0,1,2,3,4, n=12, p=0.2 (cumulative)
+    # note: we can't put "x = " here like in the previous example
+cat("binomcdf(n,p,x) =", b2, "\n") 
+
+# Binomial Distribution, inverse find z
+z1 <- qbinom(p = 0.2, size = 12, prob = 0.5) 
+    # z score such that Pr( x <= z) = 0.2 with binom prob=0.5
+    # tells us numbers of "heads" out of 12 flips to get probability 0.2
+cat("inverse Binomial =", z1)
+</script>
+</div>
+
+            
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Binomial Distribution, take a random sample
+
+rbinom(n = 50, size = 100, prob = 0.5) 
+    # 50 observations (random samples) from 100 trials with prob=0.5
+
+# Binomial Distribution, take a random sample
+
+x <- rbinom(n = 50, size = 100, prob = 0.5) 
+    # 50 observations (random samples) from 100 trials with prob=0.5
+summary(x)
+hist(x)
+</script>
+</div>
+
+<div class="sagecell-r">
+    <script type="text/x-sage">
+    # Your code here!
+
+    </script>
 </div>
             
         </div>
