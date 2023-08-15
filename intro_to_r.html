@@ -403,7 +403,7 @@ lines(ts(10*deaths),col="blue")
     <button class="collapsible">
     <div class="announcementtitle">
         <h4>
-        Discrete Distributions
+        Binomial Distribution (Discrete Distribution)
         </h4>  
     </div>
     </button>
@@ -455,6 +455,8 @@ rbinom(n = #, size = #, prob = #)
 </pre>
 </div>
 
+<h4>Examples:</h4>
+
 Here are a few examples. Hit the 'Evaluate R Code' button to see the outputs.
 
 <div class="sagecell-r">
@@ -463,20 +465,31 @@ Here are a few examples. Hit the 'Evaluate R Code' button to see the outputs.
 
 b1 <- dbinom(x = 4, size = 12, prob = 0.2) 
     # binomial probability with exactly x=4, n=12, p=0.2
-cat("binompdf(n,p,x)=", b1, "\n") 
+print("binompdf(n,p,x) = ")
+print(b1)
+</script>
+</div>
 
+<div class="sagecell-r">
+<script type="text/x-sage">
 # Binomial Distribution, cumulative "at most x=a"
 
 b2 <- pbinom(4, size = 12, prob = 0.2) 
     # binomial probability with x=0,1,2,3,4, n=12, p=0.2 (cumulative)
     # note: we can't put "x = " here like in the previous example
-cat("binomcdf(n,p,x) =", b2, "\n") 
+print("binocpdf(n,p,x) = ")
+print(b2)
+</script>
+</div>
 
+<div class="sagecell-r">
+<script type="text/x-sage">
 # Binomial Distribution, inverse find z
 z1 <- qbinom(p = 0.2, size = 12, prob = 0.5) 
     # z score such that Pr( x <= z) = 0.2 with binom prob=0.5
     # tells us numbers of "heads" out of 12 flips to get probability 0.2
-cat("inverse Binomial =", z1)
+print("inverse Binomial =")
+print(z1)
 </script>
 </div>
 
@@ -595,25 +608,9 @@ hist(x)
     <div class="content-show">
         <div class="announcementcontent">
             
-OLD Continuous Distributions:
-            
-<div class="sagecell-r">
-<script type="text/x-sage">
-# Continuous Distributions:
-# norm()  # normal distribution
-# unif()  # uniform continuous distribution
-# t()     # student's t-distribution
-# F()     # F-distribution
-# chisq() # Chi-Squared distribution
-
-# with each distribution there's four prefixes:
-    # d (exactly), p (cumulative), q (quartile aka "inverse"), r (random sample)
-</script>
-</div>
-
-END OLD
-
 <p><b>Continuous Distributions</b> compute the probability of a range of values from a given distribution.</p>
+
+<h4>Normal Distrbutions</h4>
 
 <p>Let's start with the Normal Distributions.</p>
             
@@ -621,26 +618,132 @@ END OLD
             
 <p>There's 4 prefixes: <code>d</code> (exactly), <code>p</code> (cumulative), <code>q</code> (quartile aka "inverse"), <code>r</code> (random sample).</p>
 
-Exactly:
+The <b>Normal Distribution</b>, 
+$$
+    N(\mu,\sigma),
+$$ 
+depends on the mean \(\mu\) and standard deviation \(\sigma\). It's <b>probability density function (pdf)</b> is given by:
+$$
+    f(x) = \frac{1}{\sqrt{2\pi \sigma}} \exp\left[ -\frac{(x-\mu)^2}{2\sigma^2}\right]
+$$
+
+<p>In R, to get the exact value of $f(x)$, use <code>dnorm</code>.</p>
 <div class="mycode">
 <pre>
-norm(x = #, size = #, prob = #) 
+dnorm(x = #, mean = #, sd = #) 
     # computes the probability of exactly x successess 
-        # x = number of successess, 
-        # size = number of trials, 
-        # prob = probability of success of single trial
+        # x = exact value of x (any real number), 
+        # mean = mean of normal distribution
+        # sd = standard deviation of normal distribution
 </pre>
 </div>
 
-Cumulative:
+<p>We don't really need to know or use <code>dnorm</code> unless we want to plot the curve.</p>
+
+<p>To compute <b>probabilities</b> of intervals of a normal distribution, we use the 
+    <b>cumulative distribution</b>. In math notation, if \(X \sim N(\mu,\sigma) \) then to compute
+$$
+    P(X \le b) \qquad \text{(i.e. less than b--left tail)}
+$$
+we use: 
+</p>
+
 <div class="mycode">
-<pre>
-pbinom(#, size = #, prob = #) 
-    # computes the probability of at most x = # successess (cumulative)
-    # note: need to remove 'x=' from first argument for cumulative
+<pre>   
+pnorm(b, mean = #, sd = #) 
+    # computes the cumulative probability P(X <= b)
+        # mean = mean of normal distribution
+        # sd = standard deviation of normal distribution
+        # lower value = -oo 
+        # higher value = b
 </pre>
 </div>
-            
+
+<p>
+Often, we need other calculations using the normal curve. For example:
+
+$$
+    P(a \le X \le b) \qquad \text{(i.e. between a and b)}
+$$
+or
+$$
+    P(X \ge a) \qquad \text{(i.e. greater than a--right tail)}
+$$
+</p>
+
+<p>Thanfully, with a bit of basic geometry (drawing pictures helps!), 
+    we can use the cumulative from above to accomplish the other two probabilities.
+</p>
+
+<div class="mycode">
+<pre>
+# P(a <= X <= b): 
+pnorm(b, mean = #, sd = #) - dnorm(a, mean = #, sd = #) 
+    # computes the probability under a normal distribution between the values of a and b
+    # lower value = a 
+    # higher value = b
+</pre>
+</div>
+     
+<div class="mycode">
+<pre>
+# P(X >= a):   
+pnorm(a, mean = #, sd = #, lower.tail = FALSE) 
+    # computes the probability under a normal distribution for the values greater than a
+    # lower value = a 
+    # higher value = +oo 
+</pre>
+</div>
+
+<h4>Examples:</h4>
+
+Here are a few examples. Hit the 'Evaluate R Code' button to see the outputs.
+
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Normal Distribution
+
+n1 <- pnorm(2.01, mean = 0, sd = 1) 
+    # computes the cumulative probability P(X <= b) (with b=2.01) of standard normal
+    # lower value = -oo 
+    # higher value = b
+print("P(X <= b) = ") 
+print(n1)
+</script>
+</div>
+
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Normal Distribution
+
+n2 <- pnorm(2.01, mean = 0, sd = 1) - pnorm(-0.65, mean = 0, sd = 1) 
+    # computes the probability P(-0.65 <= X <= 2.01) of standard normal
+    # lower value = a 
+    # higher value = b 
+print("P(a <= X <= b) = ")
+print(n2)
+</script>
+</div>
+
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Normal Distribution
+
+n3 <- pnorm(2.01, mean = 0, sd = 1, lower.tail = FALSE) 
+    # computes the probability P(X >= 2.01) of standard normal
+    # lower value = a = -0.65
+    # higher value = b = +oo
+print("P(X >= a) = ")
+print(n3)
+</script>
+</div>
+
+
+
+
+
+
+<h4>Inverse Normal</h4>
 
 Inverse:        
 <div class="mycode">
@@ -707,18 +810,31 @@ hist(x)
 
     </script>
 </div>
-            
+
+<h4>Additional Continuous Distributions</h4>
+
+<p>In addition to the normal distribution, R has other distributions programmed. 
+    In the code below, I'll reference a few of the distributions we use in our Intro Statistics course.</p>
+<div class="sagecell-r">
+    <script type="text/x-sage">
+    # Continuous Distributions:
+    # norm()  # normal distribution
+    # unif()  # uniform continuous distribution
+    # t()     # student's t-distribution
+    # F()     # F-distribution
+    # chisq() # Chi-Squared distribution
+    
+    # with each distribution there's four prefixes:
+        # d (exactly), p (cumulative), q (quartile aka "inverse"), r (random sample)
+    </script>
+</div>
+
         </div>
     </div>
     <!-- END Announcement post COLLAPSIBLE-->     
     <br/><br/>
     
-    
-    
-    
-    
-    
-    
+
   
     
 <h1>Inference</h1>
