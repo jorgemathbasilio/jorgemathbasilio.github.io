@@ -748,59 +748,38 @@ print(n3)
 Inverse:        
 <div class="mycode">
 <pre>
-qbinom(p = #, size = #, prob = #)
-    # inverse binomial: finds z such that P(x &lt;= z) = p (right-tail)
-</pre>
-</div>
-
-Random samples:
-<div class="mycode">
-<pre>
-rbinom(n = #, size = #, prob = #) 
-    # generates required number of random values of given probability from a given sample
-    # n = number of observations     
+qnorm(p = #, mean = #, sd = #, lower.tail = FALSE)
+    # inverse normal: finds z such that P(x &lt;= z) = p (right-tail)
 </pre>
 </div>
 
 Here are a few examples. Hit the 'Evaluate R Code' button to see the outputs.
 
+<h4>Examples:</h4>
+
+Here are a few examples. Hit the 'Evaluate R Code' button to see the outputs.
+
 <div class="sagecell-r">
 <script type="text/x-sage">
-# Binomial Distribution, "exactly x=a"
+# Inverse Normal Distribution
 
-b1 <- dbinom(x = 4, size = 12, prob = 0.2) 
-    # binomial probability with exactly x=4, n=12, p=0.2
-cat("binompdf(n,p,x)=", b1, "\n") 
-
-# Binomial Distribution, cumulative "at most x=a"
-
-b2 <- pbinom(4, size = 12, prob = 0.2) 
-    # binomial probability with x=0,1,2,3,4, n=12, p=0.2 (cumulative)
-    # note: we can't put "x = " here like in the previous example
-cat("binomcdf(n,p,x) =", b2, "\n") 
-
-# Binomial Distribution, inverse find z
-z1 <- qbinom(p = 0.2, size = 12, prob = 0.5) 
-    # z score such that Pr( x <= z) = 0.2 with binom prob=0.5
-    # tells us numbers of "heads" out of 12 flips to get probability 0.2
-cat("inverse Binomial =", z1)
+invn1 <- qnorm(0.05, mean = 0, sd = 1, lower.tail = FALSE) 
+    # computes the inverse normal z which is critical value for probability p
+    # z is such that P(X => z) = p (i.e right-tail has probability p for the z-score z)
+print("inverse normal(p,mean,sd, right-tail) = ") 
+print(invn1)
 </script>
 </div>
 
-            
 <div class="sagecell-r">
-<script type="text/x-sage">
-# Binomial Distribution, take a random sample
+    <script type="text/x-sage">
+# Inverse Normal Distribution
 
-rbinom(n = 50, size = 100, prob = 0.5) 
-    # 50 observations (random samples) from 100 trials with prob=0.5
-
-# Binomial Distribution, take a random sample
-
-x <- rbinom(n = 50, size = 100, prob = 0.5) 
-    # 50 observations (random samples) from 100 trials with prob=0.5
-summary(x)
-hist(x)
+invn2 <- qnorm(0.05, mean = 0, sd = 1, lower.tail = TRUE) 
+    # computes the inverse normal z which is critical value for probability p
+    # z is such that P(X <= z) = p (i.e. left-tail has probability p for the z-score z)
+print("inverse normal(p,mean,sd, left-tail) = ") 
+print(invn2)
 </script>
 </div>
 
