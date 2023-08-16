@@ -605,7 +605,7 @@ hist(x)
     </div>
     </button>
 
-    <div class="content-show">
+    <div class="content">
         <div class="announcementcontent">
             
 <p><b>Continuous Distributions</b> compute the probability of a range of values from a given distribution.</p>
@@ -795,17 +795,29 @@ print(invn2)
 <p>In addition to the normal distribution, R has other distributions programmed. 
     In the code below, I'll reference a few of the distributions we use in our Intro Statistics course.</p>
 <div class="sagecell-r">
-    <script type="text/x-sage">
-    # Continuous Distributions:
-    # norm()  # normal distribution
-    # unif()  # uniform continuous distribution
-    # t()     # student's t-distribution
-    # F()     # F-distribution
-    # chisq() # Chi-Squared distribution
-    
-    # with each distribution there's four prefixes:
-        # d (exactly), p (cumulative), q (quartile aka "inverse"), r (random sample)
-    </script>
+<script type="text/x-sage">
+# Continuous Distributions:
+# norm()  # normal distribution
+# unif()  # uniform continuous distribution
+# t()     # student's t-distribution
+# F()     # F-distribution
+# chisq() # Chi-Squared distribution
+
+# with each distribution there's four prefixes:
+    # d (exactly), p (cumulative), q (quartile aka "inverse"), r (random sample)
+
+# Example: student's t-distribution
+# dt(x, df)
+# pt(q, df, lower.tail = TRUE)
+# qt(p, df, lower.tail = TRUE)
+# rt(n, df)  
+
+invt1 <- qt(0.05, 15, lower.tail = FALSE)
+    # prob = p = 0.05
+    # degrees of freedom = df = 15
+print("inverse t(p, df, right-tailed)")
+print(invt1)
+</script>
 </div>
 
         </div>
