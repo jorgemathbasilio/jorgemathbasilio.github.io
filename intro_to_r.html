@@ -290,30 +290,105 @@ sample(1:22, size=7, replace=FALSE) # without replacement
     <div class="content-show">
         <div class="announcementcontent">
 
-Here's a basic example showing how to save a simple data set \(\{1,2,2,3,3,3,4,4,4,4,5,5,5,5,5,10\}\) 
-and store it to the variable name \(\text{my_cool_data}\).<br/>
+<h4>Entering Data</h4>
+
+<p>First, we must learn how to enter <b>data</b> into <code>R</code>.</p>
+
+<div class="mycode">
+<pre>
+my_data <- c(number1, number2, etc)
+
+my_data
+</pre>
+</div>    
+
+<p>
+The first line of code does a few things. 
+First, we give the data a name, <code>my_data</code>. 
+The symbols <code><-</code> is used for <b>assignment</b>.
+Next, we specify the list of data \( number1, number2, \ldots \) using the <b>vector function</b> <code>c()</code>.
+After the first line is complete, <code>R</code> stores this information in the memory.
+</p>
+
+<p>The second line then tells <code>R</code> to show or display the data!</p>
+
+<p>Try removing the second line and see what happens.</p>
+
+<p>
+Here's a basic example showing how to save a simple data set 
+
+$$
+\{1,2,2,3,3,3,4,4,4,4,5,5,5,5,5,10\}
+$$
+and store it to the variable name <code>my_cool_data</code>.</p>
             
 <div class="sagecell-r">
 <script type="text/x-sage">
 # you can edit this!
 # entering and save data to a variable called `my_cool_data`
 my_cool_data <- c(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5,10) 
-# mean
-mean(my_cool_data)
+
+my_cool_data
+</script>
+</div>  
+
+<p>Note that hashtags (&#35;) are "comments" and are meant for humans to read but they are ignored by the program.</p>
+            
+<p>Also, you can edit these examples to make your own computations below by clicking “Evaluate”.</p> 
+
+
+
+<h4>Mean, Median, Variance, Standard Deviation</h4>
+
+<p>
+Once data is entered into R, the measures of center and variation are easy!
+</p>
+
+<div class="mycode">
+<pre>
+my_data <- c(number1, number 2, etc)
+
+mean(my_data)   # compute the mean of my_data
+median(my_data) # compute the median of my_data
+
+var(my_data)    # compute the variance of my_data
+sd(my_data)     # compute the standard deviation of my_data
+</pre>
+</div>               
+            
+
+<div class="sagecell-r">
+<script type="text/x-sage">
+# you can edit this!
+# entering and save data to a variable called `my_cool_data`
+my_cool_data <- c(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5,10) 
+
+mean(my_cool_data) # mean
+
+median(my_cool_data) # median
+var(my_cool_data)    # variance
+sd(my_cool_data)     # standard deviation
+</script>
+</div>  
+
+<p>Notice it only shows one mumber in the output. 
+This is a bit annoying but we will need to deal with this qwirk.
+One way to handle this is to comment out three of the line so it only displays one at a time.</p>
+
+<div class="sagecell-r">
+<script type="text/x-sage">
+# you can edit this!
+# entering and save data to a variable called `my_cool_data`
+my_cool_data <- c(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5,10) 
+
+mean(my_cool_data) # mean
+
+#median(my_cool_data) # median
+#var(my_cool_data)    # variance
+#sd(my_cool_data)     # standard deviation
 </script>
 </div>  
     
-Note that hashtags (&#35;) are "comments" and are meant for humans to read but they are ignored by the program.<br/>
-            
-You can edit these examples to make your own computations below by clicking “Evaluate”. Try to compute the following:<br/>              
-            
-    <ol>
-        <li>Mean: mean()</li>  
-        <li>Median: median()</li>
-        <li>Variance: var()</li>
-        <li>Standard Deviation: sd()</li>
-    </ol>
-            
         </div>
     </div>
     <!-- END Announcement post COLLAPSIBLE--> 
@@ -322,6 +397,17 @@ You can edit these examples to make your own computations below by clicking “E
     
     
     
+
+
+
+
+
+
+
+
+
+
+
 <!-- ANNOUNCEMENT COLLAPSIBLE -->    
     <button class="collapsible">
     <div class="announcementtitle">
@@ -331,30 +417,113 @@ You can edit these examples to make your own computations below by clicking “E
     </div>
     </button>
 
-    <div class="content-show">
+    <div class="content">
         <div class="announcementcontent">
 
-We can create histograms. Note that R automatically decides on the width of the bins/classes.<br/><br/>
-            
+<h4>Histograms</h4>  
+
+<p> To create a <b>histogram</b>, first enter your data and then use the <code>hist()</code> function. </p>
+
+<div class="mycode">
+<pre>
+# Histogram (let R handle everything)
+hist(data)
+</pre>
+</div>
+
+<p>R let you customize almost everything. Here's a simple example:</p>
+
+<div class="mycode">
+<pre>
+hist( data,                             # data
+      main = "A lovely Title",          # add a title
+      xlab = "x values are..."          # specify labels on x-axis
+      xlim = c(min,max),                # specify desired range
+      breaks = c(seq(list of values)),  # classes / bins
+      col = c("blue", "red", etc),      # colors of bars
+      freq = FALSE,                     # TRUE by default, when false gives relative freq
+    )
+</pre>
+</div>
+
+<p>Note that R automatically decides on the width of the bins/classes.</p>
+
+
 <div class="sagecell-r">
 <script type="text/x-sage">
 # Histogram
 textbooks <- c( 35, 42, 37, 60, 50, 42, 50, 16, 58, 39, 33, 39, 23, 53, 51, 48, 41, 49, 62, 40, 45, 37, 62, 30, 23)
-hist(textbooks, breaks=c(seq(10,70,10)), col = c("blue", "red", "gray", "blue", "red", "gray"))
+hist(textbooks) # let R handle everything
 </script>
 </div>
 
-To create a dot plot:
+<p>An example with a few direct specifications:</p>
+
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Histogram
+textbooks <- c( 35, 42, 37, 60, 50, 42, 50, 16, 58, 39, 33, 39, 23, 53, 51, 48, 41, 49, 62, 40, 45, 37, 62, 30, 23)
+hist(textbooks, 
+        main = "Histogram: Textbok Data",      # add a title
+        xlab = "Textbook prices",              # specify labels on x-axis
+        xlim = c(0,100),                       # specify range
+        breaks = 10,                           # chose number of classes/bins
+        col = c("pink")
+    )
+</script>
+</div>
+
+
+
+
+
+
+<h4>Dot Plots</h4>
+
+<p> To create a <b>dot plot</b>>, first you need to load a special package called <b>plotrix</b>. 
+    A package is a bit of code someone else wrote so we can use it!</p>
+<p> Next, enter your data and then use the function <code>dotplot.mtb()</code>.</p>
+ 
+<div class="mycode">
+<pre>
+# Dot Plot
+library(plotrix) # load a special package
+
+dotplot.mtb( data ) # dot plot
+</pre>
+</div>
+
+<p>Here's a simple example:</p>
 
 <div class="sagecell-r">
 <script type="text/x-sage">
 # Dot Plot
+library(plotrix) # need to use a special package
+
 textbooks <- c( 35, 42, 37, 60, 50, 42, 50, 16, 58, 39, 33, 39, 23, 53, 51, 48, 41, 49, 62, 40, 45, 37, 62, 30, 23)
-# TODO
+
+dotplot.mtb(textbooks) # dot plot
 </script>
 </div>
     
-<p>Suppose that we want to a make a stem-and-leaf plot of Ruth's homeruns:</p>          
+
+
+
+
+
+<h4>Stem-and-Leaf Plots</h4>
+
+<p> To create a <b>stem-and-leaf pot</b>>, use the <code>stem()</code> function.</p>
+ 
+<div class="mycode">
+<pre>
+# Stem-Leaf Plot
+
+stem( data ) # stem-leaf plot
+</pre>
+</div>
+
+<p>Suppose that we want to a make a stem-and-leaf plot of Babe Ruth's homeruns:</p>          
             
 <div class="sagecell-r">
 <script type="text/x-sage">
@@ -362,27 +531,160 @@ ruth <- c(22, 25, 34, 35, 41, 41, 46, 46, 46, 47, 49, 54, 54, 59, 60)
 stem(ruth)
 </script>
 </div> 
-            
+
+
+
+
+
+
+  
+
+<h4>Pie Charts</h4>
+
+<p> To create a <b>pie chart</b>>, use the <code>pie()</code> function.</p>
+ 
+<div class="mycode">
+<pre>
+# Pie Charts
+
+slices <- c(list of values)  # enter data of the 'slices'
+lbls <- c("category1", "category2", etc) # enter label names for categories matching slice data
+pie( slices, 
+     label = lbls, 
+     main = "Add Title"
+     )
+</pre>
+</div>
+
 <p>We can create pie charts:</p>        
             
 <div class="sagecell-r">
 <script type="text/x-sage">
 slices <- c(4, 10 , 37, 8, 1)
 lbls <- c("A", "B", "C", "D", "F")
-pie(slices, labels = lbls, main="Final Exam Grades for a Statistics Course")
+pie(slices, 
+    labels = lbls, 
+    main = "Final Exam Grades for a Statistics Course"
+    )
 </script>
 </div> 
+
+
+
+<h4>One more example: Time Series</h4>
  
-<p>We can plot the time series for the 1918–1919 influenze epidemic.  The plot for the number of cases is in red, and the plot for 10 times the number of deaths is in blue.</p>
+<p>We can plot the time series for the 1918-1919 influenze epidemic. 
+The plot for the number of cases is in red, and the plot for 10 times the number of deaths is in blue.</p>
     
 <div class="sagecell-r">
 <script type="text/x-sage">
 cases <- c(36, 531, 4233, 8682, 7164, 2229, 600, 164, 57, 722, 1517, 1828, 1539, 2416, 3148, 3465, 1440)
 deaths <- c(0, 0, 130, 552, 738, 414, 198, 90, 56, 50, 71, 137, 178, 194, 290, 310, 149) 
+
 plot(ts(cases), col="red", main="Influenza Epidemic")
 lines(ts(10*deaths),col="blue")
 </script>
 </div>              
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE-->     
+<br/><br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ANNOUNCEMENT COLLAPSIBLE -->    
+<button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Five Number Summaries and Box-Whisker Plots
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content-show">
+        <div class="announcementcontent">
+
+<h4>Five Number Summary</h4>  
+
+<p> To create a <b>five number summary</b>, first enter your data and then use the <code>summary()</code> function. </p>
+
+<div class="mycode">
+<pre>
+# Five Number Summary
+summary(data)
+</pre>
+</div>
+
+
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Five Number Summary
+textbooks <- c( 35, 42, 37, 60, 50, 42, 50, 16, 58, 39, 33, 39, 23, 53, 51, 48, 41, 49, 62, 40, 45, 37, 62, 30, 23)
+
+summary(textbooks) 
+</script>
+</div>
+
+
+
+
+<h4>Box-Whisker Plots</h4>
+
+<p> To create a <b>box-whisker plot</b>, use the <code>boxplot()</code> function.</p>
+ 
+<div class="mycode">
+<pre>
+# Box Plot
+
+boxplot(data)
+</pre>
+</div>
+
+<p>Simple box plot example:</p>        
+            
+<div class="sagecell-r">
+<script type="text/x-sage">
+textbooks <- c( 35, 42, 37, 60, 50, 42, 50, 16, 58, 39, 33, 39, 23, 53, 51, 48, 41, 49, 62, 40, 45, 37, 62, 30, 23)
+
+boxplot(textbooks) 
+</script>
+</div> 
+ 
+<p>Note that it displays the boxplot vertically by default. Also, it identifies <b>outliers</b> by default.</p>
+
+<p>Here is another example with more options specified:</p>
+
+<div class="sagecell-r">
+<script type="text/x-sage">
+textbooks <- c( 35, 42, 37, 60, 50, 42, 50, 16, 58, 39, 33, 39, 23, 53, 51, 48, 41, 49, 62, 40, 45, 37, 62, 30, 23)
+
+boxplot(textbooks,
+    main = "Boxplot for Textbook Data", # title
+    horizontal = TRUE,                  # display boxplot horizontally
+    col = "orange",                     # color
+    outline = FALSE                     # FALSE does not show outliers   
+    )
+</script>
+</div> 
+
+
         </div>
     </div>
     <!-- END Announcement post COLLAPSIBLE-->     
@@ -395,6 +697,18 @@ lines(ts(10*deaths),col="blue")
 
     
   
+
+
+
+
+
+
+
+
+
+
+
+
 
     
     
@@ -606,6 +920,14 @@ hist(x)
     
     
     
+
+
+
+
+
+
+
+
 <!-- ANNOUNCEMENT COLLAPSIBLE -->    
     <button class="collapsible">
     <div class="announcementtitle">
