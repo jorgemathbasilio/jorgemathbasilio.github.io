@@ -217,8 +217,18 @@ Of course, you can also use this website for quick R Calculations without loggin
 32 + 43
 </script>
 </div>
-<br/><br/>
+<br/>
+<br/>
  
+
+
+
+
+
+
+
+
+
     
 <h1>Arithmetic</h1>   
     
@@ -249,6 +259,7 @@ Try the next few calculations in the cell above:
         </li>
     </ol>
     <br/>
+    <br/>
     
     
     
@@ -256,33 +267,24 @@ Try the next few calculations in the cell above:
     
 
     
-<h1>Random Samples</h1>      
-    
-<p>It is very easy to get all sorts of random samples in R.</p>   
-    
-<div class="sagecell-r">
-<script type="text/x-sage">
-# Random Sample
-# Pick 7 numbers at random that lie between 1 and 22.
-sample(1:22, size=7, replace=FALSE) # without replacement
-#sample(1:22, size=7, replace=TRUE) # with replacement
-</script>
-</div>     
-<br/><br/>    
+
     
   
     
-    
-<h1>Descriptive Stastistics</h1>    
-    
-<p>Click on the boxes below to see R code.</p>  
-    
-    
+
+
+
+
+
+
+
+<h1>Data Basics</h1>    
+
 <!-- ANNOUNCEMENT COLLAPSIBLE -->    
-    <button class="collapsible">
+<button class="collapsible">
     <div class="announcementtitle">
         <h4>
-        Mean, Median, Variance, Standard Deviation
+        Entering and Sorting Data
         </h4>  
     </div>
     </button>
@@ -367,8 +369,65 @@ my_cool_data <- c(5, 10, 10, 11, 15, 2, 4, 4, 5, 5, 5, 5, 7, 10)
 sort(my_cool_data) # sort increading by default
 </script>
 </div> 
+    
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE--> 
+    <br/>
+    <br/>
 
-<p>Here's an example with 50 numbers drawn from a random sample:</p>
+
+
+
+
+
+
+
+
+
+
+<!-- ANNOUNCEMENT COLLAPSIBLE -->    
+<button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Random Samples
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content-show">
+        <div class="announcementcontent">
+
+<h4>Random Samples</h4>
+
+<p>It is very easy to get all sorts of random samples in R.</p>   
+
+<div class="mycode">
+<pre>
+# Random Sample
+# Pick n numbers at random that lie between a and b.
+sample( a:b, size = n, replace = FALSE) # without replacement
+
+sample( a:b, size = n, replace = TRUE) # with replacement
+</pre>
+</div>    
+
+
+<p>Here's a basic example showing how to generate a random sample.
+</p>
+
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Random Sample
+# Pick 7 numbers at random that lie between 1 and 22.
+sample(1:22, size=7, replace=FALSE) # without replacement
+#sample(1:22, size=7, replace=TRUE) # with replacement
+</script>
+</div>  
+
+<p>Later, once we learn distributions we will learn how to generate random samples chosen from various distributions.</p>
+ 
+<p>Here's an example with 50 numbers drawn from a random sample, which is then sorted:</p>
 
 <div class="sagecell-r">
 <script type="text/x-sage">
@@ -377,9 +436,41 @@ my_cool_data <- sample( 1:100, size = 50, replace = TRUE)
 
 sort(my_cool_data) # sort increading by default
 </script>
-</div>  
+</div> 
+
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE-->     
+    <br/>
+    <br/>
 
 
+
+
+
+
+
+
+
+
+
+<h1>Descriptive Stastistics</h1>    
+    
+
+    
+<!-- ANNOUNCEMENT COLLAPSIBLE -->    
+    <button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Mean, Median, Variance, Standard Deviation
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content">
+        <div class="announcementcontent">
+
+ 
 <h4>Mean, Median, Variance, Standard Deviation</h4>
 
 <p>
@@ -434,7 +525,8 @@ mean(my_cool_data) # mean
         </div>
     </div>
     <!-- END Announcement post COLLAPSIBLE--> 
-    
+    <br/>
+    <br/> 
     
     
     
@@ -630,7 +722,8 @@ lines(ts(10*deaths),col="blue")
         </div>
     </div>
     <!-- END Announcement post COLLAPSIBLE-->     
-<br/><br/>
+    <br/>
+    <br/>
 
 
 
@@ -660,7 +753,7 @@ lines(ts(10*deaths),col="blue")
     </div>
     </button>
 
-    <div class="content-show">
+    <div class="content">
         <div class="announcementcontent">
 
 <h4>Five Number Summary</h4>  
@@ -730,7 +823,8 @@ boxplot(textbooks,
         </div>
     </div>
     <!-- END Announcement post COLLAPSIBLE-->     
-<br/><br/>
+    <br/>
+    <br/>
 
    
     
@@ -759,8 +853,7 @@ boxplot(textbooks,
     
     
 <h1>Distributions</h1>
-    
-<p>Click on the boxes below to learn how to use R.</p>   
+      
     
 <p>Just like the Ti84 calculator, it is easy to compute probabilities using common distributions.</p>    
     
@@ -955,7 +1048,8 @@ hist(x)
         </div>
     </div>
     <!-- END Announcement post COLLAPSIBLE--> 
-    
+    <br/>
+    <br/>
     
     
     
@@ -1197,10 +1291,21 @@ print(invt1)
         </div>
     </div>
     <!-- END Announcement post COLLAPSIBLE-->     
-    <br/><br/>
+    <br/>
+    <br/>
     
 
   
+
+
+
+
+
+
+
+
+
+
     
 <h1>Inference</h1>
     
@@ -1241,7 +1346,8 @@ prop.test(x = 16, n = 30, p = 0.35, alternative = "greater", conf.level = 0.95 )
         </div>
     </div>
     <!-- END Announcement post COLLAPSIBLE-->     
-    <br/><br/>
+    <br/>
+    <br/>
     
     
     
