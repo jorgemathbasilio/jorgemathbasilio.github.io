@@ -338,6 +338,48 @@ my_cool_data
 
 
 
+
+
+
+<h4>Sorting Data</h4>
+
+<p>Sorting a list into increasing (or decreasing) numbers is very useful and common. It is very tedious to do by hand.</p>
+
+<p>To <b>sort</b> a list into increasing order, use the <code>sort()</code> function.</p>
+
+<div class="mycode">
+<pre>
+my_data <- c(number1, number2, etc)
+
+sort(my_data) # sort increasing by default
+</pre>
+</div>    
+
+<p>
+    Here's a simple example:
+</p>
+
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Sort
+my_cool_data <- c(5, 10, 10, 11, 15, 2, 4, 4, 5, 5, 5, 5, 7, 10)
+
+sort(my_cool_data) # sort increading by default
+</script>
+</div> 
+
+<p>Here's an example with 50 numbers drawn from a random sample:</p>
+
+<div class="sagecell-r">
+<script type="text/x-sage">
+# create a vector with 50 random numbers from 1 to 100:
+my_cool_data <- sample( 1:100, size = 50, replace = TRUE)
+
+sort(my_cool_data) # sort increading by default
+</script>
+</div>  
+
+
 <h4>Mean, Median, Variance, Standard Deviation</h4>
 
 <p>
