@@ -1314,17 +1314,128 @@ print(invt1)
     <button class="collapsible">
     <div class="announcementtitle">
         <h4>
-        Confidence Intervals and Hypothesis Tests
+        Confidence Intervals 
         </h4>  
     </div>
     </button>
 
-    <div class="content">
+    <div class="content-show">
         <div class="announcementcontent">
             
-Confidence Intervals and Hypothesis Tests
-            
-One Proportion p-test. You can ignore             
+<p><b>Confidence Intervals</b>. Here we show how R will give you a confidence interval.</p>
+
+<h4>One Proportion Confidence Interval</h4>
+
+<p>Let's say we want to estimate the true population proportion, \(p\). 
+    We must first be given a <b>level of confidence</b>, \(CL\), 
+    which then lets us \(\alpha = 1-CL\).
+</p>
+
+<p>The <b>critical value</b> is then computed using the "inverse normal", which recall that in R is found using <code>qnorm</code>.</p>
+
+<div class="mycode">
+<pre>
+CL <- 0.95 # give CL 
+alpha <- 1-CL
+
+z_alpha <- qnorm(alpha/2, 0,1) # critical value = inverse normal ( alpha/2, 0, 1)
+</pre>
+</div>
+
+<p>
+Next, we state the <b>point estimate</b>, i.e. the sample proportion, \(\hat{p}\), and the 
+<b>standard error</b>, \(\sigma_{\hat{p}}\).
+
+$$
+    \hat{p} = \frac{x}{n}
+$$
+and
+$$
+    \sigma_{\hat{p}} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}.
+$$
+</p>
+
+<p>And use the formula for the <b>margin of error</b>, \(E\).
+
+$$
+    E = z_{\alpha/2} \cdot \sigma_{\hat{p}}.
+$$
+</p>
+
+<div class="mycode">
+<pre>   
+p_hat <- 0.65 # if p_hat is given directly
+              # use x/n if not given directly
+n <- 40       # sample size (note: need n > 30)
+
+std_error <- sqrt( ( (p_hat)*(1-p_hat) ) / n )
+
+# Margin of Error
+Error <- z_alpha * std_error
+</pre>
+</div>
+
+
+
+
+<h4>Examples:</h4>
+
+Here are a few examples. Hit the 'Evaluate R Code' button to see the outputs.
+
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Confidence Interval for One Proportion
+
+# CL and Critical value
+CL <- 0.95 # give CL 
+alpha <- 1-CL
+
+z_alpha <- qnorm(p = alpha/2, mean = 0, sd = 1) # critical value = inverse normal ( alpha/2, 0, 1)
+
+# Point Estimate and Standard Error
+n <- 40       # sample size (note: need n > 30)
+p_hat <- 0.65 # if p_hat is given directly
+              # use x/n if not given directly
+
+std_error <- sqrt( ( (p_hat)*(1-p_hat) ) / n )
+
+# Margin of Error
+Error <- z_alpha * std_error
+
+# Confidence Interval
+</script>
+</div>
+
+
+
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Normal Distribution
+
+n2 <- pnorm(2.01, mean = 0, sd = 1) - pnorm(-0.65, mean = 0, sd = 1) 
+    # computes the probability P(-0.65 <= X <= 2.01) of standard normal
+    # lower value = a 
+    # higher value = b 
+print("P(a <= X <= b) = ")
+print(n2)
+</script>
+</div>
+
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Normal Distribution
+
+n3 <- pnorm(2.01, mean = 0, sd = 1, lower.tail = FALSE) 
+    # computes the probability P(X >= 2.01) of standard normal
+    # lower value = a = -0.65
+    # higher value = b = +oo
+print("P(X >= a) = ")
+print(n3)
+</script>
+</div>
+
+
+old conf int below 
             
 <div class="sagecell-r">
 <script type="text/x-sage">
@@ -1349,6 +1460,49 @@ prop.test(x = 16, n = 30, p = 0.35, alternative = "greater", conf.level = 0.95 )
     <br/>
     <br/>
     
+
+
+
+
+
+<!-- ANNOUNCEMENT COLLAPSIBLE -->    
+<button class="collapsible">
+    <div class="announcementtitle">
+        <h4>
+        Hypothesis Tests
+        </h4>  
+    </div>
+    </button>
+
+    <div class="content">
+        <div class="announcementcontent">
+            
+Hypothesis Tests
+            
+One Proportion p-test. You can ignore             
+            
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Hypothesis Testing: One Proportion
+
+# sample proportion: p_hat = x/N, where x = # of success, N = sample size
+# p_null = proportion from null hypotheis (past proportion)
+
+# example: 
+# sample: x=16, N=30, (p_hat = x/n = 0.533)
+# null hypothesis: p_null = 0.35
+# alternative = "two.sided", "less", "greater" (choose one)
+# level of significance = LOS = 0.05, confidence level = 1 - LOS = 1 - 0.05
+
+prop.test(x = 16, n = 30, p = 0.35, alternative = "greater", conf.level = 0.95 )
+</script>
+</div>
+            
+        </div>
+    </div>
+    <!-- END Announcement post COLLAPSIBLE-->     
+    <br/>
+    <br/>    
     
     
 <h2>Scatter Plots and Linear Regression</h2>
