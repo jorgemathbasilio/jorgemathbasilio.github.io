@@ -305,7 +305,172 @@ def left_endpoint_approx( nn ): # tell it n as nn since n is predefined in sage
 # input the n to compute S_n
 left_endpoint_approx(25)
 </script>
-</div>   
+</div>  
+
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+
+#REA
+f(x) = 1+x*sin(x^4) # change me!
+a = -2      # change me!
+b = 2      # change me!
+exactint = integral(f,x,a,b)
+
+def right_endpoint_approx( nn ): # tell it n as nn since n is predefined in sage
+    deltax = (b-a)/nn
+    rea = deltax*sum([f(a+(i+1)*deltax) for i in range(nn)])
+
+    P1 = plot(f, a-0.2,b+0.2)
+
+    bars = sum([polygon([(a+deltax*u,0),(a+deltax*(u+1),0),(a+deltax*(u+1),f(a+deltax*(u+1))),(a+deltax*u,f(a+deltax*(u+1)))],color="red",alpha=0.3,thickness=1, fill=False) for u in range(nn)])
+
+    P = P1 + bars
+    P.show()
+
+    print("the right endpoint approximation is", rea.n() )
+    print("the exact answer is", exactint.n() )
+    print("the error is", exactint.n()-rea.n() )
+
+    return
+# input the n to compute S_n using REA
+
+right_endpoint_approx(10)
+</script>
+</div>  
+
+
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+
+# MPA
+f(x) = 1+x*sin(x^4) # change me!
+a = -2      # change me!
+b = 2      # change me!
+exactint = integral(f,x,a,b)
+
+def midpoint_approx( nn ): # tell it n as nn since n is predefined in sage
+    deltax = (b-a)/nn
+    mpa = deltax*sum([(f(a+i*deltax+(deltax/2))) for i in range(nn)])
+
+    P1 = plot(f, a-0.2,b+0.2)
+
+    bars = sum([polygon([(a+deltax*u,0),(a+deltax*(u+1),0),(a+deltax*(u+1),f(a+deltax*u+deltax/2)),(a+deltax*u,f(a+deltax*u+deltax/2))],color="red",alpha=0.3,thickness=1, fill=False) for u in range(nn)])
+
+    P = P1 + bars
+    P.show()
+
+    print("the midpoint approximation is", mpa.n() ) 
+    print("the exact answer is", exactint.n() )
+    print("the error is", exactint.n()-mpa.n() )
+
+    return
+# input the n to compute S_n using MPA
+midpoint_approx(10)
+</script>
+</div>  
+
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+
+# trapezoidA
+f(x) = 1+x*sin(x^4) # change me!
+a = -2      # change me!
+b = 2      # change me!
+exactint = integral(f,x,a,b)
+
+def trapezoid_approx( nn ): # tell it n as nn since n is predefined in sage
+    deltax = (b-a)/nn
+    trapa = (deltax/2)*sum([(f(a+i*deltax)+f(a+(i+1)*deltax)) for i in range(nn)])
+
+
+    P1 = plot(f, a-0.2,b+0.2)
+
+    bars = sum([polygon([(a+deltax*u,0),(a+deltax*(u+1),0),(a+deltax*(u+1),f(a+deltax*(u+1))),(a+deltax*u,f(a+deltax*u))],color="red",alpha=0.3,thickness=1, fill=False) for u in range(nn)])
+
+    P = P1 + bars
+    P.show()
+
+    print("the trapezoid approximation is", trapa.n())
+    print("the exact answer is", exactint.n() )
+    print("the error is", exactint.n()-trapa.n() )
+
+    return
+# input the n to compute S_n using REA
+trapezoid_approx(10)
+</script>
+</div>  
+
+
+
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+
+# Simpson's Rule
+f(x) = 1+x*sin(x^4) # change me!
+a = -2      # change me!
+b = 2      # change me!
+exactint = integral(f,x,a,b)
+
+def simpson_approx( nn ): # tell it n as nn since n is predefined in sage
+    deltax = (b-a)/nn
+    n2 = int(nn/2)
+    simpa = (deltax/3)*sum([(f(a+(2*i)*deltax)+4*f(a+(2*i+1)*deltax)+f(a+(2*i+2)*deltax)) for i in range(n2)])
+
+    P1 = plot(f, a-0.2,b+0.2)
+
+    #bars = sum([polygon([(a+deltax*u,0),(a+deltax*(u+1),0),(a+deltax*(u+1),f(a+deltax*(u+1))),(a+deltax*u,f(a+deltax*u))],color="red",alpha=0.3,thickness=1, fill=False) for u in range(nn)]) # sorry couldn't figure out the graph of the parabolas in time!
+
+    P = P1 #+ bars
+    P.show()
+
+    print("the Simpson's Rule approximation is", simpa.n() )
+    print("the exact answer is", exactint.n() )
+    print("the error is", exactint.n()-simpa.n() ) 
+
+    return
+# input the n to compute S_n using Simpson's Rule. Enter an EVEN number
+simpson_approx(6)
+</script>
+</div>  
+
+
+
+<div class="compute">
+<script type="text/x-sage">
+# you can edit this!
+
+# MPA
+f(x) = (1/2)*e^(-x^2) # change me!
+a = -2      # change me!
+b = 2      # change me!
+exactint = integral(f,x,a,b) #
+
+def midpoint_approx( nn ): # tell it n as nn since n is predefined in sage
+    deltax = (b-a)/nn
+    mpa = deltax*sum([(f(a+i*deltax+(deltax/2))) for i in range(nn)])
+
+    P1 = plot(f, a-0.2,b+0.2)
+
+    bars = sum([polygon([(a+deltax*u,0),(a+deltax*(u+1),0),(a+deltax*(u+1),f(a+deltax*u+deltax/2)),(a+deltax*u,f(a+deltax*u+deltax/2))],color="red",alpha=0.3,thickness=1, fill=False) for u in range(nn)])
+
+    P = P1 + bars
+    P.show()
+
+    print("the midpoint approximation is", mpa.n() )
+    print("the exact answer is", exactint.n() )
+    print("the error is", exactint.n()-mpa.n() )
+
+    return
+# input the n to compute S_n using MPA
+midpoint_approx(15)
+</script>
+</div>  
+
+
 
 </div>
 </div><br>
