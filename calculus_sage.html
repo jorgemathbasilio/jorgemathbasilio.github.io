@@ -269,7 +269,26 @@ Basic derivatives
 <div class="content-show">
 <div class="announcementcontent">
     
-Numerical Integration:
+<h2>Numerical Integration</h2>
+
+The definition of the <b>definite integral</b> is:
+$$
+\int_a^b f(x)\, dx = \lim_{n \to \infty} \sum_{i=1}^n f(c_i)\, \Delta x_i,
+$$
+where we may select \(c_i \in [x_{i-1},x_i]\) in any way that we wish.
+
+<h3>Left-endpoint Approximation</h3>
+
+We pick \(c_i = x_{i-1}\).
+
+We also set \(\Delta x_i = \frac{b-a}{b}\), that is, cut \([a,b]\) into $n$ equal pieces.
+
+If \(S_n\) is the $n$th Riemann sum, then \(\displaystyle \int_a^b f(x)\, dx \approx S_n\). The formula is:
+$$
+S_n = \sum_{i=1}^n f(c_i) \Delta x_i
+$$
+
+Next, we have Sage do all the hard work:
 
 <div class="compute">
 <script type="text/x-sage">
@@ -307,6 +326,13 @@ left_endpoint_approx(25)
 </script>
 </div>  
 
+
+
+
+<h3>Right-endpoint Approximation</h3>
+
+We pick \(c_i = x_{i}\) which is the right end point of each subinterval \([x_{i-1},x_i]\).
+
 <div class="compute">
 <script type="text/x-sage">
 # you can edit this!
@@ -340,6 +366,11 @@ right_endpoint_approx(10)
 </div>  
 
 
+
+<h3>Midpoint Approximation</h3>
+
+We pick \(c_i = \frac{x_{i-1}+x_{i}}{2}\) which is the right end point of each subinterval \([x_{i-1},x_i]\).
+
 <div class="compute">
 <script type="text/x-sage">
 # you can edit this!
@@ -370,6 +401,20 @@ def midpoint_approx( nn ): # tell it n as nn since n is predefined in sage
 midpoint_approx(10)
 </script>
 </div>  
+
+
+
+
+
+<h3>Trapezoid Rule Approximation</h3>
+
+This time the formula is different. We want the trapezoid above the subinteral \([x_{i-1},x_i]\) with heights \(f(x_{i-1})\) and \(f(x_i)\).
+
+Each trapezoid has area
+$$
+    \Delta x \cdot \left(\frac{f(x_{i-1})+f(x_i)}{2}\right),
+$$
+which we must sum.
 
 <div class="compute">
 <script type="text/x-sage">
@@ -405,6 +450,24 @@ trapezoid_approx(10)
 
 
 
+
+
+
+
+
+
+
+<h3>Simpson's Rule Approximation</h3>
+
+This one is very interesting since it uses parabolas instead of lines to approximate.
+
+Fact: Given three points \(P_0\), \(P_1\), and \(P_2\), there's only one and only one parabola that passes through \(P_0\), \(P_1\), and \(P_2\).
+
+Simpson's Rule is based on this fact and uses an EVEN number of subintervals. It uses pairs of consecutive subintervals \([x_{i-1},x_i]\) and \([x_i,x_{i+1}]\) with the three points \((x_{i-1},f(x_{i-1}))\), \((x_{i},f(x_{i}))\), and \((x_{i+1},f(x_{i+1}))\) to generate parabolas that best fit the curve over these two subintervals.
+
+See the textbook for the details of the derivation.
+
+
 <div class="compute">
 <script type="text/x-sage">
 # you can edit this!
@@ -438,6 +501,9 @@ simpson_approx(6)
 </div>  
 
 
+<h3>Try it!</h3>
+
+A few more examples.
 
 <div class="compute">
 <script type="text/x-sage">
