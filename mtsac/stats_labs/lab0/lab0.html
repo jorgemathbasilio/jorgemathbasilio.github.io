@@ -1,0 +1,615 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<HTML>
+
+
+<HEAD>
+<meta charset="UTF-8">    
+<link rel="stylesheet" type="text/css" href="../../../mainpages.css">
+
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<TITLE>Statistics Computations Using R</TITLE>
+    
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async>
+</script><!-- added to use Latex in HTML w AJAX...use \(x^2+1=0\)--> 
+
+<!-- for sagemath cells -->    
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script>
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script>
+<script>$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+        template:       sagecell.templates.minimal,
+            evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+            evalButtonText: 'Evaluate Sage'});
+});
+</script>  
+<script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate R Code'});
+});
+</script>   
+<link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css"><!-- to make sure the styling of the sage cells doesn't get screwed up by my own styles -->
+
+<script type="module" src="https://md-block.verou.me/md-block.js"></script><!-- for markdown cells in html-->
+
+</HEAD>
+
+<BODY link=darkblue vlink=darkblue>
+   
+<div class="header">
+<span class="coursetitle">Dr. Jorge Eduardo Basilio</span>
+<span class="schoolsname">
+    Statistics
+</span>
+</div>  
+
+
+<div class="wholedoc">  
+
+<h1>Statistics Labs Using R</h1>
+    
+<img width="20%" style="margin-left: 70px" src="../r.jpg">
+<img width="20%" style="margin-left: 5px" src="../r.jpg">
+<img width="20%" style="margin-left: 5px" src="../r.jpg">
+<img width="20%" style="margin-left: 5px" src="../r.jpg">
+
+<!--<img width="20%" style="margin-left: 275px" src="../r.jpg">-->
+
+<hr class="my-hr">
+
+<md-block>
+# Lab 0
+
+## Introduction to R for Statistics
+
+### Using R as a Calculator, Variables and Assignment
+
+### Instructor: Dr. Jorge Eduardo Basilio
+
+### Objectives
+
+0. Learn about R and why you its important to learn it
+1. How to get started with R
+2. Performing basic arithmetic calculations using R
+3. Assign variables using R
+4. Create a PDF of your problem solutions to submit via Canvas
+
+<div style="color:red; font-size:125%;">
+    DUE: Check both CoCalc and Canvas for due dates
+</div>
+</md-block>
+
+<hr class="my-hr">
+    
+    
+<md-block>
+# &sect; 0. Intro to R
+
+We use computers for all sorts of everyday tasks. I feel it is time that a computer becomes an important tool in studying mathematics and statistics. This opens up a lot of interesting possibilities for the types of problems one can solve.
+
+## What is R?
+
+`R` is a powerful, comprehensive, open-source software framework for doing professional statistics.
+
+It is possible to download and install the software on computers, or to use it through a website-interface without downloading anything.
+
+We will use `R` through a website-interface in the form of a "Sage Worksheet". In fact, what you are reading
+here is a Sage Worksheet which has the ".sagews" file extension. This is an interactive document that will guide you through the first steps of getting familiar with R.
+
+## Why use R?
+
+- It's free!
+- Using it on web is free via CoCalc
+- Downloading it is free (if you want to use it without internet)
+- It's open source!
+- No hidden algorithms (you can look at source code if you wish--and look "under the hood" so to speak)
+- Lots of resources to get help (use google to search)
+- **It will prepare you for the future!**
+    - You will likely need to learn some basic programming no matter what you study in college
+    - In Pyschology, for example, it's common to learn R (or Python) when learning statistics
+    - Data Analyst: hot new field where there's lots of jobs!
+    - It truly and honestly answers the question student's always ask: "When will I ever use this???"
+    - Bragging rights: put this on your resume! Tell employers when interviewing to stand out from the crowd
+
+## Why not just use graphing calculators?
+
+Graphing calculators are still rather popular. I used one in high school in the 1990s. 
+
+Let's say we would like to study and work with a large data set. Using software, like `R`, I can upload a file with the data into a folder for the project, and distribute it to all students with a click. By comparison, with a graphing calculator, the data would have to be entered by each student...by hand. We do this in class because we need to take exams but for "real world" data sets, the number of entries are huge! 
+
+Students can take the images and outputs of their computations in `R` and easily add them to any document for professional-looking reports, or undergraduate research papers suitable for publication. A picture on a graphing calculator is idle and immovable.
+
+Finally, **you will be learning a skill** and it will take time to get comfortable with it.
+</md-block>  
+
+<hr class="my-hr2">
+
+<md-block>
+## Watch this short video introduction:
+</md-block>
+
+<center>
+<iframe width="560" height="315" 
+src="https://www.youtube.com/embed/XcBLEVknqvY?si=GTo42ohWAdDJ_crH" 
+title="YouTube video player" frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</center>
+
+<hr class="my-hr">
+
+<md-block>
+# &sect; 2. Arithmetic Calculations in R
+
+The time has come to do our first calculation using R. 
+The cell below is a code cell. Hit <code>Evaluate R code</code> to see the output. 
+</md-block>
+
+<!--R cell start -->
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Example: 
+2+2
+# Click on this cell and hit 'RUN' to see the output
+</script>
+</div>
+<!--R cell end -->
+
+<md-block>
+Of course we know 2\+2 is 4. You'll see the **output** of the code `2+2` immediately below it. 
+
+_That was anticlimactic, wasn't it? No! That was awesome! You just took an important step._ 
+
+Let's continue...
+
+You can perform all sorts of basic arithmetic using R, including more complicated expressions. Just use parentheses liberally!
+
+If we want to evaluate the expression
+$$\sqrt{\frac{2+5\cdot 7}{10}}$$
+we need to know what the square root, multiplication, and division syntax used.
+
+Note that I added extra blank spaces in order to make the code easier to understand/read.
+</md-block>
+
+<!--R cell start -->
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Example:
+
+sqrt( (2 + 5*7 ) / 10)
+</script>
+</div>
+<!--R cell end -->
+
+<md-block>
+Next, let's compute the average of a small list of numbers:
+$$
+1,2,3,4,5,10
+$$
+</md-block>
+
+<!--R cell start -->
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Example: Calculating the Mean
+
+( 1+2+3+4+5+10 ) / 6     # Notice the extra spaces to make it easier for human eyes to read
+
+# hit Evaluate R Code
+</script>
+</div>
+<!--R cell end -->
+
+<md-block>
+Next, we'll compute the standard deviation of the list by typing out the computation directly 
+(we'll estimate the mean using 4.17):
+</md-block>
+
+<!--R cell start -->
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Example: Calculating the sample standard deviation from the definition formula
+
+( (1 - 4.17)^2 + (2-4.17)^2 + (3-4.17)^2 + (4-4.17)^2 + (5-4.17)^2 + (10-4.17)^2 ) / (6-1)
+
+# hit Evaluate R Code
+</script>
+</div>
+<!--R cell end -->
+
+<hr class="my-hr2">
+
+<md-block>
+## **Note: TRY IT! Examples**
+
+*Try it* examples are are not graded and should be easy to complete while you read this lab document. I encourage you to do all *Try it* exercises to make sure you are absorbing the material and syntax.
+
+Later, you'll see *Problems* and these you will submit for grading.    
+</md-block>
+
+<hr class="my-hr3">
+
+<md-block>
+<img src="https://raw.githubusercontent.com/jorgemathbasilio/jorgemathbasilio.github.io/master/stat065-f21/tryit.jpg" alt="Try it image" />
+
+What is the value of: \(3+0\times 5+5−9\)?
+
+(Remember order of operations and to use parentheses) 
+</md-block>
+
+<!--R cell start -->
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Try it!
+
+
+</script>
+</div>
+<!--R cell end -->
+
+Answer: \(-1\)   
+
+<hr class="my-hr3">
+
+<hr class="my-hr2">
+
+<md-block>
+# Quick Comment about 'Comments'
+
+Comments are very useful in programming and coding. They are parts of code that are NOT read or implemented by the program but are there to be helpful for humans--that is, for you or me to read :-)
+
+In R, any text after a hashtag is not read by the program for that line.
+
+For example,
+
+<div class="mycode">
+<pre>
+banana <- 11 # define the variable 'banana'
+banana
+</pre>
+</div>    
+
+If you go back up and read the examples, you'll see that I've already used comments!
+
+I'm going to extensively use comments in the code cells to teach you important info that is not part of the code.
+</md-block>
+
+
+
+
+
+
+
+
+<hr class="my-hr">
+
+<md-block>
+# &sect; 3. Variables and Assignment in R
+
+Variables in a programming language are different than our usual math notation. 
+
+In short, we use them as 'tags' or 'nicknames' to save the values of a computation.
+
+If you type the symbols less-than and hyphen, you type something that looks like an arrow pointing to the left: <code><-</code>. 
+You can use this arrow to **assign** values to variables, called an **assignment**.
+
+For example, you can create a variable `x` and assign it the value `3` by typing this into a cell:
+</md-block>
+
+<!--R cell start -->
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Example: variables and assingment
+
+x <- 3
+# hit Evaluate R Code
+</script>
+</div>
+<!--R cell end -->
+
+<md-block>
+Typically, when you just do the line above *nothing happens*. There's no output! 
+
+This is because we've only *assigned* the value of 3 to the variable `x` and stored it to memory. 
+So, R does what's it told, no more no less. 
+
+Of course, you probably want it to display the `3` as an output as well. We have to be specific and tell R to show us the output by "calling" the variable.
+
+To **call** a variable just type the name of it in a new line:    
+</md-block>
+
+<!--R cell start -->
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Example: variables and assingment
+x <- 3
+x
+# hit Evaluate R Code
+</script>
+</div>
+<!--R cell end -->
+
+<md-block>
+However, in recent implemintations of R they seem to have updated it so now assignment and output are both executed.
+
+## Naming Variables
+
+You can name variable almost anything. There's different conventions people use. 
+I like to use lowercase letters only and use underscores, <code>_</code>, to separate words for readability.
+
+Why is assignment useful? It helps you build complicated computations. 
+
+For example, let us compute: \(\sqrt{2+x^2}\) where \(x=5.5\).
+</md-block>
+
+<!--R cell start -->
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Example: 
+
+x <- 5.5
+myvalue <- sqrt( 2 + x^2 )
+
+myvalue
+# hit Evaluate R Code
+</script>
+</div>
+<!--R cell end -->
+
+<md-block>
+To make sure this is correct, use your calculator to verify you get the same answer.
+
+
+## Assigning qualitative values to a variable
+
+If you want to assign a variable a qualitative description or text instead of a number we use quotes:
+</md-block>
+
+<!--R cell start -->
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Example: qualitative variable assignment
+
+fav_color <- "yellow"
+fav_color               # reminder: you need to type the name of the variable again to see it as an output
+# hit Evaluate R Code
+</script>
+</div>
+<!--R cell end -->
+
+<hr class="my-hr">
+
+<div class="lab-prob">
+Problem 0
+</div>
+
+In this problem, you will open up a Word document or a text editing document where you can include screenshots/images.
+
+<div class="lab-prob-bg">
+    <ol>
+        <li>Open a Word document (or similar).</li>
+        <li>Include a title page with the following info:
+            <ol>
+                <li>Title of "Stat C1000 Lab 0"</li>
+                <li>Your name, the due date</li>
+                <li>Your instructor's Name and course CRN</li>
+            </ol>
+        </li>
+        <li>
+            Type "Probem 1" and make it bold.
+        </li>
+    </ol>
+    You will include screenshot(s) below this with solutions to problem 1 described below.
+</div>
+
+<hr class="my-hr">
+
+<div class="lab-prob">
+Problem 1
+</div>
+
+<div class="lab-prob-bg">
+In this problem, you will create a variable named “my_feelings” and assign to it your feelings about statistics. 
+Then have R output your feelings. </br>
+
+Time for your first problem! Go to the empty cell below that has the comment <code># Problem 1</code> and complete the directions below.</br>
+
+Note that I have already filled out most of the first cell for you :-)
+
+<ol>
+    <li>
+        Create a variable named “my_feelings” and assign to it your feelings about Statistics. 
+        Here remove the <code>"i love stats!"</code> (but keep the quotes) and replace it with your own feelings of Statistics. 
+        Then have R display "my_feelings" variable as an output.
+    </li>
+    <li>
+        Be sure that you actually have your output displayed!
+    </li>
+    <li>
+        Take a screenshot of the code cell together with the output.
+    </li>
+    <li>Add the screenshot to a Word document.</li>
+</ol>
+
+<!--R cell start -->
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Problem 1
+
+my_feelings <- "i love stats!"
+my_feelings
+
+# re-run the cell after you've made changes
+# hit Evaluate R Code
+</script>
+</div>
+<!--R cell end -->
+
+Take a screenshot of the code cell and a screenshot that shows the output. Include these into your Word document.</br>
+
+You have now finished problem! </br>
+
+To get ready for Problem 2, type "Problem 2" into a new line and make it bold.
+</div>
+
+<hr class="my-hr">
+
+<div class="lab-prob">
+Problem 2
+</div>
+
+<div class="lab-prob-bg">
+Perform the following calculations:</br>
+
+<b>Part a.</b> In the cell below, assign the value of \(2.3\) to the variable \(a\) and then compute:
+$$
+\frac{12 a + 5}{3^{4.2-2.3}}
+$$
+
+Hint: if you get an error message, remember to always put an explicit <code>*</code> for multiplication.
+
+<!--R cell start -->
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Problem 2 a
+
+
+# hit Evaluate R Code
+</script>
+</div>
+<!--R cell end -->
+
+Take a screenshot of the code cell and of the output and include them into your Word document. 
+Make sure that the Word document clearly labels this as "Part a".</br>
+
+<b>Part b.</b> In the cell below, compute the mean of $25.2, 15, 16.44, 15.3,$ and $18.6$.
+
+<!--R cell start -->
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Problem 2 b
+
+
+# hit Evaluate R Code
+</script>
+</div>
+<!--R cell end -->
+
+Take a screenshot of the code cell and of the output and include them into your Word document. 
+Make sure that the Word document clearly labels this as "Part b".</br>
+
+<b>Part c.</b> Similar to part (b), in the cell below, assign the mean to the variable `my_mean` and have R display the output.
+
+<!--R cell start -->
+<div class="sagecell-r">
+<script type="text/x-sage">
+# Problem 2 c
+
+
+# hit Evaluate R Code
+</script>
+</div>
+<!--R cell end -->
+
+Take a screenshot of the code cell and of the output and include them into your Word document. 
+Make sure that the Word document clearly labels this as "Part c".</br>
+
+You have now finished problem 2! </br>
+
+To get ready for the next problem, in a new line in your Word document go ahead and enter <b>"Problem 3"</b> in <b>bold</b>.
+</div>
+
+
+
+
+
+
+
+
+
+
+<hr class="my-hr">
+
+<div class="lab-prob">
+Problem 3
+</div>
+
+<div class="lab-prob-bg">
+In your Word document, write a short paragraph telling me why you are taking this class.
+
+You have now finished problem! </br>
+</div>
+
+<hr class="my-hr">
+
+<md-block>
+# &sect; 5. Almost done...Create a PDF and Submit to Canvas!
+
+Save your Word document as a PDF file and give it the file name <b>"Lab0_LastName_FirstName.pdf".</b></br>
+
+For example, if I was turning in the assignment, I would name it <b>"Lab0_Basilio_Jorge".</b>
+</md-block>
+
+<hr class="my-hr">
+
+<hr class="my-hr2">
+
+ <img width="50%" style="display:block; margin-left:auto; margin-right:auto" src="https://raw.githubusercontent.com/jorgemathbasilio/jorgemathbasilio.github.io/master/stat065-f21/congrats.png" alt="Congrats image" />
+
+  <div class="congrats">
+    You've done it! You've now finished the Lab! :-)
+  </div>
+<hr class="my-hr2">
+    
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+    
+<script> <!-- for drop-down schedule --> 
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script> 
+    
+</div><!-- whole doc -->
+<div class="footer"></div>
+
+</BODY>
+</HTML>
