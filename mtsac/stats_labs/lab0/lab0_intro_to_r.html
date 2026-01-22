@@ -162,7 +162,7 @@ referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <hr class="my-hr">
 
 <md-block>
-# &sect; 2. Arithmetic Calculations in R
+# &sect; 1. Arithmetic Calculations in R
 
 The time has come to do our first calculation using R. 
 The cell below is a code cell. Hit <code>Evaluate R code</code> to see the output. 
@@ -179,13 +179,14 @@ The cell below is a code cell. Hit <code>Evaluate R code</code> to see the outpu
 <!--R cell end -->
 
 <md-block>
-Of course we know 2\+2 is 4. You'll see the **output** of the code `2+2` immediately below it. 
+Of course we know 2+2 is 4. You'll see the **output** of the code <code>2+2</code> immediately below it. 
 
-_That was anticlimactic, wasn't it? No! That was awesome! You just took an important step._ 
+That was anticlimactic, wasn't it? No! That was awesome! You just took an important step. 
 
 Let's continue...
 
-You can perform all sorts of basic arithmetic using R, including more complicated expressions. Just use parentheses liberally!
+You can perform all sorts of basic arithmetic using R, including more complicated expressions. 
+Just use parentheses liberally!
 
 If we want to evaluate the expression
 $$\sqrt{\frac{2+5\cdot 7}{10}}$$
@@ -245,17 +246,23 @@ Next, we'll compute the standard deviation of the list by typing out the computa
 <md-block>
 ## **Note: TRY IT! Examples**
 
-*Try it* examples are are not graded and should be easy to complete while you read this lab document. I encourage you to do all *Try it* exercises to make sure you are absorbing the material and syntax.
+*Try it* examples are are not graded and should be easy to complete while you read this lab document. 
+I encourage you to do all *Try it* exercises to make sure you are absorbing the material and syntax.
 
 Later, you'll see *Problems* and these you will submit for grading.    
 </md-block>
 
-<hr class="my-hr3">
+
 
 <md-block>
+    <!--
 <img src="https://raw.githubusercontent.com/jorgemathbasilio/jorgemathbasilio.github.io/master/stat065-f21/tryit.jpg" alt="Try it image" />
+-->
+<div class="tryit">
+    Try it!
+</div>
 
-What is the value of: \(3+0\times 5+5−9\)?
+What is the value of: \( 3+0 \times 5+5-9 \)?
 
 (Remember order of operations and to use parentheses) 
 </md-block>
@@ -270,7 +277,7 @@ What is the value of: \(3+0\times 5+5−9\)?
 </div>
 <!--R cell end -->
 
-Answer: \(-1\)   
+Answer: \( -1 \)   
 
 <hr class="my-hr3">
 
@@ -279,7 +286,8 @@ Answer: \(-1\)
 <md-block>
 # Quick Comment about 'Comments'
 
-Comments are very useful in programming and coding. They are parts of code that are NOT read or implemented by the program but are there to be helpful for humans--that is, for you or me to read :-)
+Comments are very useful in programming and coding. 
+They are parts of code that are NOT read or implemented by the program but are there to be helpful for humans--that is, for you or me to read :-)
 
 In R, any text after a hashtag is not read by the program for that line.
 
@@ -307,16 +315,16 @@ I'm going to extensively use comments in the code cells to teach you important i
 <hr class="my-hr">
 
 <md-block>
-# &sect; 3. Variables and Assignment in R
+# &sect; 2. Variables and Assignment in R
 
 Variables in a programming language are different than our usual math notation. 
 
 In short, we use them as 'tags' or 'nicknames' to save the values of a computation.
 
-If you type the symbols less-than and hyphen, you type something that looks like an arrow pointing to the left: <code><-</code>. 
+If you type the symbols less-than and hyphen, you type something that looks like an arrow pointing to the left: <code> <- </code>. 
 You can use this arrow to **assign** values to variables, called an **assignment**.
 
-For example, you can create a variable `x` and assign it the value `3` by typing this into a cell:
+For example, you can create a variable <code> x </code> and assign it the value <code> 3 </code> by typing this into a cell:
 </md-block>
 
 <!--R cell start -->
@@ -333,10 +341,11 @@ x <- 3
 <md-block>
 Typically, when you just do the line above *nothing happens*. There's no output! 
 
-This is because we've only *assigned* the value of 3 to the variable `x` and stored it to memory. 
+This is because we've only *assigned* the value of 3 to the variable <code> x </code> and stored it to memory. 
 So, R does what's it told, no more no less. 
 
-Of course, you probably want it to display the `3` as an output as well. We have to be specific and tell R to show us the output by "calling" the variable.
+Of course, you probably want it to display the <code> 3 </code> as an output as well. 
+We have to be specific and tell R to show us the output by "calling" the variable.
 
 To **call** a variable just type the name of it in a new line:    
 </md-block>
@@ -358,11 +367,11 @@ However, in recent implemintations of R they seem to have updated it so now assi
 ## Naming Variables
 
 You can name variable almost anything. There's different conventions people use. 
-I like to use lowercase letters only and use underscores, <code>_</code>, to separate words for readability.
+I like to use lowercase letters only and use underscores, <code> _ </code>, to separate words for readability.
 
 Why is assignment useful? It helps you build complicated computations. 
 
-For example, let us compute: \(\sqrt{2+x^2}\) where \(x=5.5\).
+For example, let us compute: \( \sqrt{2+x^2} \) where \( x=5.5 \).
 </md-block>
 
 <!--R cell start -->
@@ -435,14 +444,14 @@ Problem 1
 In this problem, you will create a variable named “my_feelings” and assign to it your feelings about statistics. 
 Then have R output your feelings. </br>
 
-Time for your first problem! Go to the empty cell below that has the comment <code># Problem 1</code> and complete the directions below.</br>
+Time for your first problem! Go to the empty cell below that has the comment <code> # Problem 1 </code> and complete the directions below.</br>
 
 Note that I have already filled out most of the first cell for you :-)
 
 <ol>
     <li>
         Create a variable named “my_feelings” and assign to it your feelings about Statistics. 
-        Here remove the <code>"i love stats!"</code> (but keep the quotes) and replace it with your own feelings of Statistics. 
+        Here remove the <code> "i love stats!" </code> (but keep the quotes) and replace it with your own feelings of Statistics. 
         Then have R display "my_feelings" variable as an output.
     </li>
     <li>
@@ -484,12 +493,14 @@ Problem 2
 <div class="lab-prob-bg">
 Perform the following calculations:</br>
 
-<b>Part a.</b> In the cell below, assign the value of \(2.3\) to the variable \(a\) and then compute:
+<h2>Part a.</h2>
+
+In the cell below, assign the value of \( 2.3 \) to the variable \( a \) and then compute:
 $$
 \frac{12 a + 5}{3^{4.2-2.3}}
 $$
 
-Hint: if you get an error message, remember to always put an explicit <code>*</code> for multiplication.
+Hint: if you get an error message, remember to always put an explicit <code> * </code> for multiplication.
 
 <!--R cell start -->
 <div class="sagecell-r">
@@ -505,7 +516,9 @@ Hint: if you get an error message, remember to always put an explicit <code>*</c
 Take a screenshot of the code cell and of the output and include them into your Word document. 
 Make sure that the Word document clearly labels this as "Part a".</br>
 
-<b>Part b.</b> In the cell below, compute the mean of $25.2, 15, 16.44, 15.3,$ and $18.6$.
+<h2>Part b.</h2>
+
+In the cell below, compute the mean of \( 25.2, 15, 16.44, 15.3, \) and \( 18.6 \).
 
 <!--R cell start -->
 <div class="sagecell-r">
@@ -520,8 +533,10 @@ Make sure that the Word document clearly labels this as "Part a".</br>
 
 Take a screenshot of the code cell and of the output and include them into your Word document. 
 Make sure that the Word document clearly labels this as "Part b".</br>
+ 
+<h2>Part c.</h2>
 
-<b>Part c.</b> Similar to part (b), in the cell below, assign the mean to the variable `my_mean` and have R display the output.
+Similar to part (b), in the cell below, assign the mean to the variable <code> my_mean </code> and have R display the output.
 
 <!--R cell start -->
 <div class="sagecell-r">
@@ -566,7 +581,7 @@ You have now finished problem! </br>
 <hr class="my-hr">
 
 <md-block>
-# &sect; 5. Almost done...Create a PDF and Submit to Canvas!
+# &sect; 3. Almost done...Create a PDF and Submit to Canvas!
 
 Save your Word document as a PDF file and give it the file name <b>"Lab0_LastName_FirstName.pdf".</b></br>
 

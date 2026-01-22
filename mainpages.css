@@ -767,7 +767,7 @@ hr.my-hr2 {
 hr.my-hr3 {
     border: 0; /* Removes default border */
     height: 20px; /* Sets the height/thickness of the bar */
-    background-color: #c9c2a9; /* Sets the color */
+    background-color: rgb(229, 227, 203, 100); /* Sets the color */
     width: 100%; /* Sets the width (can be px or %) */
     margin: 20px auto; /* Centers the bar horizontally and adds vertical spacing */
 }
@@ -793,3 +793,13 @@ hr.my-hr3 {
     text-align:center; 
 }
 
+.tryit {
+    font-weight: bold;
+    font-size: 150%;
+    background-color: rgb(229, 227, 203, 100);
+    padding: 5px 0px 5px 15px;    
+}
+
+/*ul { 
+    list-style-type: circle; 
+}*/

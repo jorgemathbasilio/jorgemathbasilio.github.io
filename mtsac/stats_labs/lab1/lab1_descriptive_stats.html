@@ -70,21 +70,20 @@
 <hr class="my-hr">
 
 <md-block>
-# Lab 0
+# Lab 1
 
-## Introduction to R for Statistics
+## Descriptive Statistics
 
-### Using R as a Calculator, Variables and Assignment
+### Entering Data, Five Number Summaries, Common Displays, and Data Frames
 
 ### Instructor: Dr. Jorge Eduardo Basilio
 
 ### Objectives
 
-0. Learn about R and why you its important to learn it
-1. How to get started with R
-2. Performing basic arithmetic calculations using R
-3. Assign variables using R
-4. Create a PDF of your problem solutions to submit via Canvas
+0. Learn how to enter data in R 
+1. Compute descriptive statistics in R: mean, standard deviation etc
+2. Learn about basic dataframes in R
+3. Create a PDF of your lab notebook
 
 <div style="color:red; font-size:125%;">
     DUE: Check both CoCalc and Canvas for due dates
@@ -95,169 +94,172 @@
     
     
 <md-block>
-# &sect; 0. Intro to R
+# &sect; 0. Review Lab 0
 
-We use computers for all sorts of everyday tasks. 
-I feel it is time that a computer becomes an important tool in studying mathematics and statistics. 
-This opens up a lot of interesting possibilities for the types of problems one can solve.
+Before you continue with Lab 1, please go back and review lab 0 and your solutions. 
+We will need many of the techniques you learned there in this lab:
 
-## What is R?
-
-R is a powerful, comprehensive, open-source software framework for doing professional statistics.
-
-It is possible to download and install the software on computers, or to use it through a website-interface without downloading anything.
-
-We will use R through a website-interface I created with interactive "cells" where you can run code and immediately see the result, called an <b>output</b>. 
-This is an interactive document that will guide you through the first steps of getting familiar with R.
-
-If you decide to get serious you will want to install R on your computer.
-
-## Why use R?
-
-- It's free!
-- Using it on web is free via CoCalc
-- Downloading it is free (if you want to use it without internet)
-- It's open source!
-- No hidden algorithms (you can look at source code if you wish--and look "under the hood" so to speak)
-- Lots of resources to get help (use google to search)
-- **It will prepare you for the future!**
-    - You will likely need to learn some basic programming no matter what you study in college.
-    - In Pyschology, for example, it's common to learn R (or Python) when learning statistics.
-    - Data Analyst: hot new field where there's lots of jobs!
-    - It truly and honestly answers the question student's always ask: "When will I ever use this???"
-    - Bragging rights: put this on your resume! Tell employers when interviewing to stand out from the crowd :-)
-
-## Why not just use graphing calculators?
-
-Graphing calculators are still rather popular. I used one in high school in the 1990s. 
-
-We are using one in the classroom--the Ti84! 
-But, we are only using it because the MARCS can let you borrow one--making it free to use if you are willing to take the extra 5 minutes to go to the MARCS.
-
-Let's say we would like to study and work with a large data set. 
-Using software, like R, I can upload a file with the data into a folder for the project, and distribute it to all students with a click. 
-By comparison, with a graphing calculator, the data would have to be entered by each student...by hand. 
-We do this in class because we need to take exams but for "real world" data sets, the number of entries are huge! 
-
-Students can take the images and outputs of their computations in R and easily add them to any document for professional-looking reports, or undergraduate research papers suitable for publication. 
-A picture on a graphing calculator is idle and immovable.
-
-Finally, **you will be learning a skill** and it will take time to get comfortable with it.
+* Arithmetic computation 
+* Comments
+* Variables and Assignment
 </md-block>  
-
-<hr class="my-hr2">
-
-<md-block>
-## Watch this short video introduction:
-</md-block>
-
-<center>
-<iframe width="560" height="315" 
-src="https://www.youtube.com/embed/XcBLEVknqvY?si=GTo42ohWAdDJ_crH" 
-title="YouTube video player" frameborder="0" 
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</center>
 
 <hr class="my-hr">
 
 <md-block>
-# &sect; 2. Arithmetic Calculations in R
+# &sect; 1. Entering Data
 
-The time has come to do our first calculation using R. 
-The cell below is a code cell. Hit <code>Evaluate R code</code> to see the output. 
+Let's assume we have a simple data set of: 1,2,2,3,3,3,4,4,4,4,5,5,5,5,5,10.
+
+When entering data "by hand" we use the following code:
 </md-block>
 
 <!--R cell start -->
 <div class="sagecell-r">
 <script type="text/x-sage">
-# Example: 
-2+2
-# Click on this cell and hit 'RUN' to see the output
+# this is a code cell 
+
+my_cool_data <- c(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5,10) # define and store values to my_cool_data
+
+# hit Evaluate R Code when you're ready to see the output
+# reminder: the hashtag # at the beginning of a line is a 'comment' which is text that is ignored by the program
 </script>
 </div>
 <!--R cell end -->
 
 <md-block>
-Of course we know 2\+2 is 4. You'll see the **output** of the code `2+2` immediately below it. 
+Again, it seems like nothing happened. But something did happen. 
+The program has now stored all the numbers to a **vector** (i.e. list) variable that we named <code>my_cool_data</code>.
 
-_That was anticlimactic, wasn't it? No! That was awesome! You just took an important step._ 
-
-Let's continue...
-
-You can perform all sorts of basic arithmetic using R, including more complicated expressions. Just use parentheses liberally!
-
-If we want to evaluate the expression
-$$\sqrt{\frac{2+5\cdot 7}{10}}$$
-we need to know what the square root, multiplication, and division syntax used.
-
-Note that I added extra blank spaces in order to make the code easier to understand/read.
+If we want to see our data, we have to type the name again in a new line:
 </md-block>
 
 <!--R cell start -->
 <div class="sagecell-r">
 <script type="text/x-sage">
-# Example:
+# this is a code cell 
 
-sqrt( (2 + 5*7 ) / 10)
+my_cool_data <- c(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5,10) # define and store values to my_cool_data
+my_cool_data
+
+# hit Evaluate R Code when you're ready to see the output
 </script>
 </div>
 <!--R cell end -->
 
 <md-block>
-Next, let's compute the average of a small list of numbers:
-$$
-1,2,3,4,5,10
-$$
+Now <code>my_cool_data</code> is stored and ready to be studied.    
 </md-block>
 
-<!--R cell start -->
-<div class="sagecell-r">
-<script type="text/x-sage">
-# Example: Calculating the Mean
 
-( 1+2+3+4+5+10 ) / 6     # Notice the extra spaces to make it easier for human eyes to read
 
-# hit Evaluate R Code
-</script>
-</div>
-<!--R cell end -->
 
-<md-block>
-Next, we'll compute the standard deviation of the list by typing out the computation directly 
-(we'll estimate the mean using 4.17):
-</md-block>
 
-<!--R cell start -->
-<div class="sagecell-r">
-<script type="text/x-sage">
-# Example: Calculating the sample standard deviation from the definition formula
 
-( (1 - 4.17)^2 + (2-4.17)^2 + (3-4.17)^2 + (4-4.17)^2 + (5-4.17)^2 + (10-4.17)^2 ) / (6-1)
-
-# hit Evaluate R Code
-</script>
-</div>
-<!--R cell end -->
 
 <hr class="my-hr2">
 
 <md-block>
-## **Note: TRY IT! Examples**
+## Mean, Median, Standard Deviation, and Variance 
 
-*Try it* examples are are not graded and should be easy to complete while you read this lab document. I encourage you to do all *Try it* exercises to make sure you are absorbing the material and syntax.
-
-Later, you'll see *Problems* and these you will submit for grading.    
+We calculate the mean of the data set <code>my_cool_data</code>. 
+Note that we do not need to define the and save the data set again. 
+It is already stored in the memory.    
 </md-block>
 
-<hr class="my-hr3">
+<!--R cell start -->
+<div class="sagecell-r">
+<script type="text/x-sage">
+# this is a code cell 
+
+my_cool_data <- c(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5,10) # define and store values to my_cool_data
+mean(my_cool_data) # mean
+
+# hit Evaluate R Code when you're ready to see the output
+</script>
+</div>
+<!--R cell end -->
 
 <md-block>
+Notice the parentheses after the mean that sandwich the data name.
+
+This is because <code>mean()</code> is a **function**. 
+It needs an **input** (in the example above the input is the vector <code>my_cool_data</code>) 
+and it gives us an **output** (the mean of the data).
+
+We can compute the mean more explicitly:    
+</md-block>
+
+<!--R cell start -->
+<div class="sagecell-r">
+<script type="text/x-sage">
+# this is a code cell 
+
+my_cool_data <- c(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5,10) # define and store values to my_cool_data
+
+    # explicit mean
+    # recall: mean = sum of values divided by # of values
+num <- sum(my_cool_data) # numerator is sum of values
+denom <- length(my_cool_data) # length() function tells us number of values in data set (vectors)
+
+mean_hand <- num/denom
+mean_hand
+
+# hit Evaluate R Code
+</script>
+</div>
+<!--R cell end -->
+
+<md-block>
+Luckily, we don't need to compute things the long way. We'll use the functions already programmed into R.
+
+Similarly, we can calculate the median, standard deviation, and variance as follows:    
+</md-block>
+
+<!--R cell start -->
+<div class="sagecell-r">
+<script type="text/x-sage">
+# this is a code cell 
+
+my_cool_data <- c(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5,10) # define and store values to my_cool_data
+
+mean(my_cool_data) # mean
+median(my_cool_data) # median
+sd(my_cool_data) # standard deviation
+var(my_cool_data) # variance 
+
+# hit Evaluate R Code
+</script>
+</div>
+<!--R cell end -->
+
+<md-block>
+Notice that you only get one number. But which is it?    
+</md-block>
+
+
+
+
+
+
+
+<div class="tryit">
+    Try it!
+</div>
+
+<md-block>
+    <!--
 <img src="https://raw.githubusercontent.com/jorgemathbasilio/jorgemathbasilio.github.io/master/stat065-f21/tryit.jpg" alt="Try it image" />
+-->
+In the code cell above, comment out all but one of the statistics and see the output.
 
-What is the value of: \(3+0\times 5+5−9\)?
+Verify that:
+    - <code>mean(my_cool_data) = 4.0625</code>
+    - <code>median(my_cool_data) = 4</code>
+    - <code>sd(my_cool_data) = 2.015564</code>
+    - <code>var(my_cool_data) = 4.0625</code>
 
-(Remember order of operations and to use parentheses) 
+You can also use the blank code cell below and practice typing out the above code, one at a time.
 </md-block>
 
 <!--R cell start -->
@@ -270,135 +272,79 @@ What is the value of: \(3+0\times 5+5−9\)?
 </div>
 <!--R cell end -->
 
-Answer: \(-1\)   
-
 <hr class="my-hr3">
+
+
+
+
+
+
 
 <hr class="my-hr2">
 
 <md-block>
-# Quick Comment about 'Comments'
+## Five Number Summary
 
-Comments are very useful in programming and coding. They are parts of code that are NOT read or implemented by the program but are there to be helpful for humans--that is, for you or me to read :-)
+We can also have the *5 number summary*. 
 
-In R, any text after a hashtag is not read by the program for that line.
+Recall that this is the following five descriptive statistics: min, Q1 (first quartile), med, Q3 (third quartile), max. 
 
-For example,
+On the Ti84 we would use `1VarStats` to find these. 
 
-<div class="mycode">
-<pre>
-banana <- 11 # define the variable 'banana'
-banana
-</pre>
-</div>    
-
-If you go back up and read the examples, you'll see that I've already used comments!
-
-I'm going to extensively use comments in the code cells to teach you important info that is not part of the code.
-</md-block>
-
-
-
-
-
-
-
-
-<hr class="my-hr">
-
-<md-block>
-# &sect; 3. Variables and Assignment in R
-
-Variables in a programming language are different than our usual math notation. 
-
-In short, we use them as 'tags' or 'nicknames' to save the values of a computation.
-
-If you type the symbols less-than and hyphen, you type something that looks like an arrow pointing to the left: <code><-</code>. 
-You can use this arrow to **assign** values to variables, called an **assignment**.
-
-For example, you can create a variable `x` and assign it the value `3` by typing this into a cell:
+In R, it is just as easy:   
 </md-block>
 
 <!--R cell start -->
 <div class="sagecell-r">
 <script type="text/x-sage">
-# Example: variables and assingment
+# this is a code cell 
 
-x <- 3
+my_cool_data <- c(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5,10) # define and store values to my_cool_data
+
+summary(my_cool_data)    # 5 number summary
+
 # hit Evaluate R Code
 </script>
 </div>
 <!--R cell end -->
 
 <md-block>
-Typically, when you just do the line above *nothing happens*. There's no output! 
-
-This is because we've only *assigned* the value of 3 to the variable `x` and stored it to memory. 
-So, R does what's it told, no more no less. 
-
-Of course, you probably want it to display the `3` as an output as well. We have to be specific and tell R to show us the output by "calling" the variable.
-
-To **call** a variable just type the name of it in a new line:    
+Actually, notice R is even better! It also gives the mean. So it's a 6 number summary :-)    
 </md-block>
 
-<!--R cell start -->
-<div class="sagecell-r">
-<script type="text/x-sage">
-# Example: variables and assingment
-x <- 3
-x
-# hit Evaluate R Code
-</script>
-</div>
-<!--R cell end -->
+
+
+
+
+
+<hr class="my-hr2">
 
 <md-block>
-However, in recent implemintations of R they seem to have updated it so now assignment and output are both executed.
+## Qualitative Data 
 
-## Naming Variables
-
-You can name variable almost anything. There's different conventions people use. 
-I like to use lowercase letters only and use underscores, <code>_</code>, to separate words for readability.
-
-Why is assignment useful? It helps you build complicated computations. 
-
-For example, let us compute: \(\sqrt{2+x^2}\) where \(x=5.5\).
+We now look at a new data set. This time it includes <b>qualitative data</b>.
 </md-block>
 
 <!--R cell start -->
 <div class="sagecell-r">
 <script type="text/x-sage">
-# Example: 
+# this is a code cell 
 
-x <- 5.5
-myvalue <- sqrt( 2 + x^2 )
+# A dataset consisting of the 5 qualitative values: Yes, No, Yes, Yes, Maybe
+qual <- c("Yes", "No", "Yes", "Yes", "Maybe")  
+         # notice that you must use quotes to enclose categorical values
 
-myvalue
+qual           # display values
+table(qual)    # make a frequency table
+
 # hit Evaluate R Code
 </script>
 </div>
 <!--R cell end -->
 
-<md-block>
-To make sure this is correct, use your calculator to verify you get the same answer.
 
 
-## Assigning qualitative values to a variable
 
-If you want to assign a variable a qualitative description or text instead of a number we use quotes:
-</md-block>
-
-<!--R cell start -->
-<div class="sagecell-r">
-<script type="text/x-sage">
-# Example: qualitative variable assignment
-
-fav_color <- "yellow"
-fav_color               # reminder: you need to type the name of the variable again to see it as an output
-# hit Evaluate R Code
-</script>
-</div>
-<!--R cell end -->
 
 <hr class="my-hr">
 
@@ -413,7 +359,7 @@ In this problem, you will open up a Word document or a text editing document whe
         <li>Open a Word document (or similar).</li>
         <li>Include a title page with the following info:
             <ol>
-                <li>Title of "Stat C1000 Lab 0"</li>
+                <li>Title of "Stat C1000 Lab 1"</li>
                 <li>Your name, the due date</li>
                 <li>Your instructor's Name and course CRN</li>
             </ol>
@@ -426,6 +372,14 @@ In this problem, you will open up a Word document or a text editing document whe
 </div>
 
 <hr class="my-hr">
+
+
+
+
+
+
+
+
 
 <div class="lab-prob">
 Problem 1
@@ -476,6 +430,29 @@ To get ready for Problem 2, type "Problem 2" into a new line and make it bold.
 </div>
 
 <hr class="my-hr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr class="my-hr2">
+<hr class="my-hr2">
+<hr class="my-hr2">
+<hr class="my-hr2">
+
+OLD OLD OLD OLD
 
 <div class="lab-prob">
 Problem 2
