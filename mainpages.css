@@ -733,11 +733,14 @@ h2 {
 .mycode {
     background-color: #d1eaea;
     /*background-color: #f0f0f5;*/
+    padding: 5px;
+    padding-left: 20px;
 }
 
 code {
     background-color: #d1eaea;
-    padding: 1
+    margin-right: 0.5em;
+    padding-left: 0.5em;
 }
 
 .center {
