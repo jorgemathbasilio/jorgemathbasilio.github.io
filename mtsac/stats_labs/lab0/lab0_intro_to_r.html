@@ -92,58 +92,108 @@
 </md-block>
 
 <hr class="my-hr">
-    
-    
-<md-block>
-# &sect; 0. Intro to R
 
+<h1>&sect; 0. Intro to R</h1>
+
+<p>
 We use computers for all sorts of everyday tasks. 
 I feel it is time that a computer becomes an important tool in studying mathematics and statistics. 
 This opens up a lot of interesting possibilities for the types of problems one can solve.
+</p>
 
-## What is R?
+<h2>What is R?</h2>
 
+<p>
 R is a powerful, comprehensive, open-source software framework for doing professional statistics.
+</p>
 
+<p>
 It is possible to download and install the software on computers, or to use it through a website-interface without downloading anything.
+</p>
 
+<p>
 We will use R through a website-interface I created with interactive "cells" where you can run code and immediately see the result, called an <b>output</b>. 
 This is an interactive document that will guide you through the first steps of getting familiar with R.
+</p>
 
+<p>
 If you decide to get serious you will want to install R on your computer.
+</p>
 
-## Why use R?
 
-- It's free!
-- Using it on web is free via CoCalc
-- Downloading it is free (if you want to use it without internet)
-- It's open source!
-- No hidden algorithms (you can look at source code if you wish--and look "under the hood" so to speak)
-- Lots of resources to get help (use google to search)
-- **It will prepare you for the future!**
-    - You will likely need to learn some basic programming no matter what you study in college.
-    - In Pyschology, for example, it's common to learn R (or Python) when learning statistics.
-    - Data Analyst: hot new field where there's lots of jobs!
-    - It truly and honestly answers the question student's always ask: "When will I ever use this???"
-    - Bragging rights: put this on your resume! Tell employers when interviewing to stand out from the crowd :-)
+<h2>Why use R?</h2>
 
-## Why not just use graphing calculators?
+<ul>
+    <li>
+        It's free!
+    </li>
+    <li>
+        Using it on web is free via SageMath/CoCalc
+    </li>
+    <li>
+        Downloading it is free (if you want to use it without internet)
+    </li>
+    <li>
+        It's open source!
+    </li>
+    <li>
+        No hidden algorithms (you can look at source code if you wish--and look "under the hood" so to speak)
+    </li>
+    <li>
+        Lots of resources to get help (use google to search)
+    </li>
+    <li>
+        <b>It will prepare you for the future!</b>
+        <ul>
+            <li>
+                You will likely need to learn some basic programming no matter what you study in college.
+            </li>
+            <li>
+                In Pyschology, for example, it's common to learn R (or Python) when learning statistics.
+            </li>
+            <li>
+                Data Analyst: hot new field where there's lots of jobs!
+            </li>
+            <li>
+                It truly and honestly answers the question student's always ask: "When will I ever use this???"
+            </li>
+            <li>
+                Bragging rights: put this on your resume! Tell employers when interviewing to stand out from the crowd :-)
+            </li>
+        </ul>
+    </li>
+</ul>
 
+<h2>Why not just use graphing calculators?</h2>
+
+<p>
 Graphing calculators are still rather popular. I used one in high school in the 1990s. 
+</p>
 
+<p>
 We are using one in the classroom--the Ti84! 
 But, we are only using it because the MARCS can let you borrow one--making it free to use if you are willing to take the extra 5 minutes to go to the MARCS.
+</p>
 
+<p>
 Let's say we would like to study and work with a large data set. 
 Using software, like R, I can upload a file with the data into a folder for the project, and distribute it to all students with a click. 
 By comparison, with a graphing calculator, the data would have to be entered by each student...by hand. 
 We do this in class because we need to take exams but for "real world" data sets, the number of entries are huge! 
+</p>
 
+<p>
 Students can take the images and outputs of their computations in R and easily add them to any document for professional-looking reports, or undergraduate research papers suitable for publication. 
 A picture on a graphing calculator is idle and immovable.
+</p>
 
-Finally, **you will be learning a skill** and it will take time to get comfortable with it.
-</md-block>  
+<p>
+Finally, <b>you will be learning a skill</b> and it will take time to get comfortable with it.
+</p>
+ 
+
+
+
 
 <hr class="my-hr2">
 
@@ -161,12 +211,14 @@ referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <hr class="my-hr">
 
-<md-block>
-# &sect; 1. Arithmetic Calculations in R
+<h1>
+    &sect; 1. Arithmetic Calculations in R
+</h1>
 
+<p>
 The time has come to do our first calculation using R. 
 The cell below is a code cell. Hit <code>Evaluate R code</code> to see the output. 
-</md-block>
+</p>
 
 <!--R cell start -->
 <div class="sagecell-r">
@@ -178,22 +230,22 @@ The cell below is a code cell. Hit <code>Evaluate R code</code> to see the outpu
 </div>
 <!--R cell end -->
 
-<md-block>
-Of course we know 2+2 is 4. You'll see the **output** of the code <code>2+2</code> immediately below it. 
+<p>
+Of course we know 2+2 is 4. You'll see the **output** of the code <code>2+2</code> immediately below it.<br />
 
-That was anticlimactic, wasn't it? No! That was awesome! You just took an important step. 
+That was anticlimactic, wasn't it? No! That was awesome! You just took an important step.<br />
 
-Let's continue...
+Let's continue...<br />
 
 You can perform all sorts of basic arithmetic using R, including more complicated expressions. 
-Just use parentheses liberally!
+Just use parentheses liberally!<br />
 
 If we want to evaluate the expression
 $$\sqrt{\frac{2+5\cdot 7}{10}}$$
-we need to know what the square root, multiplication, and division syntax used.
+we need to know what the square root, multiplication, and division syntax used.<br />
 
 Note that I added extra blank spaces in order to make the code easier to understand/read.
-</md-block>
+</p>
 
 <!--R cell start -->
 <div class="sagecell-r">
@@ -205,12 +257,12 @@ sqrt( (2 + 5*7 ) / 10)
 </div>
 <!--R cell end -->
 
-<md-block>
+<p>
 Next, let's compute the average of a small list of numbers:
 $$
 1,2,3,4,5,10
 $$
-</md-block>
+</p>
 
 <!--R cell start -->
 <div class="sagecell-r">
@@ -224,10 +276,10 @@ $$
 </div>
 <!--R cell end -->
 
-<md-block>
+<p>
 Next, we'll compute the standard deviation of the list by typing out the computation directly 
 (we'll estimate the mean using 4.17):
-</md-block>
+</p>
 
 <!--R cell start -->
 <div class="sagecell-r">
@@ -243,29 +295,29 @@ Next, we'll compute the standard deviation of the list by typing out the computa
 
 <hr class="my-hr2">
 
-<md-block>
-## **Note: TRY IT! Examples**
+<h2>
+    Note: TRY IT! Examples
+</h2>
 
-*Try it* examples are are not graded and should be easy to complete while you read this lab document. 
-I encourage you to do all *Try it* exercises to make sure you are absorbing the material and syntax.
+<p>
+<b>Try it</b> examples are are not graded and should be easy to complete while you read this lab document. 
+I encourage you to do all <b>Try it</b> exercises to make sure you are absorbing the material and syntax.<br />
 
-Later, you'll see *Problems* and these you will submit for grading.    
-</md-block>
+Later, you'll see <b>Problems</b> and these you will submit for grading.    
+</p>
 
 
 
-<md-block>
-    <!--
-<img src="https://raw.githubusercontent.com/jorgemathbasilio/jorgemathbasilio.github.io/master/stat065-f21/tryit.jpg" alt="Try it image" />
--->
+
 <div class="tryit">
     Try it!
 </div>
 
+<p>
 What is the value of: \( 3+0 \times 5+5-9 \)?
 
 (Remember order of operations and to use parentheses) 
-</md-block>
+</p>
 
 <!--R cell start -->
 <div class="sagecell-r">
@@ -273,25 +325,31 @@ What is the value of: \( 3+0 \times 5+5-9 \)?
 # Try it!
 
 
+
 </script>
 </div>
 <!--R cell end -->
 
-Answer: \( -1 \)   
+<p>
+    Answer: \( -1 \).
+</p>   
 
 <hr class="my-hr3">
 
 <hr class="my-hr2">
 
-<md-block>
-# Quick Comment about 'Comments'
+<h2>
+    Quick Comment about 'Comments'
+</h2>
 
+<p>
 Comments are very useful in programming and coding. 
-They are parts of code that are NOT read or implemented by the program but are there to be helpful for humans--that is, for you or me to read :-)
+They are parts of code that are NOT read or implemented by the program but are there to be helpful for humans--that is, for you or me to read :-)<br />
 
-In R, any text after a hashtag is not read by the program for that line.
+In R, any text after a hashtag is not read by the program for that line.<br />
 
 For example,
+</p>
 
 <div class="mycode">
 <pre>
@@ -300,10 +358,11 @@ banana
 </pre>
 </div>    
 
-If you go back up and read the examples, you'll see that I've already used comments!
+<p>
+If you go back up and read the examples, you'll see that I've already used comments!<br />
 
 I'm going to extensively use comments in the code cells to teach you important info that is not part of the code.
-</md-block>
+</p>
 
 
 
@@ -314,18 +373,20 @@ I'm going to extensively use comments in the code cells to teach you important i
 
 <hr class="my-hr">
 
-<md-block>
-# &sect; 2. Variables and Assignment in R
+<h1>
+    &sect; 2. Variables and Assignment in R
+</h1>
 
-Variables in a programming language are different than our usual math notation. 
+<p>
+Variables in a programming language are different than our usual math notation.<br />
 
-In short, we use them as 'tags' or 'nicknames' to save the values of a computation.
+In short, we use them as 'tags' or 'nicknames' to save the values of a computation.<br />
 
 If you type the symbols less-than and hyphen, you type something that looks like an arrow pointing to the left: <code> <- </code>. 
-You can use this arrow to **assign** values to variables, called an **assignment**.
+You can use this arrow to <b>assign</b> values to variables, called an <b>assignment</b>.<br />
 
 For example, you can create a variable <code> x </code> and assign it the value <code> 3 </code> by typing this into a cell:
-</md-block>
+</p>
 
 <!--R cell start -->
 <div class="sagecell-r">
@@ -338,17 +399,17 @@ x <- 3
 </div>
 <!--R cell end -->
 
-<md-block>
-Typically, when you just do the line above *nothing happens*. There's no output! 
+<p>
+Typically, when you just do the line above <i>nothing happens</i>. There's no output!<br />
 
-This is because we've only *assigned* the value of 3 to the variable <code> x </code> and stored it to memory. 
-So, R does what's it told, no more no less. 
+This is because we've only <i>assigned</i> the value of 3 to the variable <code> x </code> and stored it to memory. 
+So, R does what's it told, no more no less.<br /> 
 
 Of course, you probably want it to display the <code> 3 </code> as an output as well. 
-We have to be specific and tell R to show us the output by "calling" the variable.
+We have to be specific and tell R to show us the output by "calling" the variable.<br />
 
-To **call** a variable just type the name of it in a new line:    
-</md-block>
+To <b>call</b> a variable just type the name of it in a new line:    
+</p>
 
 <!--R cell start -->
 <div class="sagecell-r">
@@ -361,18 +422,29 @@ x
 </div>
 <!--R cell end -->
 
-<md-block>
+<p>
 However, in recent implemintations of R they seem to have updated it so now assignment and output are both executed.
+</p>
 
-## Naming Variables
 
+
+
+
+
+<hr class="my-hr2">
+
+<h2>
+    Naming Variables
+</h2>
+
+<p>
 You can name variable almost anything. There's different conventions people use. 
-I like to use lowercase letters only and use underscores, <code> _ </code>, to separate words for readability.
+I like to use lowercase letters only and use underscores, <code> _ </code>, to separate words for readability.<br />
 
-Why is assignment useful? It helps you build complicated computations. 
+Why is assignment useful? It helps you build complicated computations.<br /> 
 
 For example, let us compute: \( \sqrt{2+x^2} \) where \( x=5.5 \).
-</md-block>
+</p>
 
 <!--R cell start -->
 <div class="sagecell-r">
@@ -388,14 +460,22 @@ myvalue
 </div>
 <!--R cell end -->
 
-<md-block>
+<p>
 To make sure this is correct, use your calculator to verify you get the same answer.
+</p>
 
 
-## Assigning qualitative values to a variable
 
+
+<hr class="my-hr2">
+
+<h2>
+    Assigning qualitative values to a variable
+</h2>
+
+<p>
 If you want to assign a variable a qualitative description or text instead of a number we use quotes:
-</md-block>
+</p>
 
 <!--R cell start -->
 <div class="sagecell-r">
@@ -408,6 +488,12 @@ fav_color               # reminder: you need to type the name of the variable ag
 </script>
 </div>
 <!--R cell end -->
+
+
+
+
+
+
 
 <hr class="my-hr">
 
@@ -578,26 +664,28 @@ In your Word document, write a short paragraph telling me why you are taking thi
 You have now finished problem! </br>
 </div>
 
+
+
+
+
+
 <hr class="my-hr">
 
-<md-block>
-# &sect; 3. Almost done...Create a PDF and Submit to Canvas!
+<h1>
+    &sect; 3. Almost done...Create a PDF and Submit to Canvas!
+</h1>
 
-Save your Word document as a PDF file and give it the file name <b>"Lab0_LastName_FirstName.pdf".</b></br>
+<p>
+Save your Word document as a PDF file and give it the file name <b>"Lab0_LastName_FirstName.pdf"</b>.<br />
 
 For example, if I was turning in the assignment, I would name it <b>"Lab0_Basilio_Jorge".</b>
-</md-block>
+</p>
 
-<hr class="my-hr">
+<div class="congrats">
+ <img width="50%" style="display:block; margin-left:auto; margin-right:auto" src="https://raw.githubusercontent.com/jorgemathbasilio/jorgemathbasilio.github.io/master/stat065-f21/congrats.png" alt="Congrats image" />  
 
-<hr class="my-hr2">
-
- <img width="50%" style="display:block; margin-left:auto; margin-right:auto" src="https://raw.githubusercontent.com/jorgemathbasilio/jorgemathbasilio.github.io/master/stat065-f21/congrats.png" alt="Congrats image" />
-
-  <div class="congrats">
-    You've done it! You've now finished the Lab! :-)
-  </div>
-<hr class="my-hr2">
+<p>You've done it! You've now finished the Lab! :-)</p> 
+</div>
     
 
 
